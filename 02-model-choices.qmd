@@ -193,8 +193,3 @@ Pacific rockfishes use a prior on steepness (or the predictive mean from this pr
     -   2015: mean = 0.77, sd = 0.147
 
     -   2017: mean = 0.72, sd = 0.158
-
-
-## Stuff to do well in advance of peak stock assessment season
-
-Contact ~~Martin Dorn~~ ~~Jim Thorson~~ Chantel Wetzel (ugh) for the current assessment cycle steepness prior. If you are conducting an assessment on a rockfish species that is included in the steepness profile (aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north), contact Chantel Wetzel for a "type-C" prior with your species removed.

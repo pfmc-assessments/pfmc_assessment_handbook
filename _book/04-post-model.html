@@ -104,7 +104,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-notes-best-practices.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modeling choices</span></a>
+  <a href="./02-model-choices.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modeling choices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -122,6 +122,16 @@ ul.task-list{list-style: none;}
   <a href="./05-other.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Other useful tidbits</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-a.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Appendix A: Species seen* in the hake fishery</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-b.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Appendix B: Alaska Center CRUISEJOINS for shelf and slope surveys</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -133,11 +143,8 @@ ul.task-list{list-style: none;}
   <ul>
   <li><a href="#notes-and-best-practices-for-retrospectives" id="toc-notes-and-best-practices-for-retrospectives" class="nav-link active" data-scroll-target="#notes-and-best-practices-for-retrospectives"> <span class="header-section-number">4.1</span> Notes and best practices for retrospectives</a></li>
   <li><a href="#notes-and-best-practices-for-andres-rebuilder-program-aka-puntalyzer" id="toc-notes-and-best-practices-for-andres-rebuilder-program-aka-puntalyzer" class="nav-link" data-scroll-target="#notes-and-best-practices-for-andres-rebuilder-program-aka-puntalyzer"> <span class="header-section-number">4.2</span> Notes and best practices for Andre’s rebuilder program (aka Puntalyzer)</a></li>
-  <li><a href="#notes-and-best-practices-for-r4ss" id="toc-notes-and-best-practices-for-r4ss" class="nav-link" data-scroll-target="#notes-and-best-practices-for-r4ss"> <span class="header-section-number">4.3</span> Notes and best practices for <code>r4ss</code></a>
-  <ul class="collapse">
-  <li><a href="#notes-and-best-practices-for-writing-assessment-documents" id="toc-notes-and-best-practices-for-writing-assessment-documents" class="nav-link" data-scroll-target="#notes-and-best-practices-for-writing-assessment-documents"> <span class="header-section-number">4.3.1</span> Notes and best practices for writing assessment documents</a></li>
-  </ul></li>
-  <li><a href="#stuff-to-do-well-in-advance-of-peak-stock-assessment-season" id="toc-stuff-to-do-well-in-advance-of-peak-stock-assessment-season" class="nav-link" data-scroll-target="#stuff-to-do-well-in-advance-of-peak-stock-assessment-season"> <span class="header-section-number">4.4</span> Stuff to do well in advance of peak stock assessment season</a></li>
+  <li><a href="#notes-and-best-practices-for-r4ss" id="toc-notes-and-best-practices-for-r4ss" class="nav-link" data-scroll-target="#notes-and-best-practices-for-r4ss"> <span class="header-section-number">4.3</span> Notes and best practices for <code>r4ss</code></a></li>
+  <li><a href="#notes-and-best-practices-for-writing-assessment-documents" id="toc-notes-and-best-practices-for-writing-assessment-documents" class="nav-link" data-scroll-target="#notes-and-best-practices-for-writing-assessment-documents"> <span class="header-section-number">4.4</span> Notes and best practices for writing assessment documents</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thefaylab/lab-manual/edit/main/04-post-model.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thefaylab/lab-manual/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -199,8 +206,9 @@ ul.task-list{list-style: none;}
 <li><p>Remember that the figures can be modified to look better. For instance, you can replace the fleet names in the model with a less abbreviated set of names that will go in the plot labels. Almost every aspect of these plots can be modified with inputs that don’t even require recoding R (although you can always do that too).</p></li>
 <li><p>If something is not working right, complain about it on the <a href="https://github.com/r4ss/r4ss/issues"><code>r4ss</code> issues list</a>.</p></li>
 </ol>
-<section id="notes-and-best-practices-for-writing-assessment-documents" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="notes-and-best-practices-for-writing-assessment-documents"><span class="header-section-number">4.3.1</span> Notes and best practices for writing assessment documents</h3>
+</section>
+<section id="notes-and-best-practices-for-writing-assessment-documents" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="notes-and-best-practices-for-writing-assessment-documents"><span class="header-section-number">4.4</span> Notes and best practices for writing assessment documents</h2>
 <ol type="1">
 <li><p>Read the <a href="https://www.pcouncil.org/documents/2020/05/f-2-attachment-3-draft-revised-terms-of-reference-for-the-groundfish-and-coastal-pelagic-species-stock-assessment-process-for-2021-and-2022.pdf/">terms of reference</a> and actually follow them.</p></li>
 <li><p>Consider using LaTeX and .Rnw files. Chantel and Kelli are working on an R package that will serve as a template for all assessment documents and act as the successor to <a href="https://github.com/melmonk/StockAssessment_template">Melissa Monk’s template</a>. based on R Markdown.</p></li>
@@ -218,11 +226,6 @@ ul.task-list{list-style: none;}
 <li><p>Make sure that labels on Figures are readable. The best way to get figures produced in R into word is to save them as PNG files. The plotting functions in the R4SS package have an input for resolution that can be increased as needed. The default resolution is higher than what you get if you save the images one by one from the RGUI graphics window.</p></li>
 <li><p>Crop out non-informative headings and labels from figures imported from R4SS or other packages.</p></li>
 </ol>
-</section>
-</section>
-<section id="stuff-to-do-well-in-advance-of-peak-stock-assessment-season" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="stuff-to-do-well-in-advance-of-peak-stock-assessment-season"><span class="header-section-number">4.4</span> Stuff to do well in advance of peak stock assessment season</h2>
-<p>Contact <del>Martin Dorn</del> <del>Jim Thorson</del> Chantel Wetzel (ugh) for the current assessment cycle steepness prior. If you are conducting an assessment on a rockfish species that is included in the steepness profile (aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north), contact Chantel Wetzel for a “type-C” prior with your species removed.</p>
 
 
 </section>

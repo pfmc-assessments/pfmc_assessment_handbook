@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://thefaylab.github.io/lab-manual/appendix-a.html</loc>
+    <lastmod>2022-08-19T16:42:55.523Z</lastmod>
+  </url>
+  <url>
     <loc>https://thefaylab.github.io/lab-manual/01-data-sources.html</loc>
-    <lastmod>2022-08-19T01:17:06.830Z</lastmod>
+    <lastmod>2022-08-19T16:43:01.972Z</lastmod>
   </url>
   <url>
-    <loc>https://thefaylab.github.io/lab-manual/summary.html</loc>
-    <lastmod>2022-08-18T23:28:08.446Z</lastmod>
+    <loc>https://thefaylab.github.io/lab-manual/02-model-choices.html</loc>
+    <lastmod>2022-08-19T17:11:24.794Z</lastmod>
   </url>
   <url>
-    <loc>https://thefaylab.github.io/lab-manual/index.html</loc>
-    <lastmod>2022-08-19T01:17:02.393Z</lastmod>
-  </url>
-  <url>
-    <loc>https://thefaylab.github.io/lab-manual/02-notes-best-practices.html</loc>
-    <lastmod>2022-08-19T01:13:35.894Z</lastmod>
-  </url>
-  <url>
-    <loc>https://thefaylab.github.io/lab-manual/05-other.html</loc>
-    <lastmod>2022-08-19T01:17:43.250Z</lastmod>
+    <loc>https://thefaylab.github.io/lab-manual/03-stock-synthesis.html</loc>
+    <lastmod>2022-08-19T17:13:37.833Z</lastmod>
   </url>
   <url>
     <loc>https://thefaylab.github.io/lab-manual/04-post-model.html</loc>
-    <lastmod>2022-08-19T01:15:57.631Z</lastmod>
+    <lastmod>2022-08-19T16:42:54.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thefaylab.github.io/lab-manual/05-other.html</loc>
+    <lastmod>2022-08-19T16:42:54.036Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thefaylab.github.io/lab-manual/appendix-b.html</loc>
+    <lastmod>2022-08-19T16:42:54.037Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thefaylab.github.io/lab-manual/index.html</loc>
+    <lastmod>2022-08-19T17:56:00.463Z</lastmod>
   </url>
 </urlset>

@@ -13,10 +13,12 @@ book:
   chapters:
     - index.qmd
     - 01-data-sources.qmd
-    - 02-notes-best-practices.qmd
+    - 02-model-choices.qmd
     - 03-stock-synthesis.qmd
     - 04-post-model.qmd
     - 05-other.qmd
+    - appendix-a.qmd
+    - appendix-b.qmd
     # - references.qmd
 
 bibliography: references.bib
