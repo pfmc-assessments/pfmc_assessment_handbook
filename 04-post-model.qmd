@@ -41,13 +41,15 @@
 
 1.  `r4ss` is available as an R package on CRAN but the most up-to-date version can be installed from GitHub. Installation instructions are available [here](https://github.com/r4ss/r4ss).
 
-2.  The GitHub page linked above include a log of changes but it's probably a good idea to reinstall it on a regular basis to keep up.
+2.  See the intro vignette [here](https://r4ss.github.io/r4ss/) for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the tune_comps() function.
 
-3.  Look through all the figures that get produced by `SS_plots`. Ian Stewart often said "each one of those figures is there for a reason". There have been cases where models were put forth with incorrect assumptions about biology, ageing error, etc. that could have been caught if the assessment authors had paid attention to all the plots.
+3. It's good idea to reinstall it on a regular basis to keep up. You can also watch the github repository if you want to get notifications of changes.
 
-4.  Remember that the figures can be modified to look better. For instance, you can replace the fleet names in the model with a less abbreviated set of names that will go in the plot labels. Almost every aspect of these plots can be modified with inputs that don't even require recoding R (although you can always do that too).
+4.  Look through all the figures that get produced by `SS_plots`. There have been cases where models were put forth with incorrect assumptions about biology, ageing error, etc. that could have been caught if the assessment authors had paid attention to all the plots.
 
-5.  If something is not working right, complain about it on the [`r4ss` issues list](https://github.com/r4ss/r4ss/issues).
+5.  Remember that the figures can be modified to look better. For instance, you can replace the fleet names in the model with a less abbreviated set of names that will go in the plot labels.
+
+6.  If something is not working right, complain about it on the [`r4ss` issues list](https://github.com/r4ss/r4ss/issues).
 
 ## Notes and best practices for writing assessment documents
 
