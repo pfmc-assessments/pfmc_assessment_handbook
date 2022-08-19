@@ -1,0 +1,200 @@
+# Modeling choices
+
+## Notes and best practices for selecting maximum age (population and data)
+
+The comments below are based on a team discussion on how to select a population and data maximum age for modeling:
+
+**Choice 1, Population length bins:** should extend beyond something like the 97.5% quantile of the length at age distribution for the largest age (easy to add more bins to see if it makes any difference).
+
+**Choice 2, Max age:** should be large enough for growth to be asymptotic, and at least as big as the largest data age bins. It's easy to test the impact of changing to different value, just requires updating ageing error matrices. Look at the stable age-distribution plot and examine the number of fish in the plus group. Additionally, the period of time when data are available (after extensive exploitation), the data plus group may be lower.
+
+**Choice 3, Data length bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. We should check to make sure that the selection of length and age bins are consistent with each other. Typically, we often have max length bins where there are only a few fish, but a larger proportion of data in the data age plus group.
+
+**Choice 4, Data age bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than apriori rules about how to set this, may be considered "data mining". Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e. 5%). Also, add a warning to r4ss about the percentage in the population and data plus groups.
+
+## Notes and best practices for determining prior for natural mortality
+
+Owen's Advice on M; July 6, 2022
+
+1.  I prefer using age data alone to estimate the natural mortality rate (see accompanying document: M2017_for_Methods_Review_Hamel; Hamel and Cope (in review)), except in cases where getting a reasonable estimate of the maximum age is problematic.
+
+2.  The age based prior is simply: $$\text{lognormal}(\ln(5.4/\text{max age}), 0.31).$$
+
+3.  The fixed value for M if not estimating is even more simply the median of that prior: $$M = 5.4/\text{max age}$$
+
+4.  Can explore a range approaches for M estimates and priors [here](http://barefootecologist.com.au/shiny_m); reference is Cope and Hamel, in press.
+
+## Notes and best practices of estimating ageing error
+
+Jim Thorson has been working on this. These files are accessible [on the web](https://github.com/nwfsc-assess/nwfscAgeingError).
+
+You can also find the original user manual that goes with the age error ADMB executable written by Andre Punt that is called by the above wrapper [on the google drive](https://docs.google.com/a/noaa.gov/file/d/0B-5Jg3P0x9x0SnUwbnMxczBpMnM/edit?usp=sharing) The above user manual will help you understand what the program is doing and how to setup and run an individual file if you wish to do so.
+
+## Notes and best practices for maturity
+
+Talk to Melissa Head about maturity. In 2017, she provided estimated maturity curves based on samples from the NWFSC survey for many species.
+
+Data from the NWFSC survey on maturity includes a column indicating mature or immature and another indicating spawning and not spawning. The latter considers all "mature" fish with over 25% atresia as not spawning (along with all immature fish). The spawning/not spawning column is the one we commonly use to estimate the maturity curve since that is really what we care about. In some cases a simple logistic will fit, but if there is much skip spawning/atresia for older/larger females, a logistic type curve which asymptotes to a lower value or a non-parametric fit is more appropriate. A column with percent atresia is also provided if you with to use a percentage other than 25% for the cutoff. Finally, the mature/immature column can be used instead if the atresia/skip spawning is taken into account in specifying the fecundity relationship.
+
+An additional column has been added to the NWFSC survey table indicating uncertainty in the designation. This can be used to weight or exclude data.
+
+Note: John Field has expressed concern that we are too focused on recent samples from the NWFSC survey, so if you aren't going to include samples from past collections, think about a justification for that choice.
+
+## Notes and best practices for fecundity
+
+Update (6/05/17): EJ published [a new analysis in 2017](http://www.sciencedirect.com/science/article/pii/S0165783616303745) which has estimates for $aL^b$ where L is in cm.
+
+Ian Taylor to add his notes on how to set this up in SS3 here soon.
+
+Update (11/29/16):
+
+Analysis of fecundity with size can be found for many rockfishes in [E.J. Dick's Dissertation](http://users.soe.ucsc.edu/~msmangel/Dick%20Thesis.pdf). The reference (from 2013 darkblotched document) is "Dick, E. J. 2009. Modeling the reproductive potential of rockfishes (Sebastes spp.). Ph.D. Dissertation, University of California, Santa Cruz."
+
+Chapter 3 of E.J.'s dissertation describes his methods. Tables 10 and 11 list parameters (for each species that E.J. considered), which include the intercept and the slope in the 2-level hierarchical model for relative fecundity as a linear function of weight. The intercept is a scalar (eggs/kg at 'zero' weight), and the slope is the expected increase in weight-specific fecundity per additional kg of weight. Note that you want to use the median (50%) value from those tables.
+
+The units of the response variable for SS3 fecundity option #1 are eggs/kg. E.J.'s regression for SS3 option #1 was in grams; therefore, we need to multiply the intercept by 1,000 and the slope by 1,000,000 to convert to kg (since that model is quadratic in W).
+
+So using darkblotched as an example, for fecundity option #1 in SS3, the parameters to enter into the control file are: `alpha = 101,100` and `beta = 44,800`
+
+For another example see the control file in the 2009 or 2011 yelloweye assessments and for Ian S.'s text see section 2.2.3 in the 2009 yelloweye assessment. Note that the comment in the control file has 'eggs/cm' however the conversion is made and this should be 'eggs/kg'
+
+Here is bit of R code from John Wallace to see that this is the correct approach:
+
+    x.gm <- seq(1, 10, length = 2000)
+    y.eggs.per.gm  <- rnorm(2000, 2 + 3*x.gm)
+    plot(x.gm, y.eggs.per.gm)
+    summary(glm(y.eggs.per.gm ~ x.gm))
+
+    x.kg <- x.gm/1000
+    y.eggs.per.kg  <- y.eggs.per.gm * 1000
+    plot(x.kg, y.eggs.per.kg)
+    summary(glm(y.eggs.per.kg ~ x.kg))
+
+The r4ss figure bio6_fecundity.png shows the resulting relationship so you can use that to determine whether your parameter values produce the correct final relationship.
+
+## Notes and best practices for modeling selectivity
+
+Ian Taylor and Jim Thorson will fill in some notes here based on the CAPAM selectivity workshop held in La Jolla on March 11-14, 2013. The notes below are a start suggested by Mark Maunder.
+
+\[update: as of July 2, 2014, Ian and Jim haven't added anything to the text below but the Special Issue of Fisheries Science associated with the CAPAM meeting isn't yet publicly available (it's close)\]
+
+### Conceptual reasoning for using different approaches to selectivity
+
+**The following set of circumstances might cause selectivity to be dome-shaped:**
+
+1.  Contact selectivity causing older fish to outswim the trawl, or escape the gillnet/hooks
+
+2.  Incomplete spatial coverage in terms of depth or untrawlable habitat
+
+3.  Spatial heterogeneity in fishing intensity (see Sampson paper). This probably applies more to fishery selectivity than surveys.
+
+**Reasons for justifying asymptotic selectivity**
+
+1.  
+
+### General advice on selectivity in SS3
+
+1.  Start with a functional form that is commonly used (double normal)
+
+2.  Find some initial values using either the Excel spreadsheets or the r4ss widgets
+
+3.  Put the initial values in the model and run without estimating anything until you get a model that runs. This can be done by setting the maximum phase in the starter file to 0 or (better), by using the command line inputs: "-maxfn 0 -nohess"
+
+4.  Read the output into R using SS_output and plot the selectivity using either SS_plots(..., plot=2) or SSplotSelex(...,subplot=1), where ... is the object created by SS_output.
+
+5.  Set the PHASE for as many parameters to negative values as possible so that you start with estimating relatively few parameters (such as parameters 1 and 3 of the double normal, which control the peak and ascending slope).
+
+### Guidelines for SS3 double normal initial setup
+
+-   Fix parameters 5 and 6 (negative phase).
+
+    -   If selectivity is thought to be zero at the youngest/smallest or the oldest/biggest fish set the value to zero (e.g -15)
+
+    -   If selectivity is thought to be larger than zero at the youngest/smallest or the oldest/biggest fish set the value to -999 (does not scale the selectivity for the youngest or oldest age, independently from the normal curve).
+
+-   Fix the plateau (parameter 2) to be small values (e.g. -15).
+
+-   Set the peak (parameter 1) at the age/length equal to the mode of the composition data
+
+-   Set the ascending (parameter 3) and descending (parameter 4) slopes at ln( (peak_age-youngest_age)*8) and ln( (oldestyoungest_age-peak_age)*8)
+
+-   Don't estimate selectivity at youngest age/size (parameter 5), either fix at -5 or -999
+
+-   Use the double normal for asymptotic selectivity so have flexibility of dome shape without major changes to control file, plus have control over selectivity at the youngest age.
+
+    -   Fix descending slope (parameter 4) at a large number (e.g. 15)
+
+    -   Alternative 1: Fix plateau (parameter 2) to a large number (e.g. 15)
+
+    -   Alternative 2: Fix selectivity of the oldest age (parameter 6) at a large number (e.g. 15).
+
+## Notes and best practices for modeling recruitment deviations
+
+1.  Choices to be made:
+
+    a.  allow recruitment deviations or not?
+
+    b.  range of years?
+
+    c.  breaking into "early", "main", "late" vectors?
+
+        i.  early and late vectors are intended to add uncertainty to the model for years with little or no data with information about recruitment
+
+2.  What was done in the 2011 assessments? Graphical description is [here](https://docs.google.com/a/noaa.gov/file/d/0B5lSVg5Eq86uX250WHJXUWt0T1E/edit).
+
+3.  Guidance on bias adjustment settings
+
+    a.  Multiple simulation analyses have shown that applying the bias adjustment settings given by the `r4ss::SS_fitbiasramp()` perform well on average. However, there's no guarantee that this will work well in any given circumstance. User discretion is advised.
+
+4.  What to do about $\sigma_R$.
+
+    1.  Simulation in [Methot and Taylor (2011)](http://www.nrcresearchpress.com/doi/abs/10.1139/f2011-092) looked at a few options.
+
+        i.  Estimating $\sigma_R$ . **Performed well under ideal circumstances.**
+
+        ii. Tune $\sigma_R$ to match the observed variability in recruitment deviations. $$ {\sigma_R}^2 = \text{sd}(r')^2 $$ **Performed less well.**
+
+        iii. Tune $\sigma_R$ so that $${\sigma_R}^2 = \text{sd}(r')2 + \text{mean}(\text{SE}(r'))^2$$ where $\text{sd}(r')$ is the standard deviation of the vector of estimated recruitments over a range of years that seem reasonably well informed by the data, and $\text{mean}(\text{SE}(r'))$ is the mean of the estimated variability of those values. **Performed best.**
+
+5.  MCMC
+
+    a.  If you can get MCMC to work for your model, all the worry about bias adjustment goes away. You would need to either estimate $\sigma_R$ in the MCMC and hope it converges, or fix it at a value that has been tuned to the MLE.
+
+6.  Autocorrelated recruitment deviations
+
+    a.  Estimate `# SR_autocorr` (Stock-Recruit parameter in control file)
+
+    b.  Here are results from hake in 2019 from the ss_new file: `-1 1 -0.155106 0 99 0 6 0 0 0 0 0 0 0 # SR_autocorr`
+
+    c.  [Johnson et al. (2016)](https://www.sciencedirect.com/science/article/abs/pii/S0165783616301928) estimated autocorrelation in a simulation context
+
+## Notes and best practices for rockfish steepness profile
+
+Pacific rockfishes use a prior on steepness (or the predictive mean from this prior). A method was developed to develop this prior by Martin Dorn in 2007, and updated by Dorn in 2009/2011. It was then rebuilt by James Thorson, who updated it in 2013/2015/2017. Starting in 2019 the update will be conducted by Chantel Wetzel
+
+-   The method is fully described in [Thorson, Dorn, and Hamel (2018) Fisheries Research](https://doi.org/10.1016/j.fishres.2018.03.014)
+
+-   The method can be replicated for any data set 2007/2009/2011/2013/2015/2017 using R package [SebastesSteepness](https://github.com/James-Thorson/SebastesSteepness)
+
+-   The rationale for excluding a species when developing a prior for a given focal species (termed "Type-C" meta-analysis) is explained [in this paper](http://www.nrcresearchpress.com/doi/abs/10.1139/f04-245)
+
+    -   If you are assessing any of the following species you will need to obtain a "Type-C" prior: aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north
+
+-   The estimated prior by year is as follows:
+
+    -   2007: mean = 0.58, sd = 0.181
+
+    -   2009: mean = 0.69, sd = 0.218
+
+    -   2011: mean = 0.76, sd = 0.170
+
+    -   2013: mean = 0.78, sd = 0.152
+
+    -   2015: mean = 0.77, sd = 0.147
+
+    -   2017: mean = 0.72, sd = 0.158
+
+
+## Stuff to do well in advance of peak stock assessment season
+
+Contact ~~Martin Dorn~~ ~~Jim Thorson~~ Chantel Wetzel (ugh) for the current assessment cycle steepness prior. If you are conducting an assessment on a rockfish species that is included in the steepness profile (aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north), contact Chantel Wetzel for a "type-C" prior with your species removed.

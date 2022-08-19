@@ -1,0 +1,31 @@
+project:
+  type: book
+
+book:
+  title: "Unofficial NWFSC Stock Assessment Handbook"
+  author: "Population Ecology Program"
+  date: last-modified
+  
+  site-url: https://thefaylab.github.io/lab-manual/
+  repo-url: https://github.com/thefaylab/lab-manual
+  repo-actions: [edit,issue]
+  
+  chapters:
+    - index.qmd
+    - 01-data-sources.qmd
+    - 02-notes-best-practices.qmd
+    - 03-stock-synthesis.qmd
+    - 04-post-model.qmd
+    - 05-other.qmd
+    # - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
