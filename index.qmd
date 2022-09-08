@@ -10,8 +10,6 @@ This document is not intended to be followed blindly. Its purpose is to collect 
 
 The SSC Groundfish Sub-committee has produced documents "ACCEPTED PRACTICES GUIDELINES FOR GROUNDFISH STOCK ASSESSMENTS". These documents are both more up-to-date than this handbook and also carry more weight. However, they are also less comprehensive than this document. You should either follow their guidelines or be prepared to justify why you didn't.
 
--   2021/2023 versions?
+- [2021 version](https://www.pcouncil.org/documents/2021/02/accepted-practices-and-guidelines-for-groundfish-stock-assessments-february-2021.pdf/)
 
--   [2019 version](https://www.pcouncil.org/documents/2019/04/accepted-practices-and-guidelines-for-groundfish-stock-assessments-april-2019.pdf/)
-
--   [2017 version](https://www.pcouncil.org/documents/2017/04/accepted-practices-and-guidelines-for-groundfish-stock-assessments-revised-20-april-2017.pdf/)
+- Older versions (perhaps useful for understanding the choices made in previous assessments): [2019](https://www.pcouncil.org/documents/2019/04/accepted-practices-and-guidelines-for-groundfish-stock-assessments-april-2019.pdf/), [2017](https://www.pcouncil.org/documents/2017/04/accepted-practices-and-guidelines-for-groundfish-stock-assessments-revised-20-april-2017.pdf/)
