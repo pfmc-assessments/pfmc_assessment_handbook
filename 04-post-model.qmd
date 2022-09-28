@@ -1,6 +1,6 @@
-# So you ran an assessment model
+# So you ran an assessment model, more notes and best practices
 
-## Notes and best practices for retrospectives
+## Retrospectives
 
 1.  Retrospective analysis is a way to assess whether something is inconsistent in data or model assumptions. A retrospective pattern can arise from changes in catch, M, q, selectivity, or growth from that which is in the model. It is primarily an exploratory/diagnostic tool, though see point 4 below.
 
@@ -14,36 +14,25 @@
 
     c.  for depletion, biomass, fishing mortality, and recruitment. Often biomass, depletion, and recruitment are provided in assessment reports
 
-```{=html}
 <!-- -->
-```
+
 4.  Although the east coast uses mohn's rho to "correct" status indicators or when setting quotas, our practice is not to. This is based on past precedent, and that our fishing history is not as long as it is on the east coast.
 
 5.  Hurtado-Ferro et al. (2015) provide a rule of thumb on the significance of mohn's rho (average over peels) dependent on life history. They suggest a retrospective pattern is not meaningful if $\rho \in (-0.15, 0.2)$ for long lived species and $\rho \in (-0.22, 0.3)$ for short lived species, and note that magnitude of Mohn's rho not related to true bias in assessment. Miller and Legault (2017) argue that variance of Mohn's rho is truly needed to ascertain whether an effect is significant.
 
-## Notes and best practices for Andre's rebuilder program (aka Puntalyzer)
+## Conducting a rebuilding analysis (aka Puntalyzer)
 
-1.  Be very afraid
+A rebuilding plan will need to be developed for any species (or stock) that has an GFSC SSC approved stock assessment that estimates the relative spawning biomass to be below the corresponding minimum stock size threshold (0.10 for flatfish and 0.25 for all other groundfish species). A rebuilding analysis is developed using a software program called the "rebuilder" (aka the Puntalyzer) developed and maintained by Andre Punt ([aepunt\@uw.edu](aepunt@uw.edu)). The program is designed to work with an input rebuilding data file created by Stock Synthesis called "rebuild.dat". The rebuilder software executable then develops numerous future projections and calculates the probability of rebuilding based on alternative harvest strategies. The RES.CSV created by the rebuilder executable contains all of the resulting estimates of rebuilding (although many quantities are not labeled within the CSV file).
 
-2.  Talk to Jason Cope, Vlada Gertseva, or Ian Taylor about what a nightmare the rebuilding analysis can be
+The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/nwfsc-assess/rebuilder)) contains the most up-to-date rebuilder executable, the user manual, code tools for processing output, and code examples. This repository should have all the pertinent information to conduct a rebuilding analysis for a species or stock managed by the Pacific Fishery Management Council
 
-3.  Make sure the "Do West Coast gfish rebuilder output (0/1)" is set to 1 in your SS3 forecast file. This will create the output files rebuild.dat and rebuild.sso
-
-4.  Download the [rebuilder executable](http://puntlab.washington.edu/software/)
-
-5.  Figure out (from the manual perhaps) how to run the rebuilder and what modifications to your input files might be needed for what you need to do.
-
-6.  Note that the rebuilder inputs have to be formatted more carefully than SS3 inputs. Blank lines or commented lines can't be inserted without messing things up.
-
-7.  Read the help file for `r4ss::DoProjectPlots` to learn about how to plot rebuilder output.
-
-## Notes and best practices for `r4ss`
+## `r4ss`
 
 1.  `r4ss` is available as an R package on CRAN but the most up-to-date version can be installed from GitHub. Installation instructions are available [here](https://github.com/r4ss/r4ss).
 
 2.  See the intro vignette [here](https://r4ss.github.io/r4ss/) for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the tune_comps() function.
 
-3. It's good idea to reinstall it on a regular basis to keep up. You can also watch the github repository if you want to get notifications of changes.
+3.  It's good idea to reinstall it on a regular basis to keep up. You can also watch the github repository if you want to get notifications of changes.
 
 4.  Look through all the figures that get produced by `SS_plots`. There have been cases where models were put forth with incorrect assumptions about biology, ageing error, etc. that could have been caught if the assessment authors had paid attention to all the plots.
 
@@ -51,7 +40,7 @@
 
 6.  If something is not working right, complain about it on the [`r4ss` issues list](https://github.com/r4ss/r4ss/issues).
 
-## Notes and best practices for writing assessment documents
+## Writing assessment documents
 
 1.  Read the [terms of reference](https://www.pcouncil.org/documents/2020/05/f-2-attachment-3-draft-revised-terms-of-reference-for-the-groundfish-and-coastal-pelagic-species-stock-assessment-process-for-2021-and-2022.pdf/) and actually follow them.
 
@@ -59,14 +48,12 @@
 
 3.  If you're using Word, talk to power users of Word about formatting of section headings, links to figures or tables, etc.. These links save much time when document is updated with sections or elements added or removed.
 
-```{=html}
 <!-- -->
-```
+
 a.  See the Assessment Document Template for a pre-made setup that reflects 2017-18 TORs: `\\nwcfile\fram\Assessments\Archives` and shared on the [Google Drive](https://drive.google.com/a/noaa.gov/file/d/0B57aOEaukI73UDlNVUVNZTFScWs/view?usp=sharing)
 
-```{=html}
 <!-- -->
-```
+
 4.  Use proper dashes and hyphens for readability: [Hyphen, En dash, and Em dash](http://cutewriting.blogspot.com/2008/06/en-dash-em-dash-and-hyphen.html)
 
 5.  Jason says: "It would be really easy to compare results of every assessment we do with the results of the data-poor methods." He did this for Cabezon in 2009 and thinks we could do it for all our assessments.

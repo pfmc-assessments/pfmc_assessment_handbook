@@ -2,7 +2,11 @@
 
 ## Table of contacts
 
-Contact info for various agencies (states, PacFIN, etc.) is listed in [this Google Doc](https://spreadsheets.google.com/ccc?key=0ApyEcf4KAlVTdDV0V1ZsNFM5REVzNDh4SXJGWkJydWc&hl=en#gid=0) created by Jason Cope in 2009 (updated March 2018)
+Contact info for various agencies (states, PacFIN, etc.) is listed in [this Google Doc](https://spreadsheets.google.com/ccc?key=0ApyEcf4KAlVTdDV0V1ZsNFM5REVzNDh4SXJGWkJydWc&hl=en#gid=0) created by Jason Cope in 2009 (updated May 2021)
+
+## Requesting data from State partners
+
+Starting with the 2023 cycle, there is a more formal process for making data requests to states for stock assessments. Details about the data requesting process, and steps for assessment leads to take, can be found in the document "[Process for requesting data from states for 2023 cycle](https://docs.google.com/document/d/1AndASdmB7gf47DODlljWb7YZNHIOgjzwHy2boUqsaL0/edit#heading=h.to89stblj2l0)."
 
 ## Regulations and catch limits
 
@@ -34,15 +38,19 @@ Talk to John Wallace or Andi Stephens. Note that the PacFIN catch can be broken 
 
 PSMFC areas do not contain all of the catch, thus it is best to use INPFC areas to aggregate catch.
 
+Once you have catch values for all years, contact the state representative(s) for confirmation that the values are correct.
+
 ### RecFIN
 
-All states have in the past claimed that all rec. data is available on [RecFIN](http://www.recfin.org/). Users should check with state representatives for updated information on the recommended source for recreational data. One can pull historical catches [here](http://www.recfin.org/estimates). One issue that was discovered in the 2015 canary assessment was that the "Tabulate Historical Estimates (1980-2003)" tab will allow you to pull catches beyond 2003. However, the most recent catch years may not match values that can be pulled in other places on RecFIN. The best approach is to only use the "Tabulate Historical Estimates" for years 1980-2003 and pull 2004 to current from a separate location (which I cannot currently find). Additionally, once you have catch values for all years, contact the state representative for confirmation that the values are correct.
+All states have in the past claimed that all rec. data is available on [RecFIN](http://www.recfin.org/). Users should check with state representatives for updated information on the recommended source for recreational data. One can pull historical catches [here](http://www.recfin.org). Select the "Catch / Sample Data Reports" image which takes you to the reports dashboard. Alternatively, ODBC connections can be used to pull catch estimates directly from the Comprehensive Fish Ticket table. Some data sources (e.g. MRFSS, WA historic catch estimates) are not currently available via the public login, so you need to login with an account that has permission to view the tables. Additionally, once you have catch values for all years, contact the state representative for confirmation that the values are correct.
 
 To obtain length composition data,
 
 1.  Go to [RecFIN](https://www.recfin.org/)
 2.  Select the "Catch / Sample Data Reports" image which takes you to the reports dashboard. There, select the "SD001 Biological Detail Report" option.
 3.  There is an automatic filtering applied, so to adjust select the 'filter' icon in the upper right (the upside down Erlenmeyer flask-like icon), and then download your data in either csv or excel format. Lengths come in imputed and measured, with T being total length and F being fork length. For questions on definitions of fields, the metadata is included as a selectable report in the reports dashboard.
+
+E.J. Dick (SWFSC) and Jason Edwards (PSMFC) are developing tables with catch-weighted length compositions. Tables have been prepared for WA and OR, and CA is in prep. Contact E.J. ([edward.dick\@noaa.gov](edward.dick@noaa.gov)) if you have questions or would like to use the estimates.
 
 ### Research catch
 
@@ -170,16 +178,6 @@ This survey has been used for Yelloweye Rockfish and Spiny Dogfish. Claude Dykst
 ### Oregon recreational observer program data
 
 Troy Buell ([troy.v.buell\@state.or.us](mailto:troy.v.buell@state.or.us)) is still involved with this data source even though he has changed positions.
-
-## Notes and best practices for observer data and discards
-
-Discard mortality should be accounted for within the assessment. There are typically three ways to approach this issue.
-
-The first approach is to include discard mortality into the catch data rather than modeling. Discard mortality can be included by either adding this total to the catch by fleet or by adding a discard fleet. If using the discard fleet the selectivity of this fleet will need to be mirrored (see the 2017 California Blue/Deacon assessment for an example of this approach). To obtain estimates of total discards based on the fleet structure in the model (gear and/or area) speak with Kayleigh Somers ([kayleigh.somers\@noaa.gov](mailto:kayleigh.somers@noaa.gov)). The annual groundfish mortality report will provide detailed information in the total estimate discard by species. The GEMM report (located on the network at \\Assessments\\GEMM Report) will provide a summarized version of the discard and retained estimates from the groundfish mortality report, but have information across all WCGOP years (2002 - present). However, the groundfish mortality report (or the GEMM) will not include the most full recent year estimates (example - the GEMM available in 2019 has data through 2017) which will require an assumption regarding the most recent year's discards. Additionally, assumptions will need to be made regarding the total amount of discard prior to the start of the WCGOP data (pre-2002).
-
-The second and third alternative approaches to including discard data is to model the process of discarding within SS3. Discards can be modeled either as total discards in mt or through the rate of discarding. Both of these approaches will require discard length data to be included in the model, or if not available a specific assumption regarding the retention curve relative to the estimated selectivity curve. Estimates of total discards are available in the annual groundfish mortality report (and the GEMM). If a specific breakdown of discard by fleet is required (gear and/or area) speak with Kayleigh Somers. The data may not be able to be summarized to all fleet structures, so it is best to discuss the options with Kayleigh early in the assessment process. Assumptions regarding the discard total in the most recent year and historical years prior to the start of WCGOP data (2002) will need to be made by the assessor and modeled (often through the use of blocks). If total discards are modeled, one will need to enter an annual CV into SS. As of right now (2019), Kayleigh is not able to provide CV quantities. This information could be calculated based on the WCGOP based on the observed data using bootstrapping. However, the bootstrap CV will be based on the observer data and may not be consistent with the data available in the groundfish mortality report (and the GEMM). Please see below for additional information regarding bootstrapping.
-
-Modeling discard rates can be an easier approach since it does not require knowledge about the total discard amounts. However, this approach may not be feasible for stocks with limited observations in the WCGOP data due to high variability in the observed discarded and retained fish. The IFQ trawl fleet currently has near 100% observer coverage, while the non-catch share sectors have a much lower observed percentage (\~20% as of last inquiry, but this may change in the future). Historically, it was thought that discard rates could not be calculated for complex managed species. However, this is not the case based on the current data. Discard rates are calculated based on the observed discarded weight relative to the total observed weight of discarded and retained fish. Bootstrapping is done using the data in order to provide a CV to the discard rate. Similar to two previous approaches, assumptions regarding the discard rate in the most recent year and historical years prior to the start of WCGOP data (2002) will need to be made by the assessor and modeled (often through the use of blocks).
 
 ## Notes and best practices for observer data and discards
 

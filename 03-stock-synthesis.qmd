@@ -24,13 +24,8 @@
 
 ## Model tuning
 
-11. **Consider estimating an extra standard deviation parameter for indices.** There are many reasons to expect that the input uncertainty values on indices of abundance are underestimates of the true uncertainty. Estimating an extra uncertainty parameter has worked well in a number of west coast groundfish assessments.
+11. **Consider estimating an extra standard deviation parameter for indices.** There are many reasons to expect that the input uncertainty values on indices of abundance are underestimates of the true uncertainty. Estimating an extra uncertainty parameter has worked well in a number of west coast groundfish assessments. Note that this should reflect the observed variability in survey indices rather than poor fit to the observed trend in survey indices. i.e. resist adding SD to surveys where there are trends in residuals without evidence of hyperdepletion or hyperstability, in which case a non-linear relationship between indices and stock size is more appropriate. However, the 2021 best practices document says, "STATs should be cautious to avoid adding variability to an index as a means of resolving model structure issues such as conflicts among data sources. Rather, variability should be added to account for sampling variance underestimating index uncertainty. *STATs should provide a priori reasons for why the index variability input to the model has been underestimated (or underspecified)*."
 
-    a.  Note that this should reflect the observed variability in survey indices rather than poor fit to the observed trend in survey indices. i.e. resist adding SD to surveys where there are trends in residuals without evidence of hyperdepletion or hyperstability, in which case a non-linear relationship between indices and stock size is more appropriate.
-
-```{=html}
-<!-- -->
-```
 12. **Weight the composition data.** Use one of the three methods described in the SS User Manual under "Data Weighting". The McAllister-Ianelli method used to be the most common for west coast groundfish, but now Francis and Dirichlet-Multinomial are the dominant options, with no clear reason to choose one over the other. This might change by 2021.
 
 13. **The recruitment bias adjustment stuff is worth understanding.** See Methot and Taylor (2011) or ask Ian to explain if this is confusing. The r4ss package has a function to estimate alternative inputs for the setup of recruitments in the control file. This can make a difference in model results.
@@ -51,9 +46,8 @@
 
     d.  summarize the results, perhaps using `r4ss::SSsummarize()`
 
-```{=html}
 <!-- -->
-```
+
 17. `r4ss::SSplotPars()` can be used to compare uncertainty estimated from MLE and MCMC. `r4ss::SSplotComparisons()` works as well.
 
 ## Using MCMC

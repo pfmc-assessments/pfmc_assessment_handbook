@@ -1,6 +1,6 @@
-# Modeling choices
+# Modeling choices, notes and best practices
 
-## Notes and best practices for selecting maximum age (population and data)
+## Selecting maximum age (population and data)
 
 The comments below are based on a team discussion on how to select a population and data maximum age for modeling:
 
@@ -12,7 +12,7 @@ The comments below are based on a team discussion on how to select a population 
 
 **Choice 4, Data age bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than apriori rules about how to set this, may be considered "data mining". Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e. 5%). Also, add a warning to r4ss about the percentage in the population and data plus groups.
 
-## Notes and best practices for determining prior for natural mortality
+## Determining prior for natural mortality
 
 Owen's Advice on M; July 6, 2022
 
@@ -24,13 +24,13 @@ Owen's Advice on M; July 6, 2022
 
 4.  Can explore a range approaches for M estimates and priors [here](http://barefootecologist.com.au/shiny_m); reference is Cope and Hamel, in press.
 
-## Notes and best practices of estimating ageing error
+## Estimating ageing error
 
 Jim Thorson has been working on this. These files are accessible [on the web](https://github.com/nwfsc-assess/nwfscAgeingError).
 
 You can also find the original user manual that goes with the age error ADMB executable written by Andre Punt that is called by the above wrapper [on the google drive](https://docs.google.com/a/noaa.gov/file/d/0B-5Jg3P0x9x0SnUwbnMxczBpMnM/edit?usp=sharing) The above user manual will help you understand what the program is doing and how to setup and run an individual file if you wish to do so.
 
-## Notes and best practices for maturity
+## Maturity
 
 Talk to Melissa Head about maturity. In 2017, she provided estimated maturity curves based on samples from the NWFSC survey for many species.
 
@@ -40,43 +40,25 @@ An additional column has been added to the NWFSC survey table indicating uncerta
 
 Note: John Field has expressed concern that we are too focused on recent samples from the NWFSC survey, so if you aren't going to include samples from past collections, think about a justification for that choice.
 
-## Notes and best practices for fecundity
+## Fecundity
 
 Update (6/05/17): EJ published [a new analysis in 2017](http://www.sciencedirect.com/science/article/pii/S0165783616303745) which has estimates for $aL^b$ where L is in cm.
 
-Ian Taylor to add his notes on how to set this up in SS3 here soon.
+Ian Taylor to add his notes on how to set this up in SS3 here
 
-Update (11/29/16):
+The estimates in Dick et al. 2017 were based on length in mm and predicted number of eggs, fitted in log-space. If you use length in cm (like in SS3), and don't want huge SSB values (eggs), you can convert the values in the paper to units of cm and millions of eggs. First, find the values "$\exp(a)$" (I'll refer to this as $a'$ below) and "$b$" from Table 6 in Dick et al. for your species (or subgenus, if no estimate for your species is reported). If your subgenus is not reported, you can use the "Sebastes" values.
 
-Analysis of fecundity with size can be found for many rockfishes in [E.J. Dick's Dissertation](http://users.soe.ucsc.edu/~msmangel/Dick%20Thesis.pdf). The reference (from 2013 darkblotched document) is "Dick, E. J. 2009. Modeling the reproductive potential of rockfishes (Sebastes spp.). Ph.D. Dissertation, University of California, Santa Cruz."
+The correct value of the "$a$" parameter ($F=aL^b$) for length in cm and fecundity in millions of eggs is:
 
-Chapter 3 of E.J.'s dissertation describes his methods. Tables 10 and 11 list parameters (for each species that E.J. considered), which include the intercept and the slope in the 2-level hierarchical model for relative fecundity as a linear function of weight. The intercept is a scalar (eggs/kg at 'zero' weight), and the slope is the expected increase in weight-specific fecundity per additional kg of weight. Note that you want to use the median (50%) value from those tables.
+$$a = \frac{a’\cdot10^b}{1000000}$$
 
-The units of the response variable for SS3 fecundity option #1 are eggs/kg. E.J.'s regression for SS3 option #1 was in grams; therefore, we need to multiply the intercept by 1,000 and the slope by 1,000,000 to convert to kg (since that model is quadratic in W).
-
-So using darkblotched as an example, for fecundity option #1 in SS3, the parameters to enter into the control file are: `alpha = 101,100` and `beta = 44,800`
-
-For another example see the control file in the 2009 or 2011 yelloweye assessments and for Ian S.'s text see section 2.2.3 in the 2009 yelloweye assessment. Note that the comment in the control file has 'eggs/cm' however the conversion is made and this should be 'eggs/kg'
-
-Here is bit of R code from John Wallace to see that this is the correct approach:
-
-    x.gm <- seq(1, 10, length = 2000)
-    y.eggs.per.gm  <- rnorm(2000, 2 + 3*x.gm)
-    plot(x.gm, y.eggs.per.gm)
-    summary(glm(y.eggs.per.gm ~ x.gm))
-
-    x.kg <- x.gm/1000
-    y.eggs.per.kg  <- y.eggs.per.gm * 1000
-    plot(x.kg, y.eggs.per.kg)
-    summary(glm(y.eggs.per.kg ~ x.kg))
+The value of '$b$' is unchanged, and can be used directly in the assessment.
 
 The r4ss figure bio6_fecundity.png shows the resulting relationship so you can use that to determine whether your parameter values produce the correct final relationship.
 
-## Notes and best practices for modeling selectivity
+## Modeling selectivity
 
-Ian Taylor and Jim Thorson will fill in some notes here based on the CAPAM selectivity workshop held in La Jolla on March 11-14, 2013. The notes below are a start suggested by Mark Maunder.
-
-\[update: as of July 2, 2014, Ian and Jim haven't added anything to the text below but the Special Issue of Fisheries Science associated with the CAPAM meeting isn't yet publicly available (it's close)\]
+There was a CAPAM workshop on selectivity in 2013. Report, presentations, and recordings are available at [here](http://www.capamresearch.org/current-projects/selectivity) and the associated Fisheries Research special issue is [here](https://www.sciencedirect.com/journal/fisheries-research/vol/158/suppl/C).
 
 ### Conceptual reasoning for using different approaches to selectivity
 
@@ -128,7 +110,7 @@ Ian Taylor and Jim Thorson will fill in some notes here based on the CAPAM selec
 
     -   Alternative 2: Fix selectivity of the oldest age (parameter 6) at a large number (e.g. 15).
 
-## Notes and best practices for modeling recruitment deviations
+## Modeling recruitment deviations
 
 1.  Choices to be made:
 
@@ -168,9 +150,11 @@ Ian Taylor and Jim Thorson will fill in some notes here based on the CAPAM selec
 
     c.  [Johnson et al. (2016)](https://www.sciencedirect.com/science/article/abs/pii/S0165783616301928) estimated autocorrelation in a simulation context
 
-## Notes and best practices for rockfish steepness profile
+## Rockfish steepness profile
 
-Pacific rockfishes use a prior on steepness (or the predictive mean from this prior). A method was developed to develop this prior by Martin Dorn in 2007, and updated by Dorn in 2009/2011. It was then rebuilt by James Thorson, who updated it in 2013/2015/2017. Starting in 2019 the update will be conducted by Chantel Wetzel
+Up until the 2019 assessment cycle, a meta-analysis approach was used to develop a prior for steepness for West Coast rockfish species. This method was originally developed to develop this prior by Martin Dorn in 2007, and updated by Dorn in 2009/2011. It was then revised and recoded by James Thorson, who updated it in 2013/2015/2017, with Chantel Wetzel conducting the update in 2019. When the meta-analysis was updated post the 2017 assessment cycle, the estimated mean from the prior distribution was considered unreasonably high, particularly for rockfish species, and the new prior was not approved by the SSC for use in future West Coast rockfish assessments. In the instance that the SSC does not approve a new estimate (or methodology), the approved approach reverts to the previous approved estimate. In this instance that is the prior estimated for use in the 2017 assessment cycle of a mean = 0.72 with a standard deviation of 0.158.
+
+Below is detailed information regarding the meta-analysis approach applied between 2007 - 2017:
 
 -   The method is fully described in [Thorson, Dorn, and Hamel (2018) Fisheries Research](https://doi.org/10.1016/j.fishres.2018.03.014)
 
@@ -180,7 +164,7 @@ Pacific rockfishes use a prior on steepness (or the predictive mean from this pr
 
     -   If you are assessing any of the following species you will need to obtain a "Type-C" prior: aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north
 
--   The estimated prior by year is as follows:
+-   The estimated prior by year was as follows:
 
     -   2007: mean = 0.58, sd = 0.181
 
