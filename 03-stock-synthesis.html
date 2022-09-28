@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unofficial NWFSC/SWFSC Groundfish Stock Assessment Handbook - 3&nbsp; Running Stock Synthesis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-post-model.html" rel="next">
+<link href="./02-model-choices.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Running Stock Synthesis</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Unofficial NWFSC/SWFSC Groundfish Stock Assessment Handbook</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/thefaylab/lab-manual" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-data-sources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data sources: notes, contact information, and links</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-model-choices.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modeling choices, notes and best practices</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-stock-synthesis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Running Stock Synthesis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-post-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">So you ran an assessment model, more notes and best practices</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-other.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Other useful tidbits</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-a.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Appendix A: Species seen* in the hake fishery</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-b.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Appendix B: Alaska Center CRUISEJOINS for shelf and slope surveys</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#model-setup" id="toc-model-setup" class="nav-link active" data-scroll-target="#model-setup"><span class="toc-section-number">3.1</span>  Model setup</a></li>
+  <li><a href="#model-tuning" id="toc-model-tuning" class="nav-link" data-scroll-target="#model-tuning"><span class="toc-section-number">3.2</span>  Model tuning</a></li>
+  <li><a href="#estimation-of-uncertainty" id="toc-estimation-of-uncertainty" class="nav-link" data-scroll-target="#estimation-of-uncertainty"><span class="toc-section-number">3.3</span>  Estimation of uncertainty</a></li>
+  <li><a href="#using-mcmc" id="toc-using-mcmc" class="nav-link" data-scroll-target="#using-mcmc"><span class="toc-section-number">3.4</span>  Using MCMC</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/thefaylab/lab-manual/edit/main/03-stock-synthesis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/thefaylab/lab-manual/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Running Stock Synthesis</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="model-setup" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="model-setup"><span class="header-section-number">3.1</span> Model setup</h2>
+<ol type="1">
+<li><p><strong>Before running anything, read your control file into Excel.</strong> It’s too hard to check the 14 columns if they aren’t lined up, and it’s easy to make mistakes in these values. Make sure the phases are small positive or negative integers (and not equal to 0), that the initial values are within the bounds, and nothing else looks strange.</p></li>
+<li><p><strong>Run using only “ss.exe” at first, not “ss_opt.exe”.</strong> As longas you’re making changes to the model, you should be using this version which checks for array bound errors. If you get such an error, work to make it go away. Once the data are set and the parameters configured, you can switch to “SS3_opt.exe” and have the model run a little faster.</p></li>
+<li><p><strong>Run the model without estimating anything at first.</strong> You should do this by setting “Turn off estimation for parameters entering after this phase” to 0 in the starter file or by adding “-maxfn 0” at the command line. If you don’t get a report file that looks OK at this stage, there’s no point in wasting time doing any estimation. Note: the “-noest” command line input does not seem to work as well as the starter file settings, so it’s probably best to avoid it.</p></li>
+<li><p><strong>Read the “warning.sso” file after every run</strong> (or note the DOS index to check if warnings exist). If you don’t understand the warnings, find out, but don’t just ignore it.</p></li>
+<li><p><strong>Look at “echoinput.sso” to debug models that don’t run.</strong> This file will show you what numbers ADMB has read and how they’re being interpreted by Stock Synthesis. Start at the bottom and scan upwards until things start to look right or start at the top and scan downwards until things start to look wrong. It’s often obvious when you have an extra input and things model starts to go awry. Use this information to fix your input files and try again.</p></li>
+<li><p><strong>Once the model runs, look at the “.ss_new” files.</strong> These files contain rich comments and often better formatting than your own input files. They are also good for debugging, because sometimes a model will run, but the parameter lines are associated with different fleets, or have different roles than you expected. Check the parameter names on the right hand side of “control.ss_new” to make sure everything looks right. You can then either replace your input files with the “.ss_new” files or just copy and paste elements that you want to keep. Note that if you’ve estimated any parameters, then the initial values in “control.ss_new” have been updated to these estimates.</p></li>
+<li><p><strong>If you have tagging data or time-varying catchability</strong>, utilize the option to automatically generate parameter lines related to these features using the “control.ss_new” file.</p></li>
+<li><p><strong>Pull in parameter bounds that are way too wide</strong> – if you aren’t anywhere near them during minimization, extremely wide bounds (like -15 to 15 on recruit deviations, or 1 to 35 for log-R0) just slow minimization and may result in poorer convergence properties.</p></li>
+<li><p><strong>If you have no initial equilibrium catch</strong> in the data file for a fleet, make sure the corresponding parameter is not being estimated in the control file. Note: the equilibrium setup is different in SS3 version 3.30, so if you have any equilibrium catch, you should learn about how this setup differs than in the past.</p></li>
+<li><p><strong>For indices of abundance,</strong> know what you’re doing. Don’t mix up a CV with a standard deviation of the log. If you’re using GLM output, make sure your year effects and uncertainty are transformed back into normal space (not log space or anything else).</p></li>
+</ol>
+</section>
+<section id="model-tuning" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="model-tuning"><span class="header-section-number">3.2</span> Model tuning</h2>
+<ol start="11" type="1">
+<li><p><strong>Consider estimating an extra standard deviation parameter for indices.</strong> There are many reasons to expect that the input uncertainty values on indices of abundance are underestimates of the true uncertainty. Estimating an extra uncertainty parameter has worked well in a number of west coast groundfish assessments. Note that this should reflect the observed variability in survey indices rather than poor fit to the observed trend in survey indices. i.e.&nbsp;resist adding SD to surveys where there are trends in residuals without evidence of hyperdepletion or hyperstability, in which case a non-linear relationship between indices and stock size is more appropriate. However, the 2021 best practices document says, “STATs should be cautious to avoid adding variability to an index as a means of resolving model structure issues such as conflicts among data sources. Rather, variability should be added to account for sampling variance underestimating index uncertainty. <em>STATs should provide a priori reasons for why the index variability input to the model has been underestimated (or underspecified)</em>.”</p></li>
+<li><p><strong>Weight the composition data.</strong> Use one of the three methods described in the SS User Manual under “Data Weighting”. The McAllister-Ianelli method used to be the most common for west coast groundfish, but now Francis and Dirichlet-Multinomial are the dominant options, with no clear reason to choose one over the other. This might change by 2021.</p></li>
+<li><p><strong>The recruitment bias adjustment stuff is worth understanding.</strong> See Methot and Taylor (2011) or ask Ian to explain if this is confusing. The r4ss package has a function to estimate alternative inputs for the setup of recruitments in the control file. This can make a difference in model results.</p></li>
+<li><p><strong>Think about sigmaR.</strong> This could be an arbitrarily chosen value, freely estimated, or iteratively tuned. Methot and Taylor (2011) suggest a way that the tuning could be done. Whatever you choose, put a little thought into it. SigmaR should be greater than the SD of the estimated recruitment deviations. See more detail on this above. There is a new (Dec.&nbsp;2016) table called <code>$sigma_R_info</code> output by <code>r4ss::SS_output()</code> which provides information on tuning sigmaR.</p></li>
+</ol>
+</section>
+<section id="estimation-of-uncertainty" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="estimation-of-uncertainty"><span class="header-section-number">3.3</span> Estimation of uncertainty</h2>
+<ol start="15" type="1">
+<li><p>See Stewart et al.&nbsp;(2012) or Methot and Taylor (2011) for some reasons why doing MCMC is a good thing if you have time for it.</p></li>
+<li><p>Parametric bootstrap. This hasn’t been done much. The <a href="https://www.pcouncil.org/documents/2006/02/stock-assessment-of-pacific-hake-whiting-in-u-s-and-canadian-waters-in-2006-february-16-2006.pdf/">2006 hake model</a> included parametric bootstrap uncertainty estimates. A description is on page 41 and Figures 55-56 (pg 139-140) show some results. Doing N bootstraps requires</p>
+<ol type="a">
+<li><p>run model with N+2 for “Number of datafiles to produce” in starter.ss</p></li>
+<li><p>use <code>r4ss::SS_splitdat()</code> or other tool to split apart data.ss_new</p></li>
+<li><p>rerun model with each new data file</p></li>
+<li><p>summarize the results, perhaps using <code>r4ss::SSsummarize()</code></p></li>
+</ol></li>
+</ol>
+<!-- -->
+<ol start="17" type="1">
+<li><code>r4ss::SSplotPars()</code> can be used to compare uncertainty estimated from MLE and MCMC. <code>r4ss::SSplotComparisons()</code> works as well.</li>
+</ol>
+</section>
+<section id="using-mcmc" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="using-mcmc"><span class="header-section-number">3.4</span> Using MCMC</h2>
+<ol start="18" type="1">
+<li><p>Talk to <del>Ian Taylor</del> Kelli Johnson or Aaron Berger if you want to run MCMC as they are using it with hake.</p></li>
+<li><p>The burn-in and thinning options in the starter file are applied after whatever ADMB options are used at run time. That is, they are applied during the mceval step, not the mcmc step. You can also do burn-in or thinning in R.</p></li>
+<li><p>The MCMC command automatically sets the recruitment bias adjustment settings to go to 1.0 for all years (see Methot &amp; Taylor 2012 to see why). Therefore, the first sample of the MCMC chain probably won’t match your MLE.</p></li>
+<li><p>The MCMC output is in the files posteriors.sso, derived_posteriors.sso and posterior_vectors.sso. Any Report associated with an MCMC run should not be used. It may reflect the bias adjustment settings for MCMC, not the MLE. Therefore, it’s safer to separate MCMC from MLE into different folders. To compare them using <code>r4ss::SSplotPars()</code>, you can merge the results into a shared folder.</p></li>
+<li><p>The best available current approach to make plots from MCMC is through <code>r4ss::SSplotComparisons()</code>, which requires first reading MLE output and then adding the MCMC output. Talk to Ian or Allan about how to do this. Someday there will be a more generalized approach that can work directly with MCMC.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-model-choices.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modeling choices, notes and best practices</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-post-model.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">So you ran an assessment model, more notes and best practices</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
