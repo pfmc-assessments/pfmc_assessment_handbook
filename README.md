@@ -20,6 +20,8 @@ You can also update the handbook the way you would normally make changes to a gi
 
 Before editing the files, you will need to [install quarto](https://quarto.org/docs/get-started/). You do not need IT to do this. Now, you can make changes. You can now use any text editor of your choosing. Below are directions for RStudio and Visual Studio Code.
 
+Rendering quarto documents does not seem to work if the repository is housed on a network drive, so it is best to clone the repository to your own local harddrive.
+
 ### RStudio
 
 Once you have cloned the repository to your local machine, open "nwfsc_assessment_handbook.Rproj" in RStudio. **It is important that you open the R project first and not an individual .qmd file.** A new instance of RStudio should open. *Now* you can open the .qmd file(s) for whichever section(s) of the handbook you wish to edit, and make any changes.
@@ -44,4 +46,4 @@ Rinse and repeat. See the overview the folks from quarto wrote [here](https://qu
 
 ### When you are done
 
-Commit and push your changes to the remote repository. GitHub actions will re-render the whole shebang and update the webpage where the handbook is hosted. You can check to make sure this process did not result in an error via the directions under [Quick and dirty].
+Commit and push your changes to the remote repository. GitHub actions will re-render the whole shebang and update the webpage where the handbook is hosted. You can check to make sure this process did not result in an error via the directions under \[Quick and dirty\].
