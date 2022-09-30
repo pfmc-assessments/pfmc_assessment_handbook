@@ -232,7 +232,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p><strong>Reasons for justifying asymptotic selectivity</strong></p>
 <ol type="1">
-<li></li>
+<li><p>It can help estimate <span class="math inline">\(L_\infty\)</span> and variability in growth because the mode of the length comps is often representative of where the oldest fish are piling up.</p></li>
+<li><p>It prevents the estimation of a large amounts of cryptic biomass</p></li>
 </ol>
 </section>
 <section id="general-advice-on-selectivity-in-ss3" class="level3" data-number="2.6.2">
@@ -240,8 +241,8 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li><p>Start with a functional form that is commonly used (double normal)</p></li>
 <li><p>Find some initial values using either the Excel spreadsheets or the r4ss widgets</p></li>
-<li><p>Put the initial values in the model and run without estimating anything until you get a model that runs. This can be done by setting the maximum phase in the starter file to 0 or (better), by using the command line inputs: “-maxfn 0 -nohess”</p></li>
-<li><p>Read the output into R using SS_output and plot the selectivity using either SS_plots(…, plot=2) or SSplotSelex(…,subplot=1), where … is the object created by SS_output.</p></li>
+<li><p>Put the initial values in the model and run without estimating anything until you get a model that runs. This can be done by setting the maximum phase in the starter file to 0 or (better), by using the command line inputs: <code>-maxfn 0 -nohess</code>.</p></li>
+<li><p>Read the output into R using SS_output and plot the selectivity in {r4ss} using either <code>SS_plots(model, plot=2)</code> or <code>SSplotSelex(model, subplot=1)</code>, where <code>model</code> is the object created by <code>SS_output()</code>.</p></li>
 <li><p>Set the PHASE for as many parameters to negative values as possible so that you start with estimating relatively few parameters (such as parameters 1 and 3 of the double normal, which control the peak and ascending slope).</p></li>
 </ol>
 </section>
@@ -254,10 +255,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p>If selectivity is thought to be larger than zero at the youngest/smallest or the oldest/biggest fish set the value to -999 (does not scale the selectivity for the youngest or oldest age, independently from the normal curve).</p></li>
 </ul></li>
 <li><p>Fix the plateau (parameter 2) to be small values (e.g.&nbsp;-15).</p></li>
-<li><p>Set the peak (parameter 1) at the age/length equal to the mode of the composition data</p></li>
-<li><p>Set the ascending (parameter 3) and descending (parameter 4) slopes at ln( (peak_age-youngest_age)<em>8) and ln( (oldestyoungest_age-peak_age)</em>8)</p></li>
-<li><p>Don’t estimate selectivity at youngest age/size (parameter 5), either fix at -5 or -999</p></li>
-<li><p>Use the double normal for asymptotic selectivity so have flexibility of dome shape without major changes to control file, plus have control over selectivity at the youngest age.</p>
+<li><p>Set the initial value for the peak (parameter 1) at the age/length equal to the mode of the composition data</p></li>
+<li><p>Set the ascending (parameter 3) and descending (parameter 4) slopes at <span class="math inline">\(log(8 \cdot (a_{peak}-a_{min}))\)</span> and <span class="math inline">\(log(8 \cdot (a_{max}-a_{peak}))\)</span> (substitude min and max lengths and length at peak when modeling length-base selectivity).</p></li>
+<li><p>Don’t estimate selectivity at youngest age/size (parameter 5) unless there are observations of fish in the smallest age- or length-bins, either fix at -5 or -999</p></li>
+<li><p>Use the double normal instead of the logistic for asymptotic selectivity to have flexibility of dome shape without major changes to control file. This also provides control over selectivity at the youngest age. To force a logistic shape, you can do one of the following (where parameters 2, 4, and 6 should not be estimated under any of the options):</p>
 <ul>
 <li><p>Fix descending slope (parameter 4) at a large number (e.g.&nbsp;15)</p></li>
 <li><p>Alternative 1: Fix plateau (parameter 2) to a large number (e.g.&nbsp;15)</p></li>
