@@ -1,1 +1,1 @@
-Sitemap: https://thefaylab.github.io/lab-manual/sitemap.xml
+Sitemap: https://pfmc-assessments.github.io/pfmc_assessment_handbook/sitemap.xml
