@@ -161,13 +161,6 @@
     "text": "Git is a version control system that can be used to synchronize files between the web and local directories. GitHub is a user-friendly website which hosts files and depends on Git.\n\n\n\nNEEDS UPDATE INCLUDING MORE INFO ABOUT WHAT EACH PACKAGE DOES– Update: Kristin Marshall has created a Google Sheet (on 16 March 2018) to track this documentation\nSome of the sets of code used in NWFSC assessments worth noting are the following:\n\nr4ss (package: https://github.com/r4ss/r4ss)\nnwfscMapping (package: https://github.com/nwfsc-assess/nwfscMapping)\nnwfscSurvey (package: https://github.com/nwfsc-assess/nwfscSurvey)\nVAST (package: https://github.com/James-Thorson/VAST)\nAdd https://github.com/James-Thorson/SebastesSteepness\nspatialDeltaGLMM (package: https://github.com/nwfsc-assess/geostatistical_delta-GLMM)\n\nSee GitHub URL readme for R package installation instructions and example\n\nnwfscDeltaGLM (package: https://github.com/nwfsc-assess/nwfscDeltaGLM)\n\nSee GitHub URL readme for R package installation instructions and example\n\nnwfscAgeingError (package: https://github.com/nwfsc-assess/nwfscAgeingError)\n\nSee GitHub URL readme for R package installation instructions and example\n\nPlotting survey data with strata (from Jason):\nhttps://r-forge.r-project.org/scm/viewvc.php/JMC/?root=nwfscassmt\n[note: as of 10/28/16, plan hatched to move this file to GitHub soon]\nDiscard estimates with bootstrap uncertainty from WCGOP (https://github.com/nwfsc-assess/nwfscDiscardBootstrap)"
   },
   {
-    "objectID": "05-other.html#stuff-to-do-well-in-advance-of-peak-stock-assessment-season",
-    "href": "05-other.html#stuff-to-do-well-in-advance-of-peak-stock-assessment-season",
-    "title": "5  Other useful tidbits",
-    "section": "5.2 Stuff to do well in advance of peak stock assessment season",
-    "text": "5.2 Stuff to do well in advance of peak stock assessment season\nContact Martin Dorn Jim Thorson Chantel Wetzel (ugh) for the current assessment cycle steepness prior. If you are conducting an assessment on a rockfish species that is included in the steepness profile (aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north), contact Chantel Wetzel for a “type-C” prior with your species removed."
-  },
-  {
     "objectID": "appendix-a.html",
     "href": "appendix-a.html",
     "title": "6  Appendix A: Species seen* in the hake fishery",
