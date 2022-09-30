@@ -20,6 +20,6 @@
 
 8. **Discard ratios and mean body weight** These data SHOULD be tuned, but we don't typically do so. Kelli Johnson tuned these for Sablefish in 2019 with the following description:
 
-> Added variances for discard rates and mean body weights were set using values calculated iteratively using the RMSE of differences between input and estimated values derived from SS3. Variances were parameterized in terms of standard deviation and coefficient of variation, respectively.
+    > Added variances for discard rates and mean body weights were set using values calculated iteratively using the RMSE of differences between input and estimated values derived from SS3. Variances were parameterized in terms of standard deviation and coefficient of variation, respectively.
 
 9. **Think about sigmaR.** This could be an arbitrarily chosen value, freely estimated, or iteratively tuned. Methot and Taylor (2011) suggest a way that the tuning could be done. Whatever you choose, put a little thought into it. SigmaR should be greater than the SD of the estimated recruitment deviations. The table `$sigma_R_info` output by `r4ss::SS_output()` provides information on tuning sigmaR.
