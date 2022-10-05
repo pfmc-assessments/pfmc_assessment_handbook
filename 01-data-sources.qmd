@@ -108,27 +108,22 @@ Note: the names for the first 4 of these surveys in nwfscSurvey package are "NWF
 
 ### AFSC surveys
 
-Data are now available through the NWFSC data warehouse which can be accessed by the functions in the [**nwfscSurvey** package](https://github.com/nwfsc-assess/nwfscSurvey).
+Data are now available through the NWFSC data warehouse which can be accessed by the functions in the [**nwfscSurvey** package](https://github.com/nwfsc-assess/nwfscSurvey). Appendix B identifies which year the listed vessels participated in the Triennial and Slope Surveys. Each cruise is assigned a unique number which is contained within the ‘CRUISEJOINS’ column in the database. Checking that your data has all the cruises you expect for a given survey would be good practice. Although gear and personnel change over time, if a study looking at differences by vessel was undertaken, Appendix B shows which vessels participated in what year and survey.
 
 #### More detail on these AFSC surveys
 
-The the most recent RACE (updated yearly) ADP (data code lists) and Species Code Books are here:
+The the most recent RACE division species and data codes manuals are here:
 
-<http://www.afsc.noaa.gov/RACE/groundfish/adp_codebook.pdf>
+<https://www.fisheries.noaa.gov/resource/document/groundfish-survey-species-code-manual-and-data-codes-manual>
 
-<http://www.afsc.noaa.gov/RACE/groundfish/species_codebook.pdf>
-
-The ADP Code Book has, for example, sex and performance code information. For convenience, here's valuable information from Page 8:
+The ADP Code Book has, for example, sex and performance code information. For convenience, here is the legacy coding for sex:
 
 > Sex
->
-> '1'= Male
->
-> '2'= Female
->
-> '3'= Undetermined
+> 1 Male
+> 2 Female
+> 3 Undetermined
 
-Note on design of 2004 triennial survey
+Note on design of the 2004 Triennial Survey
 
 > It is my (John Wallace) understanding that in the later years of Triennial survey (pre-2004), the survey became more of a fixed survey design as the skippers went back to the same locations as recorded on their vessel's instrumentation.
 >
