@@ -112,15 +112,16 @@ Data are now available through the NWFSC data warehouse which can be accessed by
 
 #### More detail on these AFSC surveys
 
-The the most recent RACE division species and data codes manuals are here:
-
-<https://www.fisheries.noaa.gov/resource/document/groundfish-survey-species-code-manual-and-data-codes-manual>
+The the most recent RACE division species and data codes manuals are [here](https://www.fisheries.noaa.gov/resource/document/groundfish-survey-species-code-manual-and-data-codes-manual).
 
 The ADP Code Book has, for example, sex and performance code information. For convenience, here is the legacy coding for sex:
 
 > Sex
+> 
 > 1 Male
+> 
 > 2 Female
+> 
 > 3 Undetermined
 
 Note on design of the 2004 Triennial Survey
