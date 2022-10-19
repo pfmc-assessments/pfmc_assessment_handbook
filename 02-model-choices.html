@@ -187,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Choice 1, Population length bins:</strong> should extend beyond something like the 97.5% quantile of the length at age distribution for the largest age (easy to add more bins to see if it makes any difference).</p>
 <p><strong>Choice 2, Max age:</strong> should be large enough for growth to be asymptotic, and at least as big as the largest data age bins. It’s easy to test the impact of changing to different value, just requires updating ageing error matrices. Look at the stable age-distribution plot and examine the number of fish in the plus group. Additionally, the period of time when data are available (after extensive exploitation), the data plus group may be lower.</p>
 <p><strong>Choice 3, Data length bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. We should check to make sure that the selection of length and age bins are consistent with each other. Typically, we often have max length bins where there are only a few fish, but a larger proportion of data in the data age plus group.</p>
-<p><strong>Choice 4, Data age bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than apriori rules about how to set this, may be considered “data mining”. Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e.&nbsp;5%). Also, add a warning to r4ss about the percentage in the population and data plus groups.</p>
+<p><strong>Choice 4, Data age bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered “data mining”. Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e.&nbsp;5%). Also, add a warning to r4ss about the percentage in the population and data plus groups.</p>
 </section>
 <section id="determining-prior-for-natural-mortality" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="determining-prior-for-natural-mortality"><span class="header-section-number">2.2</span> Determining prior for natural mortality</h2>
@@ -201,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="estimating-ageing-error" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="estimating-ageing-error"><span class="header-section-number">2.3</span> Estimating ageing error</h2>
-<p>Jim Thorson has been working on this. These files are accessible <a href="https://github.com/nwfsc-assess/nwfscAgeingError">on the web</a>.</p>
+<p>Jim Thorson has been working on this. These files are accessible <a href="https://github.com/pfmc-assessments/nwfscAgeingError">on the web</a>.</p>
 <p>You can also find the original user manual that goes with the age error ADMB executable written by Andre Punt that is called by the above wrapper <a href="https://docs.google.com/a/noaa.gov/file/d/0B-5Jg3P0x9x0SnUwbnMxczBpMnM/edit?usp=sharing">on the google drive</a> The above user manual will help you understand what the program is doing and how to setup and run an individual file if you wish to do so.</p>
 </section>
 <section id="maturity" class="level2" data-number="2.4">
@@ -256,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><p>Fix the plateau (parameter 2) to be small values (e.g.&nbsp;-15).</p></li>
 <li><p>Set the initial value for the peak (parameter 1) at the age/length equal to the mode of the composition data</p></li>
-<li><p>Set the ascending (parameter 3) and descending (parameter 4) slopes at <span class="math inline">\(log(8 \cdot (a_{peak}-a_{min}))\)</span> and <span class="math inline">\(log(8 \cdot (a_{max}-a_{peak}))\)</span> (substitude min and max lengths and length at peak when modeling length-base selectivity).</p></li>
+<li><p>Set the ascending (parameter 3) and descending (parameter 4) slopes at <span class="math inline">\(log(8 \cdot (a_{peak}-a_{min}))\)</span> and <span class="math inline">\(log(8 \cdot (a_{max}-a_{peak}))\)</span> (substitute min and max lengths and length at peak when modeling length-base selectivity).</p></li>
 <li><p>Don’t estimate selectivity at youngest age/size (parameter 5) unless there are observations of fish in the smallest age- or length-bins, either fix at -5 or -999</p></li>
 <li><p>Use the double normal instead of the logistic for asymptotic selectivity to have flexibility of dome shape without major changes to control file. This also provides control over selectivity at the youngest age. To force a logistic shape, you can do one of the following (where parameters 2, 4, and 6 should not be estimated under any of the options):</p>
 <ul>
