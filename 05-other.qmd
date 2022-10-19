@@ -8,34 +8,4 @@ Git is a version control system that can be used to synchronize files between th
 
 ### Shared code locations
 
-NEEDS UPDATE INCLUDING MORE INFO ABOUT WHAT EACH PACKAGE DOES-- Update: Kristin Marshall has created a [Google Sheet](https://docs.google.com/spreadsheets/d/1uMIYenXJPAB7JP0xd2QWghhFT1fhJM1e_TN8NOzd35w/edit#gid=0) (on 16 March 2018) to track this documentation
-
-Some of the sets of code used in NWFSC assessments worth noting are the following:
-
--   **r4ss** (package: <https://github.com/r4ss/r4ss>)
-
--   **nwfscMapping** (package: <https://github.com/nwfsc-assess/nwfscMapping>)
-
--   **nwfscSurvey** (package: <https://github.com/nwfsc-assess/nwfscSurvey>)
-
--   **VAST (package: <https://github.com/James-Thorson/VAST>)**
-
--   **Add <https://github.com/James-Thorson/SebastesSteepness>**
-
--   **spatialDeltaGLMM (package: <https://github.com/nwfsc-assess/geostatistical_delta-GLMM>)**
-
-    -   **See GitHub URL readme for R package installation instructions and example**
-
--   **nwfscDeltaGLM** (package: <https://github.com/nwfsc-assess/nwfscDeltaGLM>)
-
-    -   See GitHub URL readme for R package installation instructions and example
-
--   **nwfscAgeingError** (package: <https://github.com/nwfsc-assess/nwfscAgeingError>)
-
-    -   See GitHub URL readme for R package installation instructions and example
-
--   Plotting survey data with strata (from Jason):\
-    [https://r-forge.r-project.org/scm/viewvc.php/JMC/?root=nwfscassmt\
-    ](https://r-forge.r-project.org/scm/viewvc.php/JMC/?root=nwfscassmt)\[note: as of 10/28/16, plan hatched to move this file to GitHub soon\]
-
--   Discard estimates with bootstrap uncertainty from WCGOP (<https://github.com/nwfsc-assess/nwfscDiscardBootstrap>)
+Most of the R packages and code used in NWFSC assessments are listed in the README at https://github.com/pfmc-assessments. Other sources not included in this github organization include Stock Synthesis at https://github.com/nmfs-stock-synthesis/stock-synthesis and associated packages including {r4ss} at https://github.com/r4ss/r4ss/ and {ss3diags} (not yet used for PFMC assessments) at https://github.com/jabbamodel/ss3diags.
