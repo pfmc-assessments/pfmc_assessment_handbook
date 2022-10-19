@@ -10,7 +10,7 @@ The comments below are based on a team discussion on how to select a population 
 
 **Choice 3, Data length bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. We should check to make sure that the selection of length and age bins are consistent with each other. Typically, we often have max length bins where there are only a few fish, but a larger proportion of data in the data age plus group.
 
-**Choice 4, Data age bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than apriori rules about how to set this, may be considered "data mining". Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e. 5%). Also, add a warning to r4ss about the percentage in the population and data plus groups.
+**Choice 4, Data age bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered "data mining". Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e. 5%). Also, add a warning to r4ss about the percentage in the population and data plus groups.
 
 ## Determining prior for natural mortality
 
@@ -26,7 +26,7 @@ Owen's Advice on M; July 6, 2022
 
 ## Estimating ageing error
 
-Jim Thorson has been working on this. These files are accessible [on the web](https://github.com/nwfsc-assess/nwfscAgeingError).
+Jim Thorson has been working on this. These files are accessible [on the web](https://github.com/pfmc-assessments/nwfscAgeingError).
 
 You can also find the original user manual that goes with the age error ADMB executable written by Andre Punt that is called by the above wrapper [on the google drive](https://docs.google.com/a/noaa.gov/file/d/0B-5Jg3P0x9x0SnUwbnMxczBpMnM/edit?usp=sharing) The above user manual will help you understand what the program is doing and how to setup and run an individual file if you wish to do so.
 
@@ -97,7 +97,7 @@ There was a CAPAM workshop on selectivity in 2013. Report, presentations, and re
 
 -   Set the initial value for the peak (parameter 1) at the age/length equal to the mode of the composition data
 
--   Set the ascending (parameter 3) and descending (parameter 4) slopes at $log(8 \cdot (a_{peak}-a_{min}))$ and $log(8 \cdot (a_{max}-a_{peak}))$ (substitude min and max lengths and length at peak when modeling length-base selectivity).
+-   Set the ascending (parameter 3) and descending (parameter 4) slopes at $log(8 \cdot (a_{peak}-a_{min}))$ and $log(8 \cdot (a_{max}-a_{peak}))$ (substitute min and max lengths and length at peak when modeling length-base selectivity).
 
 -   Don't estimate selectivity at youngest age/size (parameter 5) unless there are observations of fish in the smallest age- or length-bins, either fix at -5 or -999
 

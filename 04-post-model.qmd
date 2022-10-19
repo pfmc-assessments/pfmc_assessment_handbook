@@ -24,7 +24,7 @@
 
 A rebuilding plan will need to be developed for any species (or stock) that has an GFSC SSC approved stock assessment that estimates the relative spawning biomass to be below the corresponding minimum stock size threshold (0.10 for flatfish and 0.25 for all other groundfish species). A rebuilding analysis is developed using a software program called the "rebuilder" (aka the Puntalyzer) developed and maintained by Andre Punt ([aepunt\@uw.edu](aepunt@uw.edu)). The program is designed to work with an input rebuilding data file created by Stock Synthesis called "rebuild.dat". The rebuilder software executable then develops numerous future projections and calculates the probability of rebuilding based on alternative harvest strategies. The RES.CSV created by the rebuilder executable contains all of the resulting estimates of rebuilding (although many quantities are not labeled within the CSV file).
 
-The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/nwfsc-assess/rebuilder)) contains the most up-to-date rebuilder executable, the user manual, code tools for processing output, and code examples. This repository should have all the pertinent information to conduct a rebuilding analysis for a species or stock managed by the Pacific Fishery Management Council
+The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/pfmc-assessments/rebuilder)) contains the most up-to-date rebuilder executable, the user manual, code tools for processing output, and code examples. This repository should have all the pertinent information to conduct a rebuilding analysis for a species or stock managed by the Pacific Fishery Management Council
 
 ## `r4ss`
 
