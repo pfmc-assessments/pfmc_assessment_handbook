@@ -20,7 +20,7 @@ Jason Jannot says that it should be easier to request data this year, but we (or
 
 ### At-Sea Hake Observer Program (ASHOP)
 
-Vanessa Tuttle ([Vanessa.Tuttle\@noaa.gov](mailto:Vanessa.Tuttle@noaa.gov)) is the contact person for this. A non-definitive list of "common" and "uncommon" species seen in the hake fishery (as of 2008), provided by Vanessa, is in Appendix A of this document. ADD LINK
+Vanessa Tuttle ([Vanessa.Tuttle\@noaa.gov](mailto:Vanessa.Tuttle@noaa.gov)) is the contact person for this. A non-definitive list of "common" and "uncommon" species seen in the hake fishery (as of 2008, but Vanessa says it is still current as of 2022) is in @sec-Appendix of this document. 
 
 ### PacFIN biological data (BDS)
 
