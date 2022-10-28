@@ -1,4 +1,4 @@
-# Appendix A: Species seen\* in the hake fishery {.appendix} {#sec-AppendixA}
+# Appendix A: Species seen\* in the hake fishery {#sec-AppendixA} {.appendix}
 
 See note about ASHOP program under data sources. The at-sea hake fishery does not fall under the WCGOP program.
 
