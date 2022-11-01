@@ -48,8 +48,7 @@ The correct value of the "$a$" parameter ($F=aL^b$) for length in cm and fecundi
 
 $$a = \frac{a’\cdot10^b}{1000}$$
 
-The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. 
-The value of '$b$' is unchanged, and can be used directly in the assessment. The 2017 Yellowtail Rockfish assessment used units of trillions of fish by substituting 1e9 for the 1e3 in the equation above.
+The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. The value of '$b$' is unchanged, and can be used directly in the assessment. The 2017 Yellowtail Rockfish assessment used units of trillions of fish by substituting 1e9 for the 1e3 in the equation above.
 
 The r4ss figures in the "Bio" tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship.
 

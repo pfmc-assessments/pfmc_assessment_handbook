@@ -5,6 +5,7 @@ book:
   title: "Unofficial NWFSC/SWFSC Groundfish Stock Assessment Handbook"
   author: "Assessment teams at NWFSC and SWFSC"
   date: last-modified
+  number-sections: true
   
   site-url: https://pfmc-assessments.github.io/pfmc_assessment_handbook/
   repo-url: https://github.com/pfmc-assessments/pfmc_assessment_handbook
@@ -17,9 +18,12 @@ book:
     - 03-stock-synthesis.qmd
     - 04-post-model.qmd
     - 05-other.qmd
+  appendices:
     - appendix-a.qmd
     - appendix-b.qmd
     # - references.qmd
+crossref:
+  appendix-delim: ":"
 
 bibliography: references.bib
 
