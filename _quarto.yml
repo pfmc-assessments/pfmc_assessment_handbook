@@ -22,8 +22,6 @@ book:
     - appendix-a.qmd
     - appendix-b.qmd
     # - references.qmd
-crossref:
-  appendix-delim: ":"
 
 bibliography: references.bib
 
