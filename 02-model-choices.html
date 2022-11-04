@@ -197,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Choice 1, Population length bins:</strong> should extend beyond something like the 97.5% quantile of the length at age distribution for the largest age (easy to add more bins to see if it makes any difference).</p>
 <p><strong>Choice 2, Max age:</strong> should be large enough for growth to be asymptotic, and at least as big as the largest data age bins. It’s easy to test the impact of changing to different value, just requires updating ageing error matrices. Look at the stable age-distribution plot and examine the number of fish in the plus group. Additionally, the period of time when data are available (after extensive exploitation), the data plus group may be lower.</p>
 <p><strong>Choice 3, Data length bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. We should check to make sure that the selection of length and age bins are consistent with each other. Typically, we often have max length bins where there are only a few fish, but a larger proportion of data in the data age plus group.</p>
-<p><strong>Choice 4, Data age bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered “data mining”. Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e.&nbsp;5%). Also, add a warning to r4ss about the percentage in the population and data plus groups.</p>
+<p><strong>Choice 4, Data age bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered “data mining”. Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e.&nbsp;5%). Also, add a warning to <a href="https://github.com/r4ss/r4ss">{r4ss}</a> about the percentage in the population and data plus groups.</p>
 </section>
 <section id="determining-prior-for-natural-mortality" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="determining-prior-for-natural-mortality"><span class="header-section-number">2.2</span> Determining prior for natural mortality</h2>
@@ -211,8 +211,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="estimating-ageing-error" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="estimating-ageing-error"><span class="header-section-number">2.3</span> Estimating ageing error</h2>
-<p>Jim Thorson has been working on this. These files are accessible <a href="https://github.com/pfmc-assessments/nwfscAgeingError">on the web</a>.</p>
-<p>You can also find the original user manual that goes with the age error ADMB executable written by Andre Punt that is called by the above wrapper <a href="https://docs.google.com/a/noaa.gov/file/d/0B-5Jg3P0x9x0SnUwbnMxczBpMnM/edit?usp=sharing">on the google drive</a> The above user manual will help you understand what the program is doing and how to setup and run an individual file if you wish to do so.</p>
+<p>See the <a href="https://github.com/pfmc-assessments/nwfscAgeingError">{nwfscAgeingError}</a> package.</p>
 </section>
 <section id="maturity" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="maturity"><span class="header-section-number">2.4</span> Maturity</h2>
@@ -227,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The correct value of the “<span class="math inline">\(a\)</span>” parameter (<span class="math inline">\(F=aL^b\)</span>) for length in cm and fecundity in millions of eggs is:</p>
 <p><span class="math display">\[a = \frac{a’\cdot10^b}{1000}\]</span></p>
 <p>The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. The value of ‘<span class="math inline">\(b\)</span>’ is unchanged, and can be used directly in the assessment. The 2017 Yellowtail Rockfish assessment used units of trillions of fish by substituting 1e9 for the 1e3 in the equation above.</p>
-<p>The r4ss figures in the “Bio” tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship.</p>
+<p>The <a href="https://github.com/r4ss/r4ss">{r4ss}</a> figures in the “Bio” tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship.</p>
 </section>
 <section id="modeling-selectivity" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="modeling-selectivity"><span class="header-section-number">2.6</span> Modeling selectivity</h2>
@@ -250,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="2.6.2" class="anchored" data-anchor-id="general-advice-on-selectivity-in-ss3"><span class="header-section-number">2.6.2</span> General advice on selectivity in SS3</h3>
 <ol type="1">
 <li><p>Start with a functional form that is commonly used (double normal)</p></li>
-<li><p>Find some initial values using either the Excel spreadsheets or the r4ss widgets</p></li>
+<li><p>Find some initial values using either the Excel spreadsheets or the <a href="https://github.com/r4ss/r4ss">{r4ss}</a> widgets</p></li>
 <li><p>Put the initial values in the model and run without estimating anything until you get a model that runs. This can be done by setting the maximum phase in the starter file to 0 or (better), by using the command line inputs: <code>-maxfn 0 -nohess</code>.</p></li>
 <li><p>Read the output into R using SS_output and plot the selectivity in {r4ss} using either <code>SS_plots(model, plot=2)</code> or <code>SSplotSelex(model, subplot=1)</code>, where <code>model</code> is the object created by <code>SS_output()</code>.</p></li>
 <li><p>Set the PHASE for as many parameters to negative values as possible so that you start with estimating relatively few parameters (such as parameters 1 and 3 of the double normal, which control the peak and ascending slope).</p></li>
@@ -321,7 +320,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Below is detailed information regarding the meta-analysis approach applied between 2007 - 2017:</p>
 <ul>
 <li><p>The method is fully described in <a href="https://doi.org/10.1016/j.fishres.2018.03.014">Thorson, Dorn, and Hamel (2018) Fisheries Research</a></p></li>
-<li><p>The method can be replicated for any data set 2007/2009/2011/2013/2015/2017 using R package <a href="https://github.com/James-Thorson/SebastesSteepness">SebastesSteepness</a></p></li>
+<li><p>The method can be replicated for any data set 2007/2009/2011/2013/2015/2017 using R package <a href="https://github.com/James-Thorson/SebastesSteepness">{SebastesSteepness}</a></p></li>
 <li><p>The rationale for excluding a species when developing a prior for a given focal species (termed “Type-C” meta-analysis) is explained <a href="http://www.nrcresearchpress.com/doi/abs/10.1139/f04-245">in this paper</a></p>
 <ul>
 <li>If you are assessing any of the following species you will need to obtain a “Type-C” prior: aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north</li>
