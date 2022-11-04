@@ -28,7 +28,7 @@ The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/
 
 ## `r4ss`
 
-1.  `r4ss` is available as an R package on CRAN but the most up-to-date version can be installed from GitHub. Installation instructions are available [here](https://github.com/r4ss/r4ss).
+1.  The {r4ss} package is available on CRAN but the most up-to-date version can be installed from GitHub. Installation instructions are available [here](https://github.com/r4ss/r4ss).
 
 2.  See the intro vignette [here](https://r4ss.github.io/r4ss/) for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the tune_comps() function.
 
