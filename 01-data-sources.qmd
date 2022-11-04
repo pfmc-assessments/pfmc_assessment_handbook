@@ -108,7 +108,7 @@ Note: the names for the first 4 of these surveys in nwfscSurvey package are "NWF
 
 ### AFSC surveys
 
-Data are now available through the NWFSC data warehouse which can be accessed by the functions in the [**nwfscSurvey** package](https://github.com/pfmc-assessments/nwfscSurvey). Appendix B identifies which year the listed vessels participated in the Triennial and Slope Surveys. Each cruise is assigned a unique number which is contained within the 'CRUISEJOINS' column in the database. Checking that your data has all the cruises you expect for a given survey would be good practice. Although gear and personnel change over time, if a study looking at differences by vessel was undertaken, Appendix B shows which vessels participated in what year and survey.
+Data are now available through the NWFSC data warehouse which can be accessed by the functions in the [**nwfscSurvey** package](https://github.com/pfmc-assessments/nwfscSurvey). [Appendix -@sec-appendixB] identifies which year the listed vessels participated in the Triennial and Slope Surveys. Each cruise is assigned a unique number which is contained within the 'CRUISEJOINS' column in the database. Checking that your data has all the cruises you expect for a given survey would be good practice. Although gear and personnel change over time, if a study looking at differences by vessel was undertaken, [Appendix -@sec-appendixB] shows which vessels participated in what year and survey.
 
 #### More detail on these AFSC surveys
 
@@ -134,7 +134,7 @@ Note on design of the 2004 Triennial Survey
 >
 > without regard to any previously recorded tow locations.
 >
-> For CRUISEJOIN info, see Appendix to this document.
+> For CRUISEJOIN info, see [Appendix -@sec-appendixB].
 
 ### NWFSC Survey Indices
 
