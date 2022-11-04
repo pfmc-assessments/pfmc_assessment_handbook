@@ -30,11 +30,11 @@ The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/
 
 1.  The {r4ss} package is available on CRAN but the most up-to-date version can be installed from GitHub. Installation instructions are available [here](https://github.com/r4ss/r4ss).
 
-2.  See the intro vignette [here](https://r4ss.github.io/r4ss/) for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the tune_comps() function.
+2.  See the intro vignette [here](https://r4ss.github.io/r4ss/) for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the `r4ss::tune_comps()` function.
 
 3.  It's good idea to reinstall it on a regular basis to keep up. You can also watch the github repository if you want to get notifications of changes.
 
-4.  Look through all the figures that get produced by `SS_plots`. There have been cases where models were put forth with incorrect assumptions about biology, ageing error, etc. that could have been caught if the assessment authors had paid attention to all the plots.
+4.  Look through all the figures that get produced by `r4ss::SS_plots()`. There have been cases where models were put forth with incorrect assumptions about biology, ageing error, etc. that could have been caught if the assessment authors had paid attention to all the plots.
 
 5.  Remember that the figures can be modified to look better. For instance, you can replace the fleet names in the model with a less abbreviated set of names that will go in the plot labels.
 
@@ -44,7 +44,7 @@ The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/
 
 1.  Read the [terms of reference](https://www.pcouncil.org/documents/2020/05/f-2-attachment-3-draft-revised-terms-of-reference-for-the-groundfish-and-coastal-pelagic-species-stock-assessment-process-for-2021-and-2022.pdf/) and actually follow them.
 
-2.  Consider using LaTeX and .Rnw files. Chantel and Kelli are working on an R package that will serve as a template for all assessment documents and act as the successor to [Melissa Monk's template](https://github.com/melmonk/StockAssessment_template). based on R Markdown.
+2.  See the [{sa4ss}](https://github.com/pfmc-assessments/sa4ss) package.
 
 3.  If you're using Word, talk to power users of Word about formatting of section headings, links to figures or tables, etc.. These links save much time when document is updated with sections or elements added or removed.
 

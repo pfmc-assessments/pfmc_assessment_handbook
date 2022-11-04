@@ -26,7 +26,7 @@ Vanessa Tuttle ([Vanessa.Tuttle\@noaa.gov](mailto:Vanessa.Tuttle@noaa.gov)) is t
 
 Talk to John Wallace or Andi Stevens. To confirm sample sizes for BDS, go to [this webpage](http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt) which should give a recent tally of samples by state agency.
 
-Andi is developing generalized code to process the data extracted by John which is in the ["PacFIN.Utilities" repository on GitHub](https://github.com/pfmc-assessments/PacFIN.Utilities).
+Generalized code to process the data are currently in [{PacFIN.Utilities}](https://github.com/pfmc-assessments/PacFIN.Utilities).
 
 You may see some discrepancies in CA data from 1985-1989 when compared to older extractions. Some samples were removed for some species. It is not clear why these samples were removed.
 
@@ -72,7 +72,7 @@ At a team meeting on 13 March 2019, the team agreed on the following terminology
 
 -   NWFSC Integrated Acoustic and Trawl Survey of Pacific Hake (Acoustic Survey)
 
-Note: the names for the first 4 of these surveys in nwfscSurvey package are "NWFSC.Combo", "Triennial", "AFSC.Slope", "NWFSC.Slope". The H&L and acoustic surveys are not currently available through that package.
+Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package are "NWFSC.Combo", "Triennial", "AFSC.Slope", "NWFSC.Slope". The H&L and acoustic surveys are not currently available through that package.
 
 ## Summary of NOAA fishery independent trawl surveys used for west coast assessments
 
@@ -108,7 +108,7 @@ Note: the names for the first 4 of these surveys in nwfscSurvey package are "NWF
 
 ### AFSC surveys
 
-Data are now available through the NWFSC data warehouse which can be accessed by the functions in the [**nwfscSurvey** package](https://github.com/pfmc-assessments/nwfscSurvey). [Appendix -@sec-appendixB] identifies which year the listed vessels participated in the Triennial and Slope Surveys. Each cruise is assigned a unique number which is contained within the 'CRUISEJOINS' column in the database. Checking that your data has all the cruises you expect for a given survey would be good practice. Although gear and personnel change over time, if a study looking at differences by vessel was undertaken, [Appendix -@sec-appendixB] shows which vessels participated in what year and survey.
+Data are now available through the NWFSC data warehouse which can be accessed by the functions in the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package. [Appendix -@sec-appendixB] identifies which year the listed vessels participated in the Triennial and Slope Surveys. Each cruise is assigned a unique number which is contained within the 'CRUISEJOINS' column in the database. Checking that your data has all the cruises you expect for a given survey would be good practice. Although gear and personnel change over time, if a study looking at differences by vessel was undertaken, [Appendix -@sec-appendixB] shows which vessels participated in what year and survey.
 
 #### More detail on these AFSC surveys
 
@@ -153,7 +153,7 @@ Index standardization is used Kelli Johnson's [VAST wrapper](https://github.com/
 
 ### NWFSC Survey Length and Age Compositions
 
-[GitHub repository "nwfscSurvey"](https://github.com/pfmc-assessments/nwfscSurvey) being used for comp data and other data explorations
+[{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package is used for comp data and other data explorations.
 
 Scaling from Tow to Stratum Level: Weight normalized length or age comps for each tow by the numerical CPUE. This is done in the standard data package we get from Beth.
 
@@ -179,7 +179,7 @@ Troy Buell ([troy.v.buell\@state.or.us](mailto:troy.v.buell@state.or.us)) is sti
 
 Discard mortality by fleet should be accounted for within the assessment. To obtain estimates of total discards based on the fleet structure in the model (gear and/or area) see the Groundfish Expanded Multi-year Mortality (GEMM) report which is a component of the annual Groundfish Mortality Report. The GEMM provides annual estimates of landed and discarded fish by sector off the West Coast starting in 2002 - present. However, the GEMM will not include the most full recent year estimates (example - the GEMM available in 2019 has data through 2017) which will require an assumption regarding the most recent year's discards. Additionally, assumptions will need to be made regarding the total amount of discard prior to the start of the WCGOP data (pre-2002).
 
-The GEMM report is produced by the WGCOP team with Dr. Kayleigh Somers ([kayleigh.somers\@noaa.gov](mailto:kayleigh.somers@noaa.gov)) as the lead author and is published in the September Council meeting Briefing Book titled the "Groundfish Mortality Report". The GEMM can be found within the associated Excel spreadsheet on the Table 3 tab. Additionally, the GEMM can be accessed via two other methods: 1) the GEMM report is archived on the network under \\Assessments\\GEMM Report or 2) can be accessed using the **nwfscSurvey** package (<https://github.com/pfmc-assessments/nwfscSurvey>) using the **pull_gemm** function.
+The GEMM report is produced by the WGCOP team with Dr. Kayleigh Somers ([kayleigh.somers\@noaa.gov](mailto:kayleigh.somers@noaa.gov)) as the lead author and is published in the September Council meeting Briefing Book titled the "Groundfish Mortality Report". The GEMM can be found within the associated Excel spreadsheet on the Table 3 tab. Additionally, the GEMM can be accessed via two other methods: 1) the GEMM report is archived on the network under \\Assessments\\GEMM Report or 2) can be accessed using the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) using the `pull_gemm()` function.
 
 There are typically three common methods used within West Coast groundfish stock assessments to incorporate discard mortality.
 
