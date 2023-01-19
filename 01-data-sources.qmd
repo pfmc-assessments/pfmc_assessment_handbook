@@ -82,7 +82,7 @@ Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://
 
     b.  late triennial (1995--2004, 55-500m, north of 34.5)
 
-    c.  See the 2007 Canary assessment document ([Stewart, 2007](http://www.pcouncil.org/wp-content/uploads/2007_canary_SAFE.pdf)) for justification of the split into two pieces, but there's an ongoing debate about the need to split
+    c.  The 2007 Canary assessment ([Stewart, 2007](https://www.pcouncil.org/documents/2007/10/status-of-the-u-s-canary-rockfish-resource-in-2007-october-15-2007.pdf/)) seems to have been the first one to split the survey and includes info on justification (but there's an ongoing debate about the need to split).
 
     d.  Must filter out water hauls and tows occurring outside the US EEZ (foreign tows)
 
