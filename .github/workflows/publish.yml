@@ -3,7 +3,6 @@ on:
   push:
     branches: main
   schedule:
-    # run weekly at 2:48 UTC on Tuesdays
     - cron: '48 2 * * 2'
     branches: main
 
