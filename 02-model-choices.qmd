@@ -24,6 +24,10 @@ Owen's Advice on M; July 6, 2022
 
 4.  Can explore a range approaches for M estimates and priors [here](http://barefootecologist.com.au/shiny_m); reference is Cope and Hamel, in press.
 
+## Length-weight relationships
+
+Use the ([getWLpars()](https://pfmc-assessments.github.io/PacFIN.Utilities/reference/getWLpars.html)) function in {PacFIN.Utilities} which provides estimates for the parameters required by Stock Synthesis. It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally.
+
 ## Estimating ageing error
 
 See the [{nwfscAgeingError}](https://github.com/pfmc-assessments/nwfscAgeingError) package.
