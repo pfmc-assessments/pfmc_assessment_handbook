@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -158,17 +158,18 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#selecting-maximum-age-population-and-data" id="toc-selecting-maximum-age-population-and-data" class="nav-link active" data-scroll-target="#selecting-maximum-age-population-and-data"><span class="toc-section-number">2.1</span>  Selecting maximum age (population and data)</a></li>
   <li><a href="#determining-prior-for-natural-mortality" id="toc-determining-prior-for-natural-mortality" class="nav-link" data-scroll-target="#determining-prior-for-natural-mortality"><span class="toc-section-number">2.2</span>  Determining prior for natural mortality</a></li>
-  <li><a href="#estimating-ageing-error" id="toc-estimating-ageing-error" class="nav-link" data-scroll-target="#estimating-ageing-error"><span class="toc-section-number">2.3</span>  Estimating ageing error</a></li>
-  <li><a href="#maturity" id="toc-maturity" class="nav-link" data-scroll-target="#maturity"><span class="toc-section-number">2.4</span>  Maturity</a></li>
-  <li><a href="#fecundity" id="toc-fecundity" class="nav-link" data-scroll-target="#fecundity"><span class="toc-section-number">2.5</span>  Fecundity</a></li>
-  <li><a href="#modeling-selectivity" id="toc-modeling-selectivity" class="nav-link" data-scroll-target="#modeling-selectivity"><span class="toc-section-number">2.6</span>  Modeling selectivity</a>
+  <li><a href="#length-weight-relationships" id="toc-length-weight-relationships" class="nav-link" data-scroll-target="#length-weight-relationships"><span class="toc-section-number">2.3</span>  Length-weight relationships</a></li>
+  <li><a href="#estimating-ageing-error" id="toc-estimating-ageing-error" class="nav-link" data-scroll-target="#estimating-ageing-error"><span class="toc-section-number">2.4</span>  Estimating ageing error</a></li>
+  <li><a href="#maturity" id="toc-maturity" class="nav-link" data-scroll-target="#maturity"><span class="toc-section-number">2.5</span>  Maturity</a></li>
+  <li><a href="#fecundity" id="toc-fecundity" class="nav-link" data-scroll-target="#fecundity"><span class="toc-section-number">2.6</span>  Fecundity</a></li>
+  <li><a href="#modeling-selectivity" id="toc-modeling-selectivity" class="nav-link" data-scroll-target="#modeling-selectivity"><span class="toc-section-number">2.7</span>  Modeling selectivity</a>
   <ul class="collapse">
-  <li><a href="#conceptual-reasoning-for-using-different-approaches-to-selectivity" id="toc-conceptual-reasoning-for-using-different-approaches-to-selectivity" class="nav-link" data-scroll-target="#conceptual-reasoning-for-using-different-approaches-to-selectivity"><span class="toc-section-number">2.6.1</span>  Conceptual reasoning for using different approaches to selectivity</a></li>
-  <li><a href="#general-advice-on-selectivity-in-ss3" id="toc-general-advice-on-selectivity-in-ss3" class="nav-link" data-scroll-target="#general-advice-on-selectivity-in-ss3"><span class="toc-section-number">2.6.2</span>  General advice on selectivity in SS3</a></li>
-  <li><a href="#guidelines-for-ss3-double-normal-initial-setup" id="toc-guidelines-for-ss3-double-normal-initial-setup" class="nav-link" data-scroll-target="#guidelines-for-ss3-double-normal-initial-setup"><span class="toc-section-number">2.6.3</span>  Guidelines for SS3 double normal initial setup</a></li>
+  <li><a href="#conceptual-reasoning-for-using-different-approaches-to-selectivity" id="toc-conceptual-reasoning-for-using-different-approaches-to-selectivity" class="nav-link" data-scroll-target="#conceptual-reasoning-for-using-different-approaches-to-selectivity"><span class="toc-section-number">2.7.1</span>  Conceptual reasoning for using different approaches to selectivity</a></li>
+  <li><a href="#general-advice-on-selectivity-in-ss3" id="toc-general-advice-on-selectivity-in-ss3" class="nav-link" data-scroll-target="#general-advice-on-selectivity-in-ss3"><span class="toc-section-number">2.7.2</span>  General advice on selectivity in SS3</a></li>
+  <li><a href="#guidelines-for-ss3-double-normal-initial-setup" id="toc-guidelines-for-ss3-double-normal-initial-setup" class="nav-link" data-scroll-target="#guidelines-for-ss3-double-normal-initial-setup"><span class="toc-section-number">2.7.3</span>  Guidelines for SS3 double normal initial setup</a></li>
   </ul></li>
-  <li><a href="#modeling-recruitment-deviations" id="toc-modeling-recruitment-deviations" class="nav-link" data-scroll-target="#modeling-recruitment-deviations"><span class="toc-section-number">2.7</span>  Modeling recruitment deviations</a></li>
-  <li><a href="#rockfish-steepness-profile" id="toc-rockfish-steepness-profile" class="nav-link" data-scroll-target="#rockfish-steepness-profile"><span class="toc-section-number">2.8</span>  Rockfish steepness profile</a></li>
+  <li><a href="#modeling-recruitment-deviations" id="toc-modeling-recruitment-deviations" class="nav-link" data-scroll-target="#modeling-recruitment-deviations"><span class="toc-section-number">2.8</span>  Modeling recruitment deviations</a></li>
+  <li><a href="#rockfish-steepness-profile" id="toc-rockfish-steepness-profile" class="nav-link" data-scroll-target="#rockfish-steepness-profile"><span class="toc-section-number">2.9</span>  Rockfish steepness profile</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/edit/main/02-model-choices.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -210,30 +211,34 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Can explore a range approaches for M estimates and priors <a href="http://barefootecologist.com.au/shiny_m">here</a>; reference is Cope and Hamel, in press.</p></li>
 </ol>
 </section>
-<section id="estimating-ageing-error" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="estimating-ageing-error"><span class="header-section-number">2.3</span> Estimating ageing error</h2>
+<section id="length-weight-relationships" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="length-weight-relationships"><span class="header-section-number">2.3</span> Length-weight relationships</h2>
+<p>Use the (<a href="https://pfmc-assessments.github.io/PacFIN.Utilities/reference/getWLpars.html">getWLpars()</a>) function in {PacFIN.Utilities} which provides estimates for the parameters required by Stock Synthesis. It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally.</p>
+</section>
+<section id="estimating-ageing-error" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="estimating-ageing-error"><span class="header-section-number">2.4</span> Estimating ageing error</h2>
 <p>See the <a href="https://github.com/pfmc-assessments/nwfscAgeingError">{nwfscAgeingError}</a> package.</p>
 </section>
-<section id="maturity" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="maturity"><span class="header-section-number">2.4</span> Maturity</h2>
+<section id="maturity" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="maturity"><span class="header-section-number">2.5</span> Maturity</h2>
 <p>Talk to Melissa Head about maturity. In 2017, she provided estimated maturity curves based on samples from the NWFSC survey for many species.</p>
 <p>Data from the NWFSC survey on maturity includes a column indicating mature or immature and another indicating spawning and not spawning. The latter considers all “mature” fish with over 25% atresia as not spawning (along with all immature fish). The spawning/not spawning column is the one we commonly use to estimate the maturity curve since that is really what we care about. In some cases a simple logistic will fit, but if there is much skip spawning/atresia for older/larger females, a logistic type curve which asymptotes to a lower value or a non-parametric fit is more appropriate. A column with percent atresia is also provided if you with to use a percentage other than 25% for the cutoff. Finally, the mature/immature column can be used instead if the atresia/skip spawning is taken into account in specifying the fecundity relationship.</p>
 <p>An additional column has been added to the NWFSC survey table indicating uncertainty in the designation. This can be used to weight or exclude data.</p>
 <p>Note: John Field has expressed concern that we are too focused on recent samples from the NWFSC survey, so if you aren’t going to include samples from past collections, think about a justification for that choice.</p>
 </section>
-<section id="fecundity" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="fecundity"><span class="header-section-number">2.5</span> Fecundity</h2>
+<section id="fecundity" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="fecundity"><span class="header-section-number">2.6</span> Fecundity</h2>
 <p>Dick et al.&nbsp;2017 (http://www.sciencedirect.com/science/article/pii/S0165783616303745) has estimates for the <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> parameters in the functional form <span class="math inline">\(F = aL^b\)</span> for many rockfish. The estimates are based on length in mm and predicted number of eggs, fitted in log-space. If you use length in cm (like in SS3), and don’t want huge SSB values (eggs), you can convert the values in the paper to units of cm and millions of eggs. First, find the values “<span class="math inline">\(\exp(a)\)</span>” (referred to as <span class="math inline">\(a'\)</span> below) and “<span class="math inline">\(b\)</span>” from Table 6 in Dick et al.&nbsp;for your species (or subgenus, if no estimate for your species is reported). If your subgenus is not reported, you can use the “Sebastes” values.</p>
 <p>The correct value of the “<span class="math inline">\(a\)</span>” parameter (<span class="math inline">\(F=aL^b\)</span>) for length in cm and fecundity in millions of eggs is:</p>
 <p><span class="math display">\[a = \frac{a’\cdot10^b}{1000}\]</span></p>
 <p>The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. The value of ‘<span class="math inline">\(b\)</span>’ is unchanged, and can be used directly in the assessment. The 2017 Yellowtail Rockfish assessment used units of trillions of fish by substituting 1e9 for the 1e3 in the equation above.</p>
 <p>The <a href="https://github.com/r4ss/r4ss">{r4ss}</a> figures in the “Bio” tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship.</p>
 </section>
-<section id="modeling-selectivity" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="modeling-selectivity"><span class="header-section-number">2.6</span> Modeling selectivity</h2>
+<section id="modeling-selectivity" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="modeling-selectivity"><span class="header-section-number">2.7</span> Modeling selectivity</h2>
 <p>There was a CAPAM workshop on selectivity in 2013. Report, presentations, and recordings are available at <a href="http://www.capamresearch.org/current-projects/selectivity">here</a> and the associated Fisheries Research special issue is <a href="https://www.sciencedirect.com/journal/fisheries-research/vol/158/suppl/C">here</a>.</p>
-<section id="conceptual-reasoning-for-using-different-approaches-to-selectivity" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="conceptual-reasoning-for-using-different-approaches-to-selectivity"><span class="header-section-number">2.6.1</span> Conceptual reasoning for using different approaches to selectivity</h3>
+<section id="conceptual-reasoning-for-using-different-approaches-to-selectivity" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="conceptual-reasoning-for-using-different-approaches-to-selectivity"><span class="header-section-number">2.7.1</span> Conceptual reasoning for using different approaches to selectivity</h3>
 <p><strong>The following set of circumstances might cause selectivity to be dome-shaped:</strong></p>
 <ol type="1">
 <li><p>Contact selectivity causing older fish to outswim the trawl, or escape the gillnet/hooks</p></li>
@@ -246,8 +251,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>It prevents the estimation of a large amounts of cryptic biomass</p></li>
 </ol>
 </section>
-<section id="general-advice-on-selectivity-in-ss3" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="general-advice-on-selectivity-in-ss3"><span class="header-section-number">2.6.2</span> General advice on selectivity in SS3</h3>
+<section id="general-advice-on-selectivity-in-ss3" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="general-advice-on-selectivity-in-ss3"><span class="header-section-number">2.7.2</span> General advice on selectivity in SS3</h3>
 <ol type="1">
 <li><p>Start with a functional form that is commonly used (double normal)</p></li>
 <li><p>Find some initial values using either the Excel spreadsheets or the <a href="https://github.com/r4ss/r4ss">{r4ss}</a> widgets</p></li>
@@ -256,8 +261,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Set the PHASE for as many parameters to negative values as possible so that you start with estimating relatively few parameters (such as parameters 1 and 3 of the double normal, which control the peak and ascending slope).</p></li>
 </ol>
 </section>
-<section id="guidelines-for-ss3-double-normal-initial-setup" class="level3" data-number="2.6.3">
-<h3 data-number="2.6.3" class="anchored" data-anchor-id="guidelines-for-ss3-double-normal-initial-setup"><span class="header-section-number">2.6.3</span> Guidelines for SS3 double normal initial setup</h3>
+<section id="guidelines-for-ss3-double-normal-initial-setup" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="guidelines-for-ss3-double-normal-initial-setup"><span class="header-section-number">2.7.3</span> Guidelines for SS3 double normal initial setup</h3>
 <ul>
 <li><p>Fix parameters 5 and 6 (negative phase).</p>
 <ul>
@@ -277,8 +282,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="modeling-recruitment-deviations" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="modeling-recruitment-deviations"><span class="header-section-number">2.7</span> Modeling recruitment deviations</h2>
+<section id="modeling-recruitment-deviations" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="modeling-recruitment-deviations"><span class="header-section-number">2.8</span> Modeling recruitment deviations</h2>
 <ol type="1">
 <li><p>Choices to be made:</p>
 <ol type="a">
@@ -315,8 +320,8 @@ ul.task-list li input[type="checkbox"] {
 </ol></li>
 </ol>
 </section>
-<section id="rockfish-steepness-profile" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="rockfish-steepness-profile"><span class="header-section-number">2.8</span> Rockfish steepness profile</h2>
+<section id="rockfish-steepness-profile" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="rockfish-steepness-profile"><span class="header-section-number">2.9</span> Rockfish steepness profile</h2>
 <p>Up until the 2019 assessment cycle, a meta-analysis approach was used to develop a prior for steepness for West Coast rockfish species. This method was originally developed to develop this prior by Martin Dorn in 2007, and updated by Dorn in 2009/2011. It was then revised and recoded by James Thorson, who updated it in 2013/2015/2017, with Chantel Wetzel conducting the update in 2019. When the meta-analysis was updated post the 2017 assessment cycle, the estimated mean from the prior distribution was considered unreasonably high, particularly for rockfish species, and the new prior was not approved by the SSC for use in future West Coast rockfish assessments. In the instance that the SSC does not approve a new estimate (or methodology), the approved approach reverts to the previous approved estimate. In this instance that is the prior estimated for use in the 2017 assessment cycle of a mean = 0.72 with a standard deviation of 0.158.</p>
 <p>Below is detailed information regarding the meta-analysis approach applied between 2007 - 2017:</p>
 <ul>
