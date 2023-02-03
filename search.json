@@ -74,7 +74,7 @@
     "href": "02-model-choices.html#length-weight-relationships",
     "title": "2  Modeling choices, notes and best practices",
     "section": "2.3 Length-weight relationships",
-    "text": "2.3 Length-weight relationships\nUse the (getWLpars()) function in {PacFIN.Utilities} which provides estimates for the parameters required by Stock Synthesis. It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally."
+    "text": "2.3 Length-weight relationships\nUse the getWLpars() function in {PacFIN.Utilities} which provides estimates for the parameters required by Stock Synthesis. It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally."
   },
   {
     "objectID": "02-model-choices.html#estimating-ageing-error",
