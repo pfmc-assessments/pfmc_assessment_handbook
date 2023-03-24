@@ -78,7 +78,7 @@ Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://
 
 1.  Triennial Survey (1980--1992 & 1995--2004)
 
-    a.  early triennial (1980--1992, 55-366m, north of 36.5)
+    a.  early triennial (1980--1992, 55-366m, north of 36.5 (however the switch to north of 34.5 actually occurred in 1989))
 
     b.  late triennial (1995--2004, 55-500m, north of 34.5)
 
