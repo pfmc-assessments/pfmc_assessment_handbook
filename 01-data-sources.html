@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -68,11 +68,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data sources: notes, contact information, and links</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-data-sources.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data sources: notes, contact information, and links</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -80,68 +85,77 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Unofficial NWFSC and SWFSC Groundfish Stock Assessment Handbook</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-data-sources.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data sources: notes, contact information, and links</span></a>
+  <a href="./01-data-sources.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data sources: notes, contact information, and links</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-model-choices.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modeling choices, notes and best practices</span></a>
+  <a href="./02-model-choices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modeling choices, notes and best practices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-stock-synthesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Running Stock Synthesis</span></a>
+  <a href="./03-stock-synthesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Running Stock Synthesis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-post-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">So you ran an assessment model, more notes and best practices</span></a>
+  <a href="./04-post-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">So you ran an assessment model, more notes and best practices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-other.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Other useful tidbits</span></a>
+  <a href="./05-other.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Other useful tidbits</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-a.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Species seen* in the hake fishery</span></a>
+  <a href="./appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Species seen* in the hake fishery</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-b.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Alaska Center CRUISEJOINS for shelf and slope surveys</span></a>
+  <a href="./appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Alaska Center CRUISEJOINS for shelf and slope surveys</span></span></a>
   </div>
 </li>
       </ul>
@@ -149,39 +163,40 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#table-of-contacts" id="toc-table-of-contacts" class="nav-link active" data-scroll-target="#table-of-contacts"><span class="toc-section-number">1.1</span>  Table of contacts</a></li>
-  <li><a href="#requesting-data-from-state-partners" id="toc-requesting-data-from-state-partners" class="nav-link" data-scroll-target="#requesting-data-from-state-partners"><span class="toc-section-number">1.2</span>  Requesting data from State partners</a></li>
-  <li><a href="#regulations-and-catch-limits" id="toc-regulations-and-catch-limits" class="nav-link" data-scroll-target="#regulations-and-catch-limits"><span class="toc-section-number">1.3</span>  Regulations and catch limits</a></li>
-  <li><a href="#catch-data-lengths-ages-etc." id="toc-catch-data-lengths-ages-etc." class="nav-link" data-scroll-target="#catch-data-lengths-ages-etc."><span class="toc-section-number">1.4</span>  Catch data, lengths, ages, etc.</a>
+  <li><a href="#table-of-contacts" id="toc-table-of-contacts" class="nav-link active" data-scroll-target="#table-of-contacts"><span class="header-section-number">1.1</span> Table of contacts</a></li>
+  <li><a href="#requesting-data-from-state-partners" id="toc-requesting-data-from-state-partners" class="nav-link" data-scroll-target="#requesting-data-from-state-partners"><span class="header-section-number">1.2</span> Requesting data from State partners</a></li>
+  <li><a href="#regulations-and-catch-limits" id="toc-regulations-and-catch-limits" class="nav-link" data-scroll-target="#regulations-and-catch-limits"><span class="header-section-number">1.3</span> Regulations and catch limits</a></li>
+  <li><a href="#catch-data-lengths-ages-etc." id="toc-catch-data-lengths-ages-etc." class="nav-link" data-scroll-target="#catch-data-lengths-ages-etc."><span class="header-section-number">1.4</span> Catch data, lengths, ages, etc.</a>
   <ul class="collapse">
-  <li><a href="#west-coast-groundfish-observer-program-wcgop" id="toc-west-coast-groundfish-observer-program-wcgop" class="nav-link" data-scroll-target="#west-coast-groundfish-observer-program-wcgop"><span class="toc-section-number">1.4.1</span>  West Coast Groundfish Observer Program (WCGOP)</a></li>
-  <li><a href="#at-sea-hake-observer-program-ashop" id="toc-at-sea-hake-observer-program-ashop" class="nav-link" data-scroll-target="#at-sea-hake-observer-program-ashop"><span class="toc-section-number">1.4.2</span>  At-Sea Hake Observer Program (ASHOP)</a></li>
-  <li><a href="#pacfin-biological-data-bds" id="toc-pacfin-biological-data-bds" class="nav-link" data-scroll-target="#pacfin-biological-data-bds"><span class="toc-section-number">1.4.3</span>  PacFIN biological data (BDS)</a></li>
-  <li><a href="#pacfin-landings" id="toc-pacfin-landings" class="nav-link" data-scroll-target="#pacfin-landings"><span class="toc-section-number">1.4.4</span>  PacFIN landings</a></li>
-  <li><a href="#recfin" id="toc-recfin" class="nav-link" data-scroll-target="#recfin"><span class="toc-section-number">1.4.5</span>  RecFIN</a></li>
-  <li><a href="#research-catch" id="toc-research-catch" class="nav-link" data-scroll-target="#research-catch"><span class="toc-section-number">1.4.6</span>  Research catch</a></li>
+  <li><a href="#west-coast-groundfish-observer-program-wcgop" id="toc-west-coast-groundfish-observer-program-wcgop" class="nav-link" data-scroll-target="#west-coast-groundfish-observer-program-wcgop"><span class="header-section-number">1.4.1</span> West Coast Groundfish Observer Program (WCGOP)</a></li>
+  <li><a href="#at-sea-hake-observer-program-ashop" id="toc-at-sea-hake-observer-program-ashop" class="nav-link" data-scroll-target="#at-sea-hake-observer-program-ashop"><span class="header-section-number">1.4.2</span> At-Sea Hake Observer Program (ASHOP)</a></li>
+  <li><a href="#pacfin-biological-data-bds" id="toc-pacfin-biological-data-bds" class="nav-link" data-scroll-target="#pacfin-biological-data-bds"><span class="header-section-number">1.4.3</span> PacFIN biological data (BDS)</a></li>
+  <li><a href="#pacfin-landings" id="toc-pacfin-landings" class="nav-link" data-scroll-target="#pacfin-landings"><span class="header-section-number">1.4.4</span> PacFIN landings</a></li>
+  <li><a href="#recfin" id="toc-recfin" class="nav-link" data-scroll-target="#recfin"><span class="header-section-number">1.4.5</span> RecFIN</a></li>
+  <li><a href="#research-catch" id="toc-research-catch" class="nav-link" data-scroll-target="#research-catch"><span class="header-section-number">1.4.6</span> Research catch</a></li>
   </ul></li>
-  <li><a href="#indices-of-abundance" id="toc-indices-of-abundance" class="nav-link" data-scroll-target="#indices-of-abundance"><span class="toc-section-number">1.5</span>  Indices of abundance</a></li>
-  <li><a href="#summary-of-noaa-fishery-independent-trawl-surveys-used-for-west-coast-assessments" id="toc-summary-of-noaa-fishery-independent-trawl-surveys-used-for-west-coast-assessments" class="nav-link" data-scroll-target="#summary-of-noaa-fishery-independent-trawl-surveys-used-for-west-coast-assessments"><span class="toc-section-number">1.6</span>  Summary of NOAA fishery independent trawl surveys used for west coast assessments</a>
+  <li><a href="#indices-of-abundance" id="toc-indices-of-abundance" class="nav-link" data-scroll-target="#indices-of-abundance"><span class="header-section-number">1.5</span> Indices of abundance</a></li>
+  <li><a href="#summary-of-noaa-fishery-independent-trawl-surveys-used-for-west-coast-assessments" id="toc-summary-of-noaa-fishery-independent-trawl-surveys-used-for-west-coast-assessments" class="nav-link" data-scroll-target="#summary-of-noaa-fishery-independent-trawl-surveys-used-for-west-coast-assessments"><span class="header-section-number">1.6</span> Summary of NOAA fishery independent trawl surveys used for west coast assessments</a>
   <ul class="collapse">
-  <li><a href="#afsc-surveys" id="toc-afsc-surveys" class="nav-link" data-scroll-target="#afsc-surveys"><span class="toc-section-number">1.6.1</span>  AFSC surveys</a></li>
-  <li><a href="#nwfsc-survey-indices" id="toc-nwfsc-survey-indices" class="nav-link" data-scroll-target="#nwfsc-survey-indices"><span class="toc-section-number">1.6.2</span>  NWFSC Survey Indices</a></li>
-  <li><a href="#nwfsc-survey-length-and-age-compositions" id="toc-nwfsc-survey-length-and-age-compositions" class="nav-link" data-scroll-target="#nwfsc-survey-length-and-age-compositions"><span class="toc-section-number">1.6.3</span>  NWFSC Survey Length and Age Compositions</a></li>
-  <li><a href="#iphc-survey" id="toc-iphc-survey" class="nav-link" data-scroll-target="#iphc-survey"><span class="toc-section-number">1.6.4</span>  IPHC survey</a></li>
-  <li><a href="#oregon-recreational-observer-program-data" id="toc-oregon-recreational-observer-program-data" class="nav-link" data-scroll-target="#oregon-recreational-observer-program-data"><span class="toc-section-number">1.6.5</span>  Oregon recreational observer program data</a></li>
+  <li><a href="#afsc-surveys" id="toc-afsc-surveys" class="nav-link" data-scroll-target="#afsc-surveys"><span class="header-section-number">1.6.1</span> AFSC surveys</a></li>
+  <li><a href="#nwfsc-survey-indices" id="toc-nwfsc-survey-indices" class="nav-link" data-scroll-target="#nwfsc-survey-indices"><span class="header-section-number">1.6.2</span> NWFSC Survey Indices</a></li>
+  <li><a href="#nwfsc-survey-length-and-age-compositions" id="toc-nwfsc-survey-length-and-age-compositions" class="nav-link" data-scroll-target="#nwfsc-survey-length-and-age-compositions"><span class="header-section-number">1.6.3</span> NWFSC Survey Length and Age Compositions</a></li>
+  <li><a href="#iphc-survey" id="toc-iphc-survey" class="nav-link" data-scroll-target="#iphc-survey"><span class="header-section-number">1.6.4</span> IPHC survey</a></li>
+  <li><a href="#oregon-recreational-observer-program-data" id="toc-oregon-recreational-observer-program-data" class="nav-link" data-scroll-target="#oregon-recreational-observer-program-data"><span class="header-section-number">1.6.5</span> Oregon recreational observer program data</a></li>
   </ul></li>
-  <li><a href="#notes-and-best-practices-for-observer-data-and-discards" id="toc-notes-and-best-practices-for-observer-data-and-discards" class="nav-link" data-scroll-target="#notes-and-best-practices-for-observer-data-and-discards"><span class="toc-section-number">1.7</span>  Notes and best practices for observer data and discards</a>
+  <li><a href="#notes-and-best-practices-for-observer-data-and-discards" id="toc-notes-and-best-practices-for-observer-data-and-discards" class="nav-link" data-scroll-target="#notes-and-best-practices-for-observer-data-and-discards"><span class="header-section-number">1.7</span> Notes and best practices for observer data and discards</a>
   <ul class="collapse">
-  <li><a href="#what-are-the-wcgop-data" id="toc-what-are-the-wcgop-data" class="nav-link" data-scroll-target="#what-are-the-wcgop-data"><span class="toc-section-number">1.7.1</span>  What are the WCGOP data?</a></li>
-  <li><a href="#bootstrapping" id="toc-bootstrapping" class="nav-link" data-scroll-target="#bootstrapping"><span class="toc-section-number">1.7.2</span>  Bootstrapping</a></li>
-  <li><a href="#requesting-discard-data" id="toc-requesting-discard-data" class="nav-link" data-scroll-target="#requesting-discard-data"><span class="toc-section-number">1.7.3</span>  Requesting discard data</a></li>
-  <li><a href="#discard-rates-and-length-comps-from-the-pikitch-et-al.-discard-study-1985-87-and-mesh-study-1988-90-databases" id="toc-discard-rates-and-length-comps-from-the-pikitch-et-al.-discard-study-1985-87-and-mesh-study-1988-90-databases" class="nav-link" data-scroll-target="#discard-rates-and-length-comps-from-the-pikitch-et-al.-discard-study-1985-87-and-mesh-study-1988-90-databases"><span class="toc-section-number">1.7.4</span>  Discard rates, and length comps, from the Pikitch et al.&nbsp;Discard Study (1985-87) and Mesh Study (1988-90) databases</a></li>
+  <li><a href="#what-are-the-wcgop-data" id="toc-what-are-the-wcgop-data" class="nav-link" data-scroll-target="#what-are-the-wcgop-data"><span class="header-section-number">1.7.1</span> What are the WCGOP data?</a></li>
+  <li><a href="#bootstrapping" id="toc-bootstrapping" class="nav-link" data-scroll-target="#bootstrapping"><span class="header-section-number">1.7.2</span> Bootstrapping</a></li>
+  <li><a href="#requesting-discard-data" id="toc-requesting-discard-data" class="nav-link" data-scroll-target="#requesting-discard-data"><span class="header-section-number">1.7.3</span> Requesting discard data</a></li>
+  <li><a href="#discard-rates-and-length-comps-from-the-pikitch-et-al.-discard-study-1985-87-and-mesh-study-1988-90-databases" id="toc-discard-rates-and-length-comps-from-the-pikitch-et-al.-discard-study-1985-87-and-mesh-study-1988-90-databases" class="nav-link" data-scroll-target="#discard-rates-and-length-comps-from-the-pikitch-et-al.-discard-study-1985-87-and-mesh-study-1988-90-databases"><span class="header-section-number">1.7.4</span> Discard rates, and length comps, from the Pikitch et al.&nbsp;Discard Study (1985-87) and Mesh Study (1988-90) databases</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/edit/main/01-data-sources.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -191,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data sources: notes, contact information, and links</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data sources: notes, contact information, and links</span></h1>
 </div>
 
 
@@ -413,9 +428,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -480,6 +509,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
