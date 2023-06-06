@@ -136,7 +136,7 @@ There was a CAPAM workshop on selectivity in 2013. Report, presentations, and re
 
         ii. Tune $\sigma_R$ to match the observed variability in recruitment deviations. $$ {\sigma_R}^2 = \text{sd}(r')^2 $$ **Performed less well.**
 
-        iii. Tune $\sigma_R$ so that $${\sigma_R}^2 = \text{sd}(r')2 + \text{mean}(\text{SE}(r'))^2$$ where $\text{sd}(r')$ is the standard deviation of the vector of estimated recruitments over a range of years that seem reasonably well informed by the data, and $\text{mean}(\text{SE}(r'))$ is the mean of the estimated variability of those values. **Performed best.**
+        iii. Tune $\sigma_R$ so that $${\sigma_R}^2 = \text{sd}(r')^2 + \text{mean}(\text{SE}(r'))^2$$ where $\text{sd}(r')$ is the standard deviation of the vector of estimated recruitments over a range of years that seem reasonably well informed by the data, and $\text{mean}(\text{SE}(r'))$ is the mean of the estimated variability of those values. **Performed best.**
 
 5.  MCMC
 
