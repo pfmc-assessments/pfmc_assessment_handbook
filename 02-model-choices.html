@@ -216,15 +216,15 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Choice 1, Population length bins:</strong> should extend beyond something like the 97.5% quantile of the length at age distribution for the largest age (easy to add more bins to see if it makes any difference).</p>
 <p><strong>Choice 2, Max age:</strong> should be large enough for growth to be asymptotic, and at least as big as the largest data age bins. It’s easy to test the impact of changing to different value, just requires updating ageing error matrices. Look at the stable age-distribution plot and examine the number of fish in the plus group. Additionally, the period of time when data are available (after extensive exploitation), the data plus group may be lower.</p>
 <p><strong>Choice 3, Data length bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. We should check to make sure that the selection of length and age bins are consistent with each other. Typically, we often have max length bins where there are only a few fish, but a larger proportion of data in the data age plus group.</p>
-<p><strong>Choice 4, Data age bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered “data mining”. Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e.&nbsp;5%). Also, add a warning to <a href="https://github.com/r4ss/r4ss">{r4ss}</a> about the percentage in the population and data plus groups.</p>
+<p><strong>Choice 4, Data age bins</strong> should probably be big enough that the plus group doesn’t have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered ``data mining’’. Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e., 5%). Also, add a warning to <a href="https://github.com/r4ss/r4ss">{r4ss}</a> about the percentage in the population and data plus groups.</p>
 </section>
 <section id="determining-prior-for-natural-mortality" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="determining-prior-for-natural-mortality"><span class="header-section-number">2.2</span> Determining prior for natural mortality</h2>
-<p>Owen’s Advice on M; July 6, 2022</p>
+<p>Owen’s Advice on <span class="math inline">\(M\)</span>; July 6, 2022</p>
 <ol type="1">
 <li><p>I prefer using age data alone to estimate the natural mortality rate (see accompanying document: M2017_for_Methods_Review_Hamel; Hamel and Cope (in review)), except in cases where getting a reasonable estimate of the maximum age is problematic.</p></li>
 <li><p>The age based prior is simply: <span class="math display">\[\text{lognormal}(\ln(5.4/\text{max age}), 0.31).\]</span></p></li>
-<li><p>The fixed value for M if not estimating is even more simply the median of that prior: <span class="math display">\[M = 5.4/\text{max age}\]</span></p></li>
+<li><p>The fixed value for <span class="math inline">\(M\)</span> if not estimating is even more simply the median of that prior: <span class="math display">\[M = 5.4/\text{max age}\]</span></p></li>
 <li><p>Can explore a range approaches for M estimates and priors <a href="http://barefootecologist.com.au/shiny_m">here</a>; reference is Cope and Hamel, in press.</p></li>
 </ol>
 </section>
@@ -239,17 +239,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="maturity" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="maturity"><span class="header-section-number">2.5</span> Maturity</h2>
 <p>Talk to Melissa Head about maturity. In 2017, she provided estimated maturity curves based on samples from the NWFSC survey for many species.</p>
-<p>Data from the NWFSC survey on maturity includes a column indicating mature or immature and another indicating spawning and not spawning. The latter considers all “mature” fish with over 25% atresia as not spawning (along with all immature fish). The spawning/not spawning column is the one we commonly use to estimate the maturity curve since that is really what we care about. In some cases a simple logistic will fit, but if there is much skip spawning/atresia for older/larger females, a logistic type curve which asymptotes to a lower value or a non-parametric fit is more appropriate. A column with percent atresia is also provided if you with to use a percentage other than 25% for the cutoff. Finally, the mature/immature column can be used instead if the atresia/skip spawning is taken into account in specifying the fecundity relationship.</p>
+<p>Data from the NWFSC survey on maturity includes a column indicating mature or immature and another indicating spawning and not spawning. The latter considers all ``mature’’ fish with over 25% atresia as not spawning (along with all immature fish). The spawning/not spawning column is the one we commonly use to estimate the maturity curve since that is really what we care about. In some cases a simple logistic will fit, but if there is much skip spawning/atresia for older/larger females, a logistic type curve which asymptotes to a lower value or a non-parametric fit is more appropriate. A column with percent atresia is also provided if you with to use a percentage other than 25% for the cutoff. Finally, the mature/immature column can be used instead if the atresia/skip spawning is taken into account in specifying the fecundity relationship.</p>
 <p>An additional column has been added to the NWFSC survey table indicating uncertainty in the designation. This can be used to weight or exclude data.</p>
 <p>Note: John Field has expressed concern that we are too focused on recent samples from the NWFSC survey, so if you aren’t going to include samples from past collections, think about a justification for that choice.</p>
 </section>
 <section id="fecundity" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="fecundity"><span class="header-section-number">2.6</span> Fecundity</h2>
-<p>Dick et al.&nbsp;2017 (http://www.sciencedirect.com/science/article/pii/S0165783616303745) has estimates for the <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> parameters in the functional form <span class="math inline">\(F = aL^b\)</span> for many rockfish. The estimates are based on length in mm and predicted number of eggs, fitted in log-space. If you use length in cm (like in SS3), and don’t want huge SSB values (eggs), you can convert the values in the paper to units of cm and millions of eggs. First, find the values “<span class="math inline">\(\exp(a)\)</span>” (referred to as <span class="math inline">\(a'\)</span> below) and “<span class="math inline">\(b\)</span>” from Table 6 in Dick et al.&nbsp;for your species (or subgenus, if no estimate for your species is reported). If your subgenus is not reported, you can use the “Sebastes” values.</p>
-<p>The correct value of the “<span class="math inline">\(a\)</span>” parameter (<span class="math inline">\(F=aL^b\)</span>) for length in cm and fecundity in millions of eggs is:</p>
-<p><span class="math display">\[a = \frac{a’\cdot10^b}{1000}\]</span></p>
-<p>The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. The value of ‘<span class="math inline">\(b\)</span>’ is unchanged, and can be used directly in the assessment. The 2017 Yellowtail Rockfish assessment used units of trillions of fish by substituting 1e9 for the 1e3 in the equation above.</p>
-<p>The <a href="https://github.com/r4ss/r4ss">{r4ss}</a> figures in the “Bio” tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship.</p>
+<p><a href="http://www.sciencedirect.com/science/article/pii/S0165783616303745">Dick et al.&nbsp;(2017)</a> has estimates for the <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> parameters in the functional form <span class="math inline">\(F = aL^b\)</span> for many rockfish. The estimates are based on length in mm and predicted number of eggs, fitted in log-space. If you use length in cm (like in SS3), and don’t want huge spawning biomass values (eggs), you can convert the values in the paper to units of cm and millions of eggs. First, find the values <code>$\exp(a)$'' (referred to as $a'$ below) and</code><span class="math inline">\(b\)</span>’’ from Table 6 in Dick et al.&nbsp;for your species (or subgenus, if no estimate for your species is reported). If your subgenus is not reported, you can use the ``<em>Sebastes</em>’’ values.</p>
+<p>The correct value of the ``<span class="math inline">\(a\)</span>’’ parameter (<span class="math inline">\(F=aL^b\)</span>) for length in cm and fecundity in millions of eggs is:</p>
+<p><span class="math display">\[a = \frac{a'\cdot10^b}{1000}\]</span></p>
+<p>The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. The value of <span class="math inline">\(b\)</span> is unchanged, and can be used directly in the assessment. The 2017 Yellowtail Rockfish assessment used units of trillions of fish by substituting 1e9 for the 1e3 in the equation above.</p>
+<p>The <a href="https://github.com/r4ss/r4ss">{r4ss}</a> figures in the ``Bio’’ tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship.</p>
 </section>
 <section id="modeling-selectivity" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="modeling-selectivity"><span class="header-section-number">2.7</span> Modeling selectivity</h2>
@@ -306,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
 <ol type="a">
 <li><p>allow recruitment deviations or not?</p></li>
 <li><p>range of years?</p></li>
-<li><p>breaking into “early”, “main”, “late” vectors?</p>
+<li><p>breaking into <code>early'',</code>main’‘, ``late’’ vectors?</p>
 <ol type="i">
 <li>early and late vectors are intended to add uncertainty to the model for years with little or no data with information about recruitment</li>
 </ol></li>
@@ -344,9 +344,9 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>The method is fully described in <a href="https://doi.org/10.1016/j.fishres.2018.03.014">Thorson, Dorn, and Hamel (2018) Fisheries Research</a></p></li>
 <li><p>The method can be replicated for any data set 2007/2009/2011/2013/2015/2017 using R package <a href="https://github.com/James-Thorson/SebastesSteepness">{SebastesSteepness}</a></p></li>
-<li><p>The rationale for excluding a species when developing a prior for a given focal species (termed “Type-C” meta-analysis) is explained <a href="http://www.nrcresearchpress.com/doi/abs/10.1139/f04-245">in this paper</a></p>
+<li><p>The rationale for excluding a species when developing a prior for a given focal species (termed ``Type-C’’ meta-analysis) is explained <a href="http://www.nrcresearchpress.com/doi/abs/10.1139/f04-245">in this paper</a></p>
 <ul>
-<li>If you are assessing any of the following species you will need to obtain a “Type-C” prior: aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north</li>
+<li>If you are assessing any of the following species you will need to obtain a Type-C prior: aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north</li>
 </ul></li>
 <li><p>The estimated prior by year was as follows:</p>
 <ul>
