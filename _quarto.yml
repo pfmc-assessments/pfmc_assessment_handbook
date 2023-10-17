@@ -17,6 +17,7 @@ book:
     - 03-stock-synthesis.qmd
     - 04-post-model.qmd
     - 05-other.qmd
+    - cloud-computing.qmd
   appendices:
     - appendix-a.qmd
     - appendix-b.qmd
