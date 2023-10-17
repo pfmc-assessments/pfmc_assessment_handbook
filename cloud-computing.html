@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unofficial NWFSC and SWFSC Groundfish Stock Assessment Handbook - 4&nbsp; So you ran an assessment model, more notes and best practices</title>
+<title>Unofficial NWFSC and SWFSC Groundfish Stock Assessment Handbook - 6&nbsp; Cloud computing: jittering a stock assessment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05-other.html" rel="next">
-<link href="./03-stock-synthesis.html" rel="prev">
+<link href="./appendix-a.html" rel="next">
+<link href="./05-other.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -62,8 +62,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -76,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-post-model.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">So you ran an assessment model, more notes and best practices</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cloud-computing.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Cloud computing: jittering a stock assessment</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -130,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-post-model.html" class="sidebar-item-text sidebar-link active">
+  <a href="./04-post-model.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">So you ran an assessment model, more notes and best practices</span></span></a>
   </div>
 </li>
@@ -142,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cloud-computing.html" class="sidebar-item-text sidebar-link">
+  <a href="./cloud-computing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Cloud computing: jittering a stock assessment</span></span></a>
   </div>
 </li>
@@ -179,19 +177,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#retrospectives" id="toc-retrospectives" class="nav-link active" data-scroll-target="#retrospectives"><span class="header-section-number">4.1</span> Retrospectives</a></li>
-  <li><a href="#conducting-a-rebuilding-analysis-aka-puntalyzer" id="toc-conducting-a-rebuilding-analysis-aka-puntalyzer" class="nav-link" data-scroll-target="#conducting-a-rebuilding-analysis-aka-puntalyzer"><span class="header-section-number">4.2</span> Conducting a rebuilding analysis (aka Puntalyzer)</a></li>
-  <li><a href="#r4ss" id="toc-r4ss" class="nav-link" data-scroll-target="#r4ss"><span class="header-section-number">4.3</span> <code>r4ss</code></a></li>
-  <li><a href="#writing-assessment-documents" id="toc-writing-assessment-documents" class="nav-link" data-scroll-target="#writing-assessment-documents"><span class="header-section-number">4.4</span> Writing assessment documents</a></li>
+  <li><a href="#pick-a-vm" id="toc-pick-a-vm" class="nav-link active" data-scroll-target="#pick-a-vm"><span class="header-section-number">6.1</span> Pick a VM</a></li>
+  <li><a href="#connect-to-your-vm" id="toc-connect-to-your-vm" class="nav-link" data-scroll-target="#connect-to-your-vm"><span class="header-section-number">6.2</span> Connect to your VM</a></li>
+  <li><a href="#install-software" id="toc-install-software" class="nav-link" data-scroll-target="#install-software"><span class="header-section-number">6.3</span> Install software</a></li>
+  <li><a href="#connect-to-rstudio" id="toc-connect-to-rstudio" class="nav-link" data-scroll-target="#connect-to-rstudio"><span class="header-section-number">6.4</span> Connect to Rstudio</a>
+  <ul class="collapse">
+  <li><a href="#a-note-on-rstudio" id="toc-a-note-on-rstudio" class="nav-link" data-scroll-target="#a-note-on-rstudio"><span class="header-section-number">6.4.1</span> A note on Rstudio</a></li>
+  </ul></li>
+  <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages"><span class="header-section-number">6.5</span> Install packages</a></li>
+  <li><a href="#move-files" id="toc-move-files" class="nav-link" data-scroll-target="#move-files"><span class="header-section-number">6.6</span> Move files</a>
+  <ul class="collapse">
+  <li><a href="#other-file-transfer-methods-that-you-might-consider" id="toc-other-file-transfer-methods-that-you-might-consider" class="nav-link" data-scroll-target="#other-file-transfer-methods-that-you-might-consider"><span class="header-section-number">6.6.1</span> Other file transfer methods that you might consider</a></li>
+  </ul></li>
+  <li><a href="#make-sure-you-log-off-your-vm" id="toc-make-sure-you-log-off-your-vm" class="nav-link" data-scroll-target="#make-sure-you-log-off-your-vm"><span class="header-section-number">6.7</span> Make sure you log off your VM!!!</a></li>
+  <li><a href="#some-thoughts" id="toc-some-thoughts" class="nav-link" data-scroll-target="#some-thoughts"><span class="header-section-number">6.8</span> Some thoughts</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/edit/main/04-post-model.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/edit/main/cloud-computing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">So you ran an assessment model, more notes and best practices</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Cloud computing: jittering a stock assessment</span></h1>
 </div>
 
 
@@ -206,60 +214,114 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="retrospectives" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="retrospectives"><span class="header-section-number">4.1</span> Retrospectives</h2>
+<p>This is the path that I (Kiva) figured out and it worked for me. I am not an expert on computers, cloud computing, or computer security, so if you find yourself thinking “huh, why is she recommending that and not this,” there is probably not a very good reason! In other words, please let me know if you think this could be improved.</p>
+<section id="pick-a-vm" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="pick-a-vm"><span class="header-section-number">6.1</span> Pick a VM</h2>
 <ol type="1">
-<li><p>Retrospective analysis is a way to assess whether something is inconsistent in data or model assumptions. A retrospective pattern can arise from changes in catch, M, q, selectivity, or growth from that which is in the model. It is primarily an exploratory/diagnostic tool, though see point 4 below.</p></li>
-<li><p>See the 11/17/2021 <a href="https://docs.google.com/presentation/d/1ZfW1-d6x-lzhxLZpYQhlIAFuAW8ij_e5oEEV0ujwP5A/edit#slide=id.gf83411298e_0_18">PEP team meeting presentation</a> for background information and past publications on retrospective analysis</p></li>
-<li><p>PEP’s approach is to apply:</p>
-<ol type="a">
-<li><p>5 years of peels (based on findings from Miller and Legault 2017),</p></li>
-<li><p>using the alternative Mohn’s rho (Mohn’s rho averaged over peels - the AFSC_Hurtado term from <code>r4ss::SSmohnsrho</code>),</p></li>
-<li><p>for depletion, biomass, fishing mortality, and recruitment. Often biomass, depletion, and recruitment are provided in assessment reports</p></li>
+<li>You’ll need an NMFS Azure account. Contact <a href="mailto:christine.stawitz@noaa.gov">Christine Stawitz</a> to get one.</li>
+<li>Log in.</li>
+<li>Click on Virtual machines -&gt; Create. I think the preset configurations are helpful.</li>
+<li>I’ve been using the D-series</li>
+<li>Give it a name. Other settings I changed from defaults:
+<ol type="1">
+<li>Size. Decide how many CPUs (cores) you want. This sets how many stock assessments can be run concurrently.</li>
+<li>Under networking, add HTTP (80) and HTTPS (443) to the inbound ports. Ignore the warning.</li>
 </ol></li>
+<li>Once you get to the end of all of the options, mostly sticking to defaults, click “Create.”</li>
+<li>You’ll need to create a new SSH key for your VM. Once again, just click on the default buttons to keep things advancing, letting the many settings you don’t entirely understand wash over you. (You probably created an SSH key at some point for github.)</li>
 </ol>
-<!-- -->
-<ol start="4" type="1">
-<li><p>Although the east coast uses mohn’s rho to “correct” status indicators or when setting quotas, our practice is not to. This is based on past precedent, and that our fishing history is not as long as it is on the east coast.</p></li>
-<li><p>Hurtado-Ferro et al.&nbsp;(2015) provide a rule of thumb on the significance of mohn’s rho (average over peels) dependent on life history. They suggest a retrospective pattern is not meaningful if <span class="math inline">\(\rho \in (-0.15, 0.2)\)</span> for long lived species and <span class="math inline">\(\rho \in (-0.22, 0.3)\)</span> for short lived species, and note that magnitude of Mohn’s rho not related to true bias in assessment. Miller and Legault (2017) argue that variance of Mohn’s rho is truly needed to ascertain whether an effect is significant.</p></li>
-</ol>
+<p>You’re done! It will take a few moments to get going. If after trying it out you don’t like it, no worries! Most of these settings can be changed on the fly!</p>
+<p>I started out with an 8 core VM. This was twice as many as my laptop, so the gains were not huge. For production purposes, I would probably opt for 16 cores.</p>
 </section>
-<section id="conducting-a-rebuilding-analysis-aka-puntalyzer" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="conducting-a-rebuilding-analysis-aka-puntalyzer"><span class="header-section-number">4.2</span> Conducting a rebuilding analysis (aka Puntalyzer)</h2>
-<p>A rebuilding plan will need to be developed for any species (or stock) that has an GFSC SSC approved stock assessment that estimates the relative spawning biomass to be below the corresponding minimum stock size threshold (0.10 for flatfish and 0.25 for all other groundfish species). A rebuilding analysis is developed using a software program called the “rebuilder” (aka the Puntalyzer) developed and maintained by Andre Punt (<a href="aepunt@uw.edu">aepunt@uw.edu</a>). The program is designed to work with an input rebuilding data file created by Stock Synthesis called “rebuild.dat”. The rebuilder software executable then develops numerous future projections and calculates the probability of rebuilding based on alternative harvest strategies. The RES.CSV created by the rebuilder executable contains all of the resulting estimates of rebuilding (although many quantities are not labeled within the CSV file).</p>
-<p>The rebuilder github repository (<a href="https://github.com/pfmc-assessments/rebuilder">pfmc-assessment/rebuilder</a>) contains the most up-to-date rebuilder executable, the user manual, code tools for processing output, and code examples. This repository should have all the pertinent information to conduct a rebuilding analysis for a species or stock managed by the Pacific Fishery Management Council</p>
+<section id="connect-to-your-vm" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="connect-to-your-vm"><span class="header-section-number">6.2</span> Connect to your VM</h2>
+<p>There are several ways to do this. This is what I do:</p>
+<p>Go to the Azure home portal. Under “Resources” your VM should be there. Click on it. If the “Start” button is blue, click on it. This is sort of like turning on your computer. Creating a new VM will automatically turn it on.</p>
+<p>Click on “Connect.” I use the Native SSH. Copy your SSH key’s file name to step 3 of the Native SSH directions. It is probably something like <code>[VM name]_key.pem</code>. It will give you the SSH command to run; copy it.</p>
+<p>Open up Powershell, Git Bash, or similar. Change the directory (using <code>cd</code>) to wherever you stored your SSH key. If your computer asks if you are sure you want to do this, you bet you are sure.</p>
 </section>
-<section id="r4ss" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="r4ss"><span class="header-section-number">4.3</span> <code>r4ss</code></h2>
+<section id="install-software" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="install-software"><span class="header-section-number">6.3</span> Install software</h2>
+<p>First, install some software you will need for cloud computing by running the following lines in the command line:</p>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install libxml2 libxml2-dev # igraph
+sudo apt-get install libcairo2-dev # Graphics packages
+sudo apt-get install libssl-dev libcurl4-openssl-dev #httr
+sudo apt-get install apache2</code></pre>
+<p>To make sure everything is working, in your browser window, navigate to your VM’s IP address, which you can find in the Azure portal of your browser. You should see…</p>
+<p>Now install R:</p>
+<pre><code>sudo add-apt-repository ppa:marutter/rrutter
+sudo apt update
+sudo apt-get install r-base</code></pre>
+<p>Install Rstudio Server:</p>
+<p>To download the latest version of Rstudio Server, follow the directions <a href="https://posit.co/download/rstudio-server/">here</a>. If you followed the earlier specifications to set up the VM, you should select the operating system “Debian / Ubuntu.” The Ubuntu version that is installed shows up when you first SSH into the VM. For me, it was 20. You’ve already installed R, so scroll down to step 3. It will direct you to run</p>
+<pre><code>sudo apt-get install gdebi-core</code></pre>
+<p>And then a couple more lines specific to the version.</p>
+<p>Christine Stawitz says “If you don’t like RStudio as an IDE, there are other options like Code Server (cloud version of VSCode) or Jupyter notebooks.”</p>
+</section>
+<section id="connect-to-rstudio" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="connect-to-rstudio"><span class="header-section-number">6.4</span> Connect to Rstudio</h2>
+<p>In the Azure portal where you can see the VM settings, in the left bar under “Networking” select “Network settings.” Add an inbound port rule. The destination port rule should be 8787 (the default for Rstudio). Keep everything else as a default. As a test, on your browser, navigate to [VM IP address]:8787. You should see an Rstudio login.</p>
+<p>I’m not sure what the correct login is, so let’s change it. From your VM’s Azure portal in your browser, under “Help,” click on “Reset password.” Click the “reset password” bubble. Pick a username and password.</p>
+<p>Now return to that Rstudio login on your browser. Refresh, and enter your username and password you just chose. It should look just like a normal Rstudio window!</p>
+<p>Ian: I was actually following the directions <a href="https://techcommunity.microsoft.com/t5/educator-developer-blog/hosting-rserver-and-rstudio-on-azure/ba-p/744389">here</a>, and then they got really long and I had something working so I stopped. Christine, independently, said she stopped at the same spot. IT may not like accessing it from the public IP address, but she said she is going to do it this way until she gets in trouble.</p>
+<section id="a-note-on-rstudio" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="a-note-on-rstudio"><span class="header-section-number">6.4.1</span> A note on Rstudio</h3>
+<p>Rstudio cannot parallel process using a “multicore” strategy, only “multisession.” The makes no difference on your Windows laptop, because Windows also does not support multicore parallel processing. However, if you have set up a Linux VM, it is theoretically an option. I do not know if it is faster or how much.</p>
+</section>
+</section>
+<section id="install-packages" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">6.5</span> Install packages</h2>
+<p>Things should be looking more familiar! From the Rstudio (or your favorite IDE) tab in your browser, run:</p>
+<pre><code>install.packages('remotes')
+
+remotes::install_github('r4ss/r4ss')
+
+# Plus any others you want, e.g., nwfscDiag, here, tidyverse, etc.</code></pre>
+</section>
+<section id="move-files" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="move-files"><span class="header-section-number">6.6</span> Move files</h2>
+<p>There are several ways to do this. I am giving you directions for one approach, using Azcopy. To install Azcopy on your VM, run:</p>
+<pre><code>wget https://aka.ms/downloadazcopy-v10-linux
+tar -xvf downloadazcopy-v10-linux
+sudo cp ./azcopy_linux_amd64_*/azcopy /usr/bin/</code></pre>
+<p>Now</p>
 <ol type="1">
-<li><p>The {r4ss} package is available on CRAN but the most up-to-date version can be installed from GitHub. Installation instructions are available <a href="https://github.com/r4ss/r4ss">here</a>.</p></li>
-<li><p>See the intro vignette <a href="https://r4ss.github.io/r4ss/">here</a> for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the <code>r4ss::tune_comps()</code> function.</p></li>
-<li><p>It’s good idea to reinstall it on a regular basis to keep up. You can also watch the github repository if you want to get notifications of changes.</p></li>
-<li><p>Look through all the figures that get produced by <code>r4ss::SS_plots()</code>. There have been cases where models were put forth with incorrect assumptions about biology, ageing error, etc. that could have been caught if the assessment authors had paid attention to all the plots.</p></li>
-<li><p>Remember that the figures can be modified to look better. For instance, you can replace the fleet names in the model with a less abbreviated set of names that will go in the plot labels.</p></li>
-<li><p>If something is not working right, complain about it on the <a href="https://github.com/r4ss/r4ss/issues"><code>r4ss</code> issues list</a>.</p></li>
+<li>In the Azure portal of your browser, create a storage account. Title it whatever you want, maybe your name or the name of the assessment. Default settings should be fine.</li>
+<li>On the left column under “Data storage,” click on “Containers.” Make a new container. Pick a name. Again, default settings are fine.</li>
+<li>Navigate to your new container and on the top bar click on “Upload.” Upload whatever files you want to transfer.</li>
+<li>In the same container, click on “Shared access signature” under “Security + networking.” I gave it all 7 permissions. Give yourself a little flexibility on the start and expiry date/time. I usually just subtract one day from the start and add one day to the end. You can also enter your VM’s IP address if you want.</li>
+<li>Click “Generate SAS token and URL” and copy the text for the Blob SAS URL.</li>
+<li>Back in your VM terminal, run</li>
 </ol>
+<pre><code>sudo azcopy copy "[paste Blob SAS URL]" "." --recursive</code></pre>
+<p>The general syntax is:</p>
+<pre><code>sudo azcopy copy "[copy from]" "[copy to]" --recursive</code></pre>
+<p>The recursive addition is necessary if multiple files are involved. The files should be downloaded into a new folder with the same name as your container!</p>
+<ol start="7" type="1">
+<li>By default, the directory you just created does not have sufficient file permissions to run stock synthesis. To change this type:</li>
+</ol>
+<pre><code>sudo chmod 777 [model_directory]</code></pre>
+<p>If you were transferring a stock assessment model, try running stock synthesis (probably using <code>-nohess</code>) to make sure it is working. To ensure you have the right executable, you can run <code>r4ss::get_ss_exe()</code> from Rstudio (or whatever cloud IDE you are using), and it will automatically download the correct executable to your selected working directory.</p>
+<section id="other-file-transfer-methods-that-you-might-consider" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="other-file-transfer-methods-that-you-might-consider"><span class="header-section-number">6.6.1</span> Other file transfer methods that you might consider</h3>
+<p>You could install git and clone your repo. I did not look into that because repos can get large and take a while to clone. You can easily download model files straight from github without git using <code>wget</code>, but will eventually need to write the results somewhere.</p>
+<p>Another approach is to use the <code>scp</code> command from your local computer and avoid the blob storage and azcopy. I think you would have to open up the appropriate port on your VM. Hem, who uses Azure to run Atlantis, recommended the azcopy approach, so that is what I tried. I have used scp in the past on university computing clusters, and it may be fewer steps for each file transfer. I have no idea whether we can run scp on our federal laptops.</p>
 </section>
-<section id="writing-assessment-documents" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="writing-assessment-documents"><span class="header-section-number">4.4</span> Writing assessment documents</h2>
-<ol type="1">
-<li><p>Read the <a href="https://www.pcouncil.org/documents/2020/05/f-2-attachment-3-draft-revised-terms-of-reference-for-the-groundfish-and-coastal-pelagic-species-stock-assessment-process-for-2021-and-2022.pdf/">terms of reference</a> and actually follow them.</p></li>
-<li><p>See the <a href="https://github.com/pfmc-assessments/sa4ss">{sa4ss}</a> package.</p></li>
-<li><p>If you’re using Word, talk to power users of Word about formatting of section headings, links to figures or tables, etc.. These links save much time when document is updated with sections or elements added or removed.</p></li>
-</ol>
-<!-- -->
-<ol type="a">
-<li>See the Assessment Document Template for a pre-made setup that reflects 2017-18 TORs: <code>\\nwcfile\fram\Assessments\Archives</code> and shared on the <a href="https://drive.google.com/a/noaa.gov/file/d/0B57aOEaukI73UDlNVUVNZTFScWs/view?usp=sharing">Google Drive</a></li>
-</ol>
-<!-- -->
-<ol start="4" type="1">
-<li><p>Use proper dashes and hyphens for readability: <a href="http://cutewriting.blogspot.com/2008/06/en-dash-em-dash-and-hyphen.html">Hyphen, En dash, and Em dash</a></p></li>
-<li><p>Jason says: “It would be really easy to compare results of every assessment we do with the results of the data-poor methods.” He did this for Cabezon in 2009 and thinks we could do it for all our assessments.</p></li>
-<li><p>For Word, consider using Endnote or Zotero to find/organize/insert references. The assessment endnote library is at <code>\\Nwcfile\fram\Assessment\References</code>, but please export references you need and do not link a Word document directly to that library.</p></li>
-<li><p>Make sure that labels on Figures are readable. The best way to get figures produced in R into word is to save them as PNG files. The plotting functions in the R4SS package have an input for resolution that can be increased as needed. The default resolution is higher than what you get if you save the images one by one from the RGUI graphics window.</p></li>
-<li><p>Crop out non-informative headings and labels from figures imported from R4SS or other packages.</p></li>
-<li><p>The council website has a <a href="https://reports.psmfc.org/pacfin/f?p=501:5302:5212201589304:INITIAL::">useful dashboard</a> for information on recent fishery performance, OFLs, ACLs, etc. Go to the “GMT016 - Stock Summary” table and filter by species and area.</p></li>
-</ol>
+</section>
+<section id="make-sure-you-log-off-your-vm" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="make-sure-you-log-off-your-vm"><span class="header-section-number">6.7</span> Make sure you log off your VM!!!</h2>
+<p>Hit “Stop” on the main Azure panel for your VM in your browser. This is akin to shutting down your computer. In general, cloud computing is paid by the minute. The per minute cost is low, but you don’t want to keep it on, e.g., overnight, if you are not using it.</p>
+</section>
+<section id="some-thoughts" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="some-thoughts"><span class="header-section-number">6.8</span> Some thoughts</h2>
+<p>The strongest use case for this in production stock assessments is running jitters. The first time, this requires more active time on your part than running a jitter on your local computer. However, you should get the jitter results faster once it starts running. I ran 8 jitters all at once and it took X min of processing time! Once you set up your VM, you can get back on it whenever you want and your files and settings will be retained, so it is just a matter of transferring files and hitting run.</p>
+<p>Note that {r4ss} is newly set up so that you can run jitters and retrospectives in parallel on your laptop, too! Your laptop just has fewer cores, so you can run fewer models at once. Profiles are not currently set up to run in parallel because it is often useful for convergence purposes to run them sequentially and then use the previous par file as the starter.</p>
+<p>The VM will not run a single stock synthesis model any faster than your laptop. The gains are really in the number of models that you can run simultaneously.</p>
+<p>Another use case for this is if you want to rerun all of your sensitivities on a new (e.g., post-STAR) base model. You could do something like <code>furrr::future_walk(dir_string, r4ss::run)</code>. For research (e.g., simulations, variable selection, cross validation), the use cases are endless!</p>
+<p>I can fumble my way through file management from the command line, but I don’t love it. Normally we all probably think of Rstudio as an environment for writing and executing R code, but it does provide a nice graphical file manager that I have been making use of. You can also open and edit any text file, including all of the inputs and outputs for stock synthesis. (Other IDEs should provide this functionality, too.) Your Ubuntu VM does come with Vim.</p>
+<p>Until June, 2024, my understanding is this is all free. After that, we may need to pay. Christine Stawitz thinks it will be possible to pay for the credits in advance when funds are available, and use the credits whenever we want. (Cloud computing in general definitely works that way. It is possible the federal bureacracy ruins it, like all nice things.)</p>
 
 
 </section>
@@ -500,13 +562,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-stock-synthesis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Running Stock Synthesis</span></span>
+      <a href="./05-other.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Other useful tidbits</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-other.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Other useful tidbits</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./appendix-a.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Species seen* in the hake fishery</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
