@@ -249,12 +249,22 @@ sudo apt-get install libxml2 libxml2-dev # igraph
 sudo apt-get install libcairo2-dev # Graphics packages
 sudo apt-get install libssl-dev libcurl4-openssl-dev #httr
 sudo apt-get install apache2</code></pre>
-<p>To make sure everything is working, in your browser window, navigate to your VM’s IP address, which you can find in the Azure portal of your browser. You should see…</p>
+<p>To make sure everything is working, in your browser window, navigate to your VM’s IP address, which you can find in the Azure portal of your browser. You should see:</p>
+<p><img src="img/apache.JPG" class="img-fluid"></p>
 <p>Now install R:</p>
-<pre><code>sudo add-apt-repository ppa:marutter/rrutter
-sudo apt update
-sudo apt-get install r-base</code></pre>
-<p>Update: I realized this installs R 3.6.3. That is pretty old. I tried the instructions <a href="https://cloud.r-project.org/">here</a>, but got some errors.</p>
+<pre><code># update indices
+sudo apt update -qq
+# install two helper packages we need
+sudo apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+# Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+# install R
+sudo apt install --no-install-recommends r-base</code></pre>
+<p>This installed the latest R version as of 10/30/23 (I ended up with 4.3.1). For up-to-date instructions, go to <a href="https://cloud.r-project.org/bin/linux/ubuntu/">the R project website</a>.</p>
 <p>Install Rstudio Server:</p>
 <p>To download the latest version of Rstudio Server, follow the directions <a href="https://posit.co/download/rstudio-server/">here</a>. If you followed the earlier specifications to set up the VM, you should select the operating system “Debian / Ubuntu.” The Ubuntu version that is installed shows up when you first SSH into the VM. For me, it was 20. You’ve already installed R, so scroll down to step 3. It will direct you to run</p>
 <pre><code>sudo apt-get install gdebi-core</code></pre>
