@@ -45,17 +45,28 @@ sudo apt-get install libssl-dev libcurl4-openssl-dev #httr
 sudo apt-get install apache2
 ```
 
-To make sure everything is working, in your browser window, navigate to your VM's IP address, which you can find in the Azure portal of your browser. You should see...
+To make sure everything is working, in your browser window, navigate to your VM's IP address, which you can find in the Azure portal of your browser. You should see:
+
+![](img/apache.JPG)
 
 Now install R:
 
 ```         
-sudo add-apt-repository ppa:marutter/rrutter
-sudo apt update
-sudo apt-get install r-base
+# update indices
+sudo apt update -qq
+# install two helper packages we need
+sudo apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+# Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+# install R
+sudo apt install --no-install-recommends r-base
 ```
 
-Update: I realized this installs R 3.6.3. That is pretty old. I tried the instructions [here](https://cloud.r-project.org/), but got some errors.
+This installed the latest R version as of 10/30/23 (I ended up with 4.3.1). For up-to-date instructions, go to [the R project website](https://cloud.r-project.org/bin/linux/ubuntu/).
 
 Install Rstudio Server:
 
