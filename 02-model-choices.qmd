@@ -54,11 +54,11 @@ The division is by 1 thousand instead of 1 million because recruitment in SS3 is
 
 Other options include spawning output in **billions of eggs** via:
 
-$$a = \frac{a'\cdot10^b}{1e6}$$
+$$a = \frac{a'\cdot10^b}{10^6}$$
 
 or spawning output in **trillions of eggs** (e.g. 2017 Yellowtail Rockfish):
 
-$$a = \frac{a'\cdot10^b}{1e9}$$.
+$$a = \frac{a'\cdot10^b}{10^9}.$$
 
 The [{r4ss}](https://github.com/r4ss/r4ss) figures in the "Bio" tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship by comparing to original studies on the relationship between fecundity and length.
 
