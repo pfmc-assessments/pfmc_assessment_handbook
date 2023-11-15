@@ -10,7 +10,7 @@ The comments below are based on a team discussion on how to select a population 
 
 **Choice 3, Data length bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. We should check to make sure that the selection of length and age bins are consistent with each other. Typically, we often have max length bins where there are only a few fish, but a larger proportion of data in the data age plus group.
 
-**Choice 4, Data age bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered ``data mining''. Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e., 5\%). Also, add a warning to [{r4ss}](https://github.com/r4ss/r4ss) about the percentage in the population and data plus groups.
+**Choice 4, Data age bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered "data mining". Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e., 5\%). Also, add a warning to [{r4ss}](https://github.com/r4ss/r4ss) about the percentage in the population and data plus groups.
 
 ## Determining prior for natural mortality
 
@@ -36,7 +36,7 @@ See the [{nwfscAgeingError}](https://github.com/pfmc-assessments/nwfscAgeingErro
 
 Talk to Melissa Head about maturity. In 2017, she provided estimated maturity curves based on samples from the NWFSC survey for many species.
 
-Data from the NWFSC survey on maturity includes a column indicating mature or immature and another indicating spawning and not spawning. The latter considers all ``mature'' fish with over 25% atresia as not spawning (along with all immature fish). The spawning/not spawning column is the one we commonly use to estimate the maturity curve since that is really what we care about. In some cases a simple logistic will fit, but if there is much skip spawning/atresia for older/larger females, a logistic type curve which asymptotes to a lower value or a non-parametric fit is more appropriate. A column with percent atresia is also provided if you with to use a percentage other than 25% for the cutoff. Finally, the mature/immature column can be used instead if the atresia/skip spawning is taken into account in specifying the fecundity relationship.
+Data from the NWFSC survey on maturity includes a column indicating mature or immature and another indicating spawning and not spawning. The latter considers all "mature" fish with over 25% atresia as not spawning (along with all immature fish). The spawning/not spawning column is the one we commonly use to estimate the maturity curve since that is really what we care about. In some cases a simple logistic will fit, but if there is much skip spawning/atresia for older/larger females, a logistic type curve which asymptotes to a lower value or a non-parametric fit is more appropriate. A column with percent atresia is also provided if you with to use a percentage other than 25% for the cutoff. Finally, the mature/immature column can be used instead if the atresia/skip spawning is taken into account in specifying the fecundity relationship.
 
 An additional column has been added to the NWFSC survey table indicating uncertainty in the designation. This can be used to weight or exclude data.
 
@@ -126,7 +126,7 @@ There was a CAPAM workshop on selectivity in 2013. Report, presentations, and re
 
     b.  range of years?
 
-    c.  breaking into ``early'', ``main'', ``late'' vectors?
+    c.  breaking into "early", "main", "late" vectors?
 
         i.  early and late vectors are intended to add uncertainty to the model for years with little or no data with information about recruitment
 
@@ -168,7 +168,7 @@ Below is detailed information regarding the meta-analysis approach applied betwe
 
 -   The method can be replicated for any data set 2007/2009/2011/2013/2015/2017 using R package [{SebastesSteepness}](https://github.com/James-Thorson/SebastesSteepness)
 
--   The rationale for excluding a species when developing a prior for a given focal species (termed ``Type-C'' meta-analysis) is explained [in this paper](http://www.nrcresearchpress.com/doi/abs/10.1139/f04-245)
+-   The rationale for excluding a species when developing a prior for a given focal species (termed "Type-C" meta-analysis) is explained [in this paper](http://www.nrcresearchpress.com/doi/abs/10.1139/f04-245)
 
     -   If you are assessing any of the following species you will need to obtain a Type-C prior: aurora, black, bocaccio, canary, chilipepper, darkblotched, gopher, splitnose, widow, yelloweye, yellowtail north
 
