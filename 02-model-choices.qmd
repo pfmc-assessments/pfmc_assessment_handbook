@@ -44,23 +44,23 @@ Note: John Field has expressed concern that we are too focused on recent samples
 
 ## Fecundity
 
-[Dick et al. (2017)](http://www.sciencedirect.com/science/article/pii/S0165783616303745) has estimates for the $a$ and $b$ parameters in the functional form $F = aL^b$ for many rockfish. The estimates are based on length in mm and predicted number of eggs, fitted in log-space. If you use length in cm (like in SS3), and don't want huge spawning biomass values (eggs), you can convert the values in the paper to units of cm and millions, billions, or trillions of eggs. First, find the values ``$\exp(a)$'' (referred to as $a'$ below) and ``$b$'' from Table 6 in Dick et al. for your species (or subgenus, if no estimate for your species is reported). If your subgenus is not reported, you can use the ``*Sebastes*'' values.
+[Dick et al. (2017)](http://www.sciencedirect.com/science/article/pii/S0165783616303745) has estimates for the $a$ and $b$ parameters in the functional form $F = aL^b$ for many rockfish. The estimates are based on length in mm and predicted number of eggs, fitted in log-space. If you use length in cm (like in SS3), and don't want huge spawning biomass values (eggs), you can convert the values in the paper to units of cm and millions, billions, or trillions of eggs. First, find the values "$\exp(a)$" (referred to as $a'$ below) and "$b$" from Table 6 in Dick et al. for your species (or subgenus, if no estimate for your species is reported). If your subgenus is not reported, you can use the "*Sebastes*" values.
 
-The correct value of the ``$a$'' parameter in Stock Synthesis (using fecundity at length option 2: eggs=a*L^b) with length in cm and spawning output in **millions of eggs** is:
+The correct value of the "$a$" parameter in Stock Synthesis (using fecundity at length option 2: eggs=a*L^b) with length in cm and spawning output in **millions of eggs** is:
 
 $$a = \frac{a'\cdot10^b}{1000}$$
 
 The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. The value of $b$ is unchanged, and can be used directly in the assessment. 
 
-Other options include 
+Other options include spawning output in **billions of eggs** via:
 
-$$a = \frac{a'\cdot10^b}{1e6}$$ to get spawning output in **billions of eggs**
+$$a = \frac{a'\cdot10^b}{1e6}$$
 
-or 
+or spawning output in **trillions of eggs** (e.g. 2017 Yellowtail Rockfish):
 
-$$a = \frac{a'\cdot10^b}{1e9}$$ to get spawning output in **trillions of eggs** (e.g. 2017 Yellowtail Rockfish).
+$$a = \frac{a'\cdot10^b}{1e9}$$.
 
-The [{r4ss}](https://github.com/r4ss/r4ss) figures in the ``Bio'' tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship by comparing to original studies on the relationship between fecundity and length.
+The [{r4ss}](https://github.com/r4ss/r4ss) figures in the "Bio" tab show the resulting fecundity relationship as a function of length, weight, and age so you can use that to determine whether your parameter values produce the correct final relationship by comparing to original studies on the relationship between fecundity and length.
 
 ## Modeling selectivity
 
