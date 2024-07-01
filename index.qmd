@@ -8,7 +8,7 @@ This document is not intended to be followed blindly. Its purpose is to collect 
 
 # Alternative sources for best practices
 
-The SSC Groundfish Sub-committee has produced documents "ACCEPTED PRACTICES GUIDELINES FOR GROUNDFISH STOCK ASSESSMENTS". These documents, as well as the official groundfish stock assessment terms of reference, are both more up-to-date than this handbook and also carry more weight. However, they are also less comprehensive than this document. You should either follow their guidelines or be prepared to justify why you didn't.
+The SSC Groundfish Sub-committee has produced documents "ACCEPTED PRACTICES GUIDELINES FOR GROUNDFISH STOCK ASSESSMENTS". These documents, as well as the official groundfish stock assessment terms of reference (available at https://www.pcouncil.org/stock-assessments-star-reports-stat-reports-rebuilding-analyses-terms-of-reference/groundfish-stock-assessment-documents/), are both more up-to-date than this handbook and also carry more weight. However, they are also less comprehensive than this document. You should either follow their guidelines or be prepared to justify why you didn't.
 
 -   [2023 version](https://www.pcouncil.org/documents/2023/12/accepted-practice-attachment-for-ssc-gfsc-january-17-18-2023.pdf/)
 
