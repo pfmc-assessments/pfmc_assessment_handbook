@@ -253,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1.4" class="anchored" data-anchor-id="catch-data-lengths-ages-etc."><span class="header-section-number">1.4</span> Catch data, lengths, ages, etc.</h2>
 <section id="west-coast-groundfish-observer-program-wcgop" class="level3" data-number="1.4.1">
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="west-coast-groundfish-observer-program-wcgop"><span class="header-section-number">1.4.1</span> West Coast Groundfish Observer Program (WCGOP)</h3>
-<p>Jason Jannot says that it should be easier to request data this year, but we (or perhaps a few designated folks on the team) will get it in a more raw format that needs some processing. See section below on “Notes and best practices for observer data and discards” ADD LINK</p>
+<p>See section below on “Notes and best practices for observer data and discards” ADD LINK</p>
 </section>
 <section id="at-sea-hake-observer-program-ashop" class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="at-sea-hake-observer-program-ashop"><span class="header-section-number">1.4.2</span> At-Sea Hake Observer Program (ASHOP)</h3>
@@ -261,21 +261,21 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="pacfin-biological-data-bds" class="level3" data-number="1.4.3">
 <h3 data-number="1.4.3" class="anchored" data-anchor-id="pacfin-biological-data-bds"><span class="header-section-number">1.4.3</span> PacFIN biological data (BDS)</h3>
-<p>Talk to John Wallace or Andi Stevens. To confirm sample sizes for BDS, go to <a href="http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt">this webpage</a> which should give a recent tally of samples by state agency.</p>
+<p>To get these data, create a “Data request” issue on the <a href="https://github.com/pfmc-assessments/PacFIN.Utilities/issues">PacFIN.Utilities github repo</a>. To confirm sample sizes for BDS, go to <a href="http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt">this webpage</a> which should give a recent tally of samples by state agency.</p>
 <p>Generalized code to process the data are currently in <a href="https://github.com/pfmc-assessments/PacFIN.Utilities">{PacFIN.Utilities}</a>.</p>
 <p>You may see some discrepancies in CA data from 1985-1989 when compared to older extractions. Some samples were removed for some species. It is not clear why these samples were removed.</p>
 </section>
 <section id="pacfin-landings" class="level3" data-number="1.4.4">
 <h3 data-number="1.4.4" class="anchored" data-anchor-id="pacfin-landings"><span class="header-section-number">1.4.4</span> PacFIN landings</h3>
-<p><strong>[Add text here on how and where to get catch for <del>2019</del> 2023 assessments]</strong></p>
-<p>Talk to John Wallace or Andi Stephens. Note that the PacFIN catch can be broken down by INPFC or month only for the trawl component, not the non-trawl gears. Also, beware double counting based on multiple levels of aggregation.</p>
+<p>To get these data, create a “Data request” issue on the <a href="https://github.com/pfmc-assessments/PacFIN.Utilities/issues">PacFIN.Utilities github repo</a>.</p>
+<p>Note that the PacFIN catch can be broken down by INPFC or month only for the trawl component, not the non-trawl gears. Also, beware double counting based on multiple levels of aggregation.</p>
 <p>PSMFC areas do not contain all of the catch, thus it is best to use INPFC areas to aggregate catch.</p>
 <p>Once you have catch values for all years, contact the state representative(s) for confirmation that the values are correct.</p>
 </section>
 <section id="recfin" class="level3" data-number="1.4.5">
 <h3 data-number="1.4.5" class="anchored" data-anchor-id="recfin"><span class="header-section-number">1.4.5</span> RecFIN</h3>
 <p>All states have in the past claimed that all rec. data is available on <a href="http://www.recfin.org/">RecFIN</a>. Users should check with state representatives for updated information on the recommended source for recreational data. One can pull historical catches <a href="http://www.recfin.org">here</a>. Select the “Catch / Sample Data Reports” image which takes you to the reports dashboard. Alternatively, ODBC connections can be used to pull catch estimates directly from the Comprehensive Fish Ticket table. Some data sources (e.g.&nbsp;MRFSS, WA historic catch estimates) are not currently available via the public login, so you need to login with an account that has permission to view the tables. Additionally, once you have catch values for all years, contact the state representative for confirmation that the values are correct.</p>
-<p>Washington provides recreational catch in numbers. This leads to two decisions for putting catches into the model: keep catch in numbers, which stock synthesis converts to weights internally; or convert catch to weight using an external estimate. Both options have been done historically. The former causes challenges for projections, but if the former is chosen, it is useful to compare the model’s calculated average weight of the catch to the value used to convert numbers to weight to see if there is large disagreement. For a partial history about this issue, and approaches for some past assessments see <a href="https://github.com/pfmc-assessments/canary_2023/issues/52">issue #52</a> from the canary rockfish git hub page.</p>
+<p>Washington provides historical recreational catch in numbers. (Modern catches are available in both numbers and weight.) This leads to two decisions for putting catches into the model: keep catch in numbers, which stock synthesis converts to weights internally; or convert catch to weight using an external estimate. Both options have been done historically. The former causes challenges for projections, but if the former is chosen, it is useful to compare the model’s calculated average weight of the catch to the value used to convert numbers to weight to see if there is large disagreement. For a partial history about this issue, and approaches for some past assessments see <a href="https://github.com/pfmc-assessments/canary_2023/issues/52">issue #52</a> from the canary rockfish github page.</p>
 <p>To obtain length composition data,</p>
 <ol type="1">
 <li>Go to <a href="https://www.recfin.org/">RecFIN</a></li>
@@ -407,7 +407,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="requesting-discard-data" class="level3" data-number="1.7.3">
 <h3 data-number="1.7.3" class="anchored" data-anchor-id="requesting-discard-data"><span class="header-section-number">1.7.3</span> Requesting discard data</h3>
-<p>There are two types of discard data available using WCGOP data. The first is a summary of the observed discards, discard rates, and bootstrapped uncertainty across years (2002 - present). The second type of data are lengths of discarded fish observed by WCGOP. To request these data please email information regarding data stratification (gear groupings and areas) to Chantel Wetzel (<a href="mailto:chantel.wetzel@noaa.gov">chantel.wetzel@noaa.gov</a>) for observed discards, rates, and uncertainty and Andi Stephens (<a href="mailto:andi.stephens@noaa.gov">andi.stephens@noaa.gov</a>) for length composition data for discarded fish.</p>
+<p>There are two types of discard data available using WCGOP data. The first is a summary of the observed discards, discard rates, and bootstrapped uncertainty across years (2002 - present). The second type of data are lengths of discarded fish observed by WCGOP. To request these data please create an issue on the <a href="https://github.com/pfmc-assessments/nwfscDiscard/issues">nwfscDiscard github repo</a>.</p>
 </section>
 <section id="discard-rates-and-length-comps-from-the-pikitch-et-al.-discard-study-1985-87-and-mesh-study-1988-90-databases" class="level3" data-number="1.7.4">
 <h3 data-number="1.7.4" class="anchored" data-anchor-id="discard-rates-and-length-comps-from-the-pikitch-et-al.-discard-study-1985-87-and-mesh-study-1988-90-databases"><span class="header-section-number">1.7.4</span> Discard rates, and length comps, from the Pikitch et al.&nbsp;Discard Study (1985-87) and Mesh Study (1988-90) databases</h3>
