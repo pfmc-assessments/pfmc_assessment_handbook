@@ -274,7 +274,7 @@
     "href": "cloud-computing.html",
     "title": "6  Cloud computing: jittering a stock assessment",
     "section": "",
-    "text": "6.1 Pick a VM\nYou’re done! It will take a few moments to get going. If after trying it out you don’t like it, no worries! Most of these settings can be changed on the fly!\nI started out with an 8 core VM. This was twice as many as my laptop, so the gains were not huge. For production purposes, I would probably opt for 16 cores.",
+    "text": "6.1 Pick a VM\nThis is the path that I (Kiva) figured out and it worked for me. I am not an expert on computers, cloud computing, or computer security, so if you find yourself thinking “huh, why is she recommending that and not this,” there is probably not a very good reason! In other words, please let me know if you think this could be improved.\nYou’re done! It will take a few moments to get going. If after trying it out you don’t like it, no worries! Most of these settings can be changed on the fly!\nI started out with an 8 core VM. This was twice as many as my laptop, so the gains were not huge. For production purposes, I would probably opt for 16 cores.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Cloud computing: jittering a stock assessment</span>"
     ]
