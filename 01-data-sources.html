@@ -263,13 +263,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="pacfin-biological-data-bds" class="level3" data-number="1.4.3">
 <h3 data-number="1.4.3" class="anchored" data-anchor-id="pacfin-biological-data-bds"><span class="header-section-number">1.4.3</span> PacFIN biological data (BDS)</h3>
-<p>To get these data, create a “Data request” issue on the <a href="https://github.com/pfmc-assessments/PacFIN.Utilities/issues">PacFIN.Utilities github repo</a>. To confirm sample sizes for BDS, go to <a href="http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt">this webpage</a> which should give a recent tally of samples by state agency.</p>
-<p>Generalized code to process the data are currently in <a href="https://github.com/pfmc-assessments/PacFIN.Utilities">{PacFIN.Utilities}</a>.</p>
+<p>To get these data, create a “Data request” issue on the <a href="https://github.com/pfmc-assessments/pacfintools/issues">pacfintools github repo</a>. To confirm sample sizes for BDS, go to <a href="http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt">this webpage</a> which should give a recent tally of samples by state agency.</p>
+<p>Generalized code to process the data are currently in <a href="https://github.com/pfmc-assessments/pacfintools">{pacfintools}</a>.</p>
 <p>You may see some discrepancies in CA data from 1985-1989 when compared to older extractions. Some samples were removed for some species. It is not clear why these samples were removed.</p>
 </section>
 <section id="pacfin-landings" class="level3" data-number="1.4.4">
 <h3 data-number="1.4.4" class="anchored" data-anchor-id="pacfin-landings"><span class="header-section-number">1.4.4</span> PacFIN landings</h3>
-<p>To get these data, create a “Data request” issue on the <a href="https://github.com/pfmc-assessments/PacFIN.Utilities/issues">PacFIN.Utilities github repo</a>.</p>
+<p>To get these data, create a “Data request” issue on the <a href="https://github.com/pfmc-assessments/pacfintools/issues">pacfintools github repo</a>.</p>
 <p>Note that the PacFIN catch can be broken down by INPFC or month only for the trawl component, not the non-trawl gears. Also, beware double counting based on multiple levels of aggregation.</p>
 <p>PSMFC areas do not contain all of the catch, thus it is best to use INPFC areas to aggregate catch.</p>
 <p>Once you have catch values for all years, contact the state representative(s) for confirmation that the values are correct.</p>
@@ -293,16 +293,16 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="indices-of-abundance" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="indices-of-abundance"><span class="header-section-number">1.5</span> Indices of abundance</h2>
-<p>At a team meeting on 13 March 2019, the team agreed on the following terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. This will be the approach used in the write-up of the surveys as well.</p>
+<p>At a team meeting on 13 March 2019, the team agreed on common terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. These names have been slightly revised to better match the names used in the Miller et al.&nbsp;background doc “Overview of West Coast Groundfish Fishery-Independent Surveys” (available to NOAA folks on Google Drive at <a href="https://docs.google.com/document/d/1gvMFvK0nWT1b3WXiZR14CtQLCIIYAlMu/edit?usp=sharing&amp;ouid=109294197263395918754&amp;rtpof=true&amp;sd=true">here</a>)</p>
 <ul>
-<li><p>NWFSC West Coast Groundfish Bottom Trawl Survey (WCGBT Survey)</p></li>
-<li><p>AFSC/NWFSC West Coast Triennial Shelf Survey (Triennial Survey)</p></li>
+<li><p>NWFSC West Coast Groundfish Bottom Trawl Survey (WCGBT Survey or WCGBTS)</p></li>
+<li><p>NMFS West Coast Triennial Shelf Survey (Triennial Survey)</p></li>
 <li><p>AFSC West Coast Slope Survey (AFSC Slope Survey)</p></li>
 <li><p>NWFSC West Coast Slope Survey (NWFSC Slope Survey)</p></li>
-<li><p>NWFSC Southern California Shelf Rockfish Hook and Line Survey (H&amp;L Survey)</p></li>
+<li><p>NWFSC Southern California Shelf Rockfish Hook and Line Survey (NWFSC HKL Survey)</p></li>
 <li><p>NWFSC Integrated Acoustic and Trawl Survey of Pacific Hake (Acoustic Survey)</p></li>
 </ul>
-<p>Note: the names for the first 4 of these surveys in the <a href="https://github.com/pfmc-assessments/nwfscSurvey">{nwfscSurvey}</a> package are “NWFSC.Combo”, “Triennial”, “AFSC.Slope”, “NWFSC.Slope”. The H&amp;L and acoustic surveys are not currently available through that package.</p>
+<p>Note: the names for the first 4 of these surveys in the <a href="https://github.com/pfmc-assessments/nwfscSurvey">{nwfscSurvey}</a> package are “NWFSC.Combo”, “Triennial”, “AFSC.Slope”, “NWFSC.Slope”. The HKL and acoustic surveys are not currently available through that package.</p>
 </section>
 <section id="summary-of-noaa-fishery-independent-trawl-surveys-used-for-west-coast-assessments" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="summary-of-noaa-fishery-independent-trawl-surveys-used-for-west-coast-assessments"><span class="header-section-number">1.6</span> Summary of NOAA fishery independent trawl surveys used for west coast assessments</h2>
@@ -315,6 +315,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Must filter out water hauls and tows occurring outside the US EEZ (foreign tows)</p></li>
 <li><p>Note that 1977 is always tossed out.</p></li>
 <li><p>The 2005 and 2013 Shortspine Thornyhead assessments split the triennial into shallow vs.&nbsp;deep to create a single index from 1980-2004 for 55-366 m and a separate 366-500 m index for 1995-2004.</p></li>
+<li><p>Strata information from the <a href="https://docs.google.com/a/noaa.gov/document/d/1WnWF60l9GgB7ZwFeds7RYbddXMNmxxR6FAvB2Q4unPY/edit?usp=sharing">2001 AFSC Triennial Survey Plan</a> includes the following information on the depth strata “Sampling density will be similar throughout the three depth strata: 30-100, 101-200, and 201-275 fm (55-183, 184-366, and 367-500 m) of the survey area. Tracklines are spaced at 10 nmi intervals and stations are located randomly along those tracklines at the rate of one station per four nmi of linear distance in the shallow stratum and one station every five nmi of linear distance in the two deeper strata.”</p></li>
 </ol></li>
 <li><p>AKFSC Slope Survey (1997-2001, 183–1280m, north of 34.5)</p>
 <ol type="a">
@@ -329,6 +330,12 @@ ul.task-list li input[type="checkbox"] {
 <li><p>This survey should be referenced as the “WCGBT Survey”</p></li>
 </ol></li>
 </ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/survey_summary_US_West_Coast.png" class="img-fluid figure-img"></p>
+<figcaption>Summary of the day of the year, latitude and depth covered by each of the primary trawl surveys on the U.S. West Coast. Values that are typically excluded (Triennial in 1977 and AFSC Slope survey prior to 1997) are shaded gray. Note that the depth figure uses a log<sub>2</sub>-scale to better reflect the relative area associated with different depth ranges (shelf is generally wider than slope).</figcaption>
+</figure>
+</div>
 <section id="afsc-surveys" class="level3" data-number="1.6.1">
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="afsc-surveys"><span class="header-section-number">1.6.1</span> AFSC surveys</h3>
 <p>Data are now available through the NWFSC data warehouse which can be accessed by the functions in the <a href="https://github.com/pfmc-assessments/nwfscSurvey">{nwfscSurvey}</a> package. <a href="appendix-b.html" class="quarto-xref">Appendix&nbsp;<span>B</span></a> identifies which year the listed vessels participated in the Triennial and Slope Surveys. Each cruise is assigned a unique number which is contained within the ‘CRUISEJOINS’ column in the database. Checking that your data has all the cruises you expect for a given survey would be good practice. Although gear and personnel change over time, if a study looking at differences by vessel was undertaken, <a href="appendix-b.html" class="quarto-xref">Appendix&nbsp;<span>B</span></a> shows which vessels participated in what year and survey.</p>
@@ -364,7 +371,7 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://docs.google.com/a/noaa.gov/document/d/1pq7D6ZYbpbgc-7v2qwcCyr3SCqDfBNxcPPq082jwnYQ/edit?usp=sharing">Strata Tow Percentages for NWFSC Bottom Trawl Survey for 2004-Current</a></p>
 <p><a href="https://drive.google.com/a/noaa.gov/file/d/0B5YpOk8zQ3cuYWpSNEQ5XzZUMlk/edit?usp=sharing">Calcs for Strata Tow Percentages and Station Selection for the NWFSC Bottom Trawl Surveys for 2003 and Beyond (PDF file on Google Drive)</a></p>
 </blockquote>
-<p>Index standardization is used Kelli Johnson’s <a href="https://github.com/pfmc-assessments/VASTWestCoast">VAST wrapper</a> has specific examples for each survey located in the inst\examples folder.</p>
+<p>As of January 2025, index standardization for the trawl surveys is conducted by a subset of NWFSC staff used the <a href="https://github.com/pfmc-assessments/indexwc/">{indexwc}</a> package and shared with the assessment authors. The documentation of this package will be improved in the future to make it easier for folks to explore alternative indices beyond what is initially provided.</p>
 </section>
 <section id="nwfsc-survey-length-and-age-compositions" class="level3" data-number="1.6.3">
 <h3 data-number="1.6.3" class="anchored" data-anchor-id="nwfsc-survey-length-and-age-compositions"><span class="header-section-number">1.6.3</span> NWFSC Survey Length and Age Compositions</h3>
@@ -380,7 +387,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="iphc-survey" class="level3" data-number="1.6.4">
 <h3 data-number="1.6.4" class="anchored" data-anchor-id="iphc-survey"><span class="header-section-number">1.6.4</span> IPHC survey</h3>
-<p>This survey has been used for Yelloweye Rockfish and Spiny Dogfish. Claude Dykstra (<a href="mailto:claude@iphc.int">claude@iphc.int</a>) has provided data in the past. The index was calculated using a binomial GLM developed by John Wallace. Talk to John or Ian Taylor to get R code for this analysis.</p>
+<p>This survey has been used for Yelloweye Rockfish and Spiny Dogfish. Claude Dykstra (<a href="mailto:claude@iphc.int">claude@iphc.int</a>) has provided data in the past. The index was calculated using a binomial GLM developed by John Wallace. WDFW staff have also explored standardizing this index (work for Yelloweye in 2025 still in progress).</p>
 </section>
 <section id="oregon-recreational-observer-program-data" class="level3" data-number="1.6.5">
 <h3 data-number="1.6.5" class="anchored" data-anchor-id="oregon-recreational-observer-program-data"><span class="header-section-number">1.6.5</span> Oregon recreational observer program data</h3>
@@ -394,7 +401,8 @@ ul.task-list li input[type="checkbox"] {
 <p>There are typically three common methods used within West Coast groundfish stock assessments to incorporate discard mortality.</p>
 <p>The first approach is to include discard mortality into the catch data rather than estimating discards within the model. Discard mortality can be included by either adding this total to the catch by fleet or by adding a discard fleet. If using the discard fleet the selectivity of this fleet will need to be mirrored (see the 2017 California Blue/Deacon assessment for an example of this approach).</p>
 <p>The second and third alternative approaches to including discard data is to model the process of discarding within SS3. Discards can be modeled either as total discards in mt or through the rate of discarding. Both of these approaches will require discard length data to be included in the model, or if not available, a specific assumption regarding the retention curve relative to the estimated selectivity curve.</p>
-<p>Estimates of total discards are available in the annual groundfish mortality report (and the GEMM). If a specific breakdown of discard by fleet is required (gear and/or area) speak with Dr.&nbsp;Chantel Wetzel. The data may not be able to be summarized to all fleet structures, so it is best to discuss the options with Chantel early in the assessment process. Assumptions regarding the discard total in the most recent year and historical years prior to the start of WCGOP data (2002) will need to be made by the assessor and modeled (often through the use of time blocks). If total discards are modeled, one will need to enter an annual CV into SS3 which is currently not available with the GEMM. The current approach for obtaining discard totals or discard rates with CV is via bootstrapping the available WCGOP observer data. The bootstrap CV will be based on the observer data and may not be entirely consistent with the data available in the groundfish mortality report (and the GEMM), particularly for sectors with limited observer coverage. Please see below for additional information regarding bootstrapping.</p>
+<p>Estimates of total discards are available in the annual groundfish mortality report (and the GEMM). If a specific breakdown of discard by fleet is required (gear and/or area) speak with Dr.&nbsp;Chantel Wetzel. The data may not be able to be summarized to all fleet structures, so it is best to discuss the options with Chantel early in the assessment process. To get processed data, create a “Data request” issue on the <a href="https://github.com/pfmc-assessments/nwfscDiscard/issues">nwfscDiscard github repo</a>.</p>
+<p>Assumptions regarding the discard total in the most recent year and historical years prior to the start of WCGOP data (2002) will need to be made by the assessor and modeled (often through the use of time blocks). If total discards are modeled, one will need to enter an annual CV into SS3 which is currently not available with the GEMM. The current approach for obtaining discard totals or discard rates with CV is via bootstrapping the available WCGOP observer data. The bootstrap CV will be based on the observer data and may not be entirely consistent with the data available in the groundfish mortality report (and the GEMM), particularly for sectors with limited observer coverage. Please see below for additional information regarding bootstrapping.</p>
 <p>Modeling discard rates can be an easier approach since it does not require knowledge about the total discard amounts. However, this approach may not be feasible for stocks with limited observations in the WCGOP data due to high variability in the observed discarded and retained fish. The IFQ trawl fleet currently has near 100% observer coverage starting in 2011, while the non-catch share sectors have a much lower observed percentage (~20% as of last inquiry, but this may change in the future). Historically, it was thought that discard rates could not be calculated for complex managed species. However, this is not the case based on the current data. Discard rates are calculated based on the observed discarded weight relative to the total observed weight of discarded and retained fish. Bootstrapping is done using the data in order to provide a CV to the discard rate. Similar to two previous approaches, assumptions regarding the discard rate in the most recent year and historical years prior to the start of WCGOP data (2002) will need to be made by the assessor and modeled (often through the use of time blocks).</p>
 <p>Note, if discard mortality is estimated within the model, it is important to compare the catches (landings + discards) estimated within SS3 to the total mortality estimates from the GEMM. The GEMM is the official mortality report for West Coast groundfish stocks as is used to determine the ACL and OFL attainment and if overfishing is occurring. The total mortality estimates between SS3 and the GEMM would not be expected to match exactly; however, the should have a reasonable level of similarity. If there are large differences between the mortality estimates across multiple years one may need to reconsider if the model has enough data to appropriately estimate retention reliably for each fleet. Discarding practices can easily be heterogenous within a fleet that appears homogeneous based on landings. For example, the Makah tribe has required that all overfished and commercially saleable rockfish be landed since the late 1990s, leading to essentially zero tribal discards. The discard rate calculated from WCGOP data does not apply to tribal vessels (which WCGOP does not observe), so if tribal landings are substantial, the use of a discard rate could overestimate total mortality.</p>
 <p>The SSC has specified that the GEMM is the official data source to update recent removals when conducting a catch-only update model. The GMT is currently tasked with allocating removals by modeled fleet using the GEMM. The GMT will provide the removal estimates for year with GEMM data, provide expected removals for the final model year, and removal assumptions to use during the projection period. These data will typically be available between March and April of the assessment year.</p>

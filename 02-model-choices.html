@@ -227,6 +227,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#modeling-recruitment-deviations" id="toc-modeling-recruitment-deviations" class="nav-link" data-scroll-target="#modeling-recruitment-deviations"><span class="header-section-number">2.8</span> Modeling recruitment deviations</a></li>
   <li><a href="#rockfish-steepness-profile" id="toc-rockfish-steepness-profile" class="nav-link" data-scroll-target="#rockfish-steepness-profile"><span class="header-section-number">2.9</span> Rockfish steepness profile</a></li>
+  <li><a href="#projections-a.k.a.-forecasts" id="toc-projections-a.k.a.-forecasts" class="nav-link" data-scroll-target="#projections-a.k.a.-forecasts"><span class="header-section-number">2.10</span> Projections (a.k.a. Forecasts)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/edit/main/02-model-choices.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pfmc-assessments/pfmc_assessment_handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -272,11 +273,11 @@ window.Quarto = {
 </section>
 <section id="length-weight-relationships" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="length-weight-relationships"><span class="header-section-number">2.3</span> Length-weight relationships</h2>
-<p>Use the <a href="https://pfmc-assessments.github.io/PacFIN.Utilities/reference/getWLpars.html">getWLpars()</a> function in {PacFIN.Utilities} which provides estimates for the parameters required by Stock Synthesis. It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally.</p>
+<p>Use the <a href="https://pfmc-assessments.github.io/nwfscSurvey/reference/estimate_weight_length.html">nwfscSurvey::estimate_weight_length()</a>. It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally. Other data sources (e.g., PacFIN if weights are available, etc.) can be passed to this function to estimate weight-length relationships. The <code>col_length</code> and <code>col_weight</code> arguments should be used to specify the specific string used to identify these quantities in your data.</p>
 </section>
 <section id="estimating-ageing-error" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="estimating-ageing-error"><span class="header-section-number">2.4</span> Estimating ageing error</h2>
-<p>See the <a href="https://github.com/pfmc-assessments/nwfscAgeingError">{nwfscAgeingError}</a> package.</p>
+<p>See the <a href="https://github.com/pfmc-assessments/AgeingError">{AgeingError}</a> package.</p>
 </section>
 <section id="maturity" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="maturity"><span class="header-section-number">2.5</span> Maturity</h2>
@@ -404,6 +405,14 @@ window.Quarto = {
 <li><p>2017: mean = 0.72, sd = 0.158</p></li>
 </ul></li>
 </ul>
+</section>
+<section id="projections-a.k.a.-forecasts" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="projections-a.k.a.-forecasts"><span class="header-section-number">2.10</span> Projections (a.k.a. Forecasts)</h2>
+<p>The time-varying Pstar for your forecast.ss file can be calculated using <code>PEPtools::get_buffer()</code>,see <a href="https://github.com/pfmc-assessments/PEPtools/">PEPtools github repo</a>.</p>
+<p>The default <code>sigma</code> input to that function is 0.5 for Category 1 stocks and 1.0 for Category 2 but if uncertainty in the model (one of <code>model$Pstar_sigma</code> or <code>model$OFL_sigma</code> as output from <code>r4ss::SS_output()</code>–check with SSC folks on which) is larger, use that instead. The <code>pstar</code> is set by the Council and the adopted value can be found online table <a href="https://reports.psmfc.org/pacfin/f?p=501:5301:6060050528090:INITIAL::::">GMT015</a>. It is recommended to get confirmation from the GMT representative as well.</p>
+<p>Make sure you are using the right control rule for the PFMC in your forecast file: <code>3 # Control rule method (0: none; 1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch)</code></p>
+<p>Fixed catches for first 2 years of forecast (the current year and next) should be provided by GMT rep to STAR Panel. The values are input at the bottome of the SS3 forecast file and should be split by fleet in the model. Adopted OFL/ACL values are in <a href="https://reports.psmfc.org/pacfin/f?p=501:1000:4357688221402:::::">GMT016 table</a>.</p>
+<p>Creating the forecast table of OFLs and ABCs (ACLs if the relative stock size is below the management target) for your assessment document you can use <a href="https://r4ss.github.io/r4ss/reference/SSexecutivesummary.html"><code>r4ss::SSexecutivesummary()</code></a> to help with this task. You may want to specify the OFLs (and ACLs) for the next two years: <code>r4ss::SSexecutivesummary(model, forecast_ofl = c(3763, 3563))</code></p>
 
 
 </section>
