@@ -2,7 +2,7 @@
 
 ## Retrospectives
 
-1.  Retrospective analysis is a way to assess whether something is inconsistent in data or model assumptions. A retrospective pattern can arise from changes in catch, M, q, selectivity, or growth from that which is in the model. It is primarily an exploratory/diagnostic tool, though see point 4 below.
+1.  Retrospective analysis is a way to assess whether something is inconsistent in data or model assumptions. A retrospective pattern can arise from changes in catch, M, q, selectivity, or growth from that which is in the model. It is primarily an exploratory/diagnostic tool, though see point 4 below. The [{nwfscDiag}](https://pfmc-assessments.github.io/nwfscDiag/) package can help with this.
 
 2.  See the 11/17/2021 [PEP team meeting presentation](https://docs.google.com/presentation/d/1ZfW1-d6x-lzhxLZpYQhlIAFuAW8ij_e5oEEV0ujwP5A/edit#slide=id.gf83411298e_0_18) for background information and past publications on retrospective analysis
 
@@ -28,11 +28,11 @@ The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/
 
 ## `r4ss`
 
-1.  The {r4ss} package is available on CRAN but the most up-to-date version can be installed from GitHub. Installation instructions are available [here](https://github.com/r4ss/r4ss).
+1.  The {r4ss} package should be installed from GitHub. Installation instructions are available at <https://r4ss.github.io/r4ss/>.
 
-2.  See the intro vignette [here](https://r4ss.github.io/r4ss/) for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the `r4ss::tune_comps()` function.
+2.  See the intro vignette at on that website for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the `r4ss::tune_comps()` function.
 
-3.  It's good idea to reinstall it on a regular basis to keep up. You can also watch the github repository if you want to get notifications of changes.
+3.  It's good idea to reinstall r4ss on a regular basis to keep up. You can also watch the github repository if you want to get notifications of changes.
 
 4.  Look through all the figures that get produced by `r4ss::SS_plots()`. There have been cases where models were put forth with incorrect assumptions about biology, ageing error, etc. that could have been caught if the assessment authors had paid attention to all the plots.
 
@@ -44,24 +44,10 @@ The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/
 
 1.  Read the [terms of reference](https://www.pcouncil.org/documents/2020/05/f-2-attachment-3-draft-revised-terms-of-reference-for-the-groundfish-and-coastal-pelagic-species-stock-assessment-process-for-2021-and-2022.pdf/) and actually follow them.
 
-2.  See the [{sa4ss}](https://github.com/pfmc-assessments/sa4ss) package.
+2.  As of winter 2024, we are transitioning from [{sa4ss}](https://pfmc-assessments.github.io/sa4ss/) to [{asar}](https://nmfs-ost.github.io/asar/) but don't yet have any regional guidance to add to this handbook.
 
-3.  If you're using Word, talk to power users of Word about formatting of section headings, links to figures or tables, etc.. These links save much time when document is updated with sections or elements added or removed.
+3.  Use proper dashes and hyphens for readability: [Hyphen, En dash, and Em dash](http://cutewriting.blogspot.com/2008/06/en-dash-em-dash-and-hyphen.html)
 
-<!-- -->
+4.  Jason Cope suggests comparing assessment results with estimates from simpler methods saying: "It would be really easy to compare results of every assessment we do with the results of the data-poor methods." Jason did this for cabezon in 2019 and thinks we could do it for all our assessments.
 
-a.  See the Assessment Document Template for a pre-made setup that reflects 2017-18 TORs: `\\nwcfile\fram\Assessments\Archives` and shared on the [Google Drive](https://drive.google.com/a/noaa.gov/file/d/0B57aOEaukI73UDlNVUVNZTFScWs/view?usp=sharing)
-
-<!-- -->
-
-4.  Use proper dashes and hyphens for readability: [Hyphen, En dash, and Em dash](http://cutewriting.blogspot.com/2008/06/en-dash-em-dash-and-hyphen.html)
-
-5.  Jason says: "It would be really easy to compare results of every assessment we do with the results of the data-poor methods." He did this for Cabezon in 2009 and thinks we could do it for all our assessments.
-
-6.  For Word, consider using Endnote or Zotero to find/organize/insert references. The assessment endnote library is at `\\Nwcfile\fram\Assessment\References`, but please export references you need and do not link a Word document directly to that library.
-
-7.  Make sure that labels on Figures are readable. The best way to get figures produced in R into word is to save them as PNG files. The plotting functions in the R4SS package have an input for resolution that can be increased as needed. The default resolution is higher than what you get if you save the images one by one from the RGUI graphics window.
-
-8.  Crop out non-informative headings and labels from figures imported from R4SS or other packages.
-
-9.  The council website has a [useful dashboard](https://reports.psmfc.org/pacfin/f?p=501:5302:5212201589304:INITIAL::) for information on recent fishery performance, OFLs, ACLs, etc. Go to the "GMT016 - Stock Summary" table and filter by species and area.
+5.  The Council website has a [useful dashboard](https://reports.psmfc.org/pacfin/f?p=501:5302:5212201589304:INITIAL::) for information on recent fishery performance, OFLs, ACLs, etc. Go to the "GMT016 - Stock Summary" table and filter by species and area.

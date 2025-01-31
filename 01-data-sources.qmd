@@ -24,15 +24,15 @@ Vanessa Tuttle ([Vanessa.Tuttle\@noaa.gov](mailto:Vanessa.Tuttle@noaa.gov)) is t
 
 ### PacFIN biological data (BDS)
 
-To get these data, create a "Data request" issue on the [PacFIN.Utilities github repo](https://github.com/pfmc-assessments/PacFIN.Utilities/issues). To confirm sample sizes for BDS, go to [this webpage](http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt) which should give a recent tally of samples by state agency.
+To get these data, create a "Data request" issue on the [pacfintools github repo](https://github.com/pfmc-assessments/pacfintools/issues). To confirm sample sizes for BDS, go to [this webpage](http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt) which should give a recent tally of samples by state agency.
 
-Generalized code to process the data are currently in [{PacFIN.Utilities}](https://github.com/pfmc-assessments/PacFIN.Utilities).
+Generalized code to process the data are currently in [{pacfintools}](https://github.com/pfmc-assessments/pacfintools).
 
 You may see some discrepancies in CA data from 1985-1989 when compared to older extractions. Some samples were removed for some species. It is not clear why these samples were removed.
 
 ### PacFIN landings
 
-To get these data, create a "Data request" issue on the [PacFIN.Utilities github repo](https://github.com/pfmc-assessments/PacFIN.Utilities/issues).
+To get these data, create a "Data request" issue on the [pacfintools github repo](https://github.com/pfmc-assessments/pacfintools/issues).
 
 Note that the PacFIN catch can be broken down by INPFC or month only for the trawl component, not the non-trawl gears. Also, beware double counting based on multiple levels of aggregation.
 
@@ -44,7 +44,7 @@ Once you have catch values for all years, contact the state representative(s) fo
 
 All states have in the past claimed that all rec. data is available on [RecFIN](http://www.recfin.org/). Users should check with state representatives for updated information on the recommended source for recreational data. One can pull historical catches [here](http://www.recfin.org). Select the "Catch / Sample Data Reports" image which takes you to the reports dashboard. Alternatively, ODBC connections can be used to pull catch estimates directly from the Comprehensive Fish Ticket table. Some data sources (e.g. MRFSS, WA historic catch estimates) are not currently available via the public login, so you need to login with an account that has permission to view the tables. Additionally, once you have catch values for all years, contact the state representative for confirmation that the values are correct.
 
-Washington provides historical recreational catch in numbers. (Modern catches are available in both numbers and weight.) This leads to two decisions for putting catches into the model: keep catch in numbers, which stock synthesis converts to weights internally; or convert catch to weight using an external estimate. Both options have been done historically. The former causes challenges for projections, but if the former is chosen, it is useful to compare the model's calculated average weight of the catch to the value used to convert numbers to weight to see if there is large disagreement. For a partial history about this issue, and approaches for some past assessments see [issue #52](https://github.com/pfmc-assessments/canary_2023/issues/52) from the canary rockfish github page. Note that Washington historical catches are publicly available on RecFIN, but should be filtered to areas 1-4 (coastal marine catch areas). As of the 2025 yellowtail assessment, publicly available RecFIN catch data excluded all Puget Sound catch, whereas catch from the "Sekiu and Pillar Point" area near the entrance to Puget Sound should be included in assessments in federal waters. In order to include these catches, you will need to use the confidential catch data table (CTE501), rather than the public version (CTE001), which aggregates data to a higher spatial resolution and excludes Puget Sound. 
+Washington provides historical recreational catch in numbers. (Modern catches are available in both numbers and weight.) This leads to two decisions for putting catches into the model: keep catch in numbers, which stock synthesis converts to weights internally; or convert catch to weight using an external estimate. Both options have been done historically. The former causes challenges for projections, but if the former is chosen, it is useful to compare the model's calculated average weight of the catch to the value used to convert numbers to weight to see if there is large disagreement. For a partial history about this issue, and approaches for some past assessments see [issue #52](https://github.com/pfmc-assessments/canary_2023/issues/52) from the canary rockfish github page. Note that Washington historical catches are publicly available on RecFIN, but should be filtered to areas 1-4 (coastal marine catch areas). As of the 2025 yellowtail assessment, publicly available RecFIN catch data excluded all Puget Sound catch, whereas catch from the "Sekiu and Pillar Point" area near the entrance to Puget Sound should be included in assessments in federal waters. In order to include these catches, you will need to use the confidential catch data table (CTE501), rather than the public version (CTE001), which aggregates data to a higher spatial resolution and excludes Puget Sound.
 
 To obtain length composition data,
 
@@ -60,21 +60,21 @@ This is not automatically included in any of the other data sources. Gretchen Ha
 
 ## Indices of abundance
 
-At a team meeting on 13 March 2019, the team agreed on the following terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. This will be the approach used in the write-up of the surveys as well.
+At a team meeting on 13 March 2019, the team agreed on common terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. These names have been slightly revised to better match the names used in the Miller et al. background doc "Overview of West Coast Groundfish Fishery-Independent Surveys" (available to NOAA folks on Google Drive at [here](https://docs.google.com/document/d/1gvMFvK0nWT1b3WXiZR14CtQLCIIYAlMu/edit?usp=sharing&ouid=109294197263395918754&rtpof=true&sd=true))
 
--   NWFSC West Coast Groundfish Bottom Trawl Survey (WCGBT Survey)
+-   NWFSC West Coast Groundfish Bottom Trawl Survey (WCGBT Survey or WCGBTS)
 
--   AFSC/NWFSC West Coast Triennial Shelf Survey (Triennial Survey)
+-   NMFS West Coast Triennial Shelf Survey (Triennial Survey)
 
 -   AFSC West Coast Slope Survey (AFSC Slope Survey)
 
 -   NWFSC West Coast Slope Survey (NWFSC Slope Survey)
 
--   NWFSC Southern California Shelf Rockfish Hook and Line Survey (H&L Survey)
+-   NWFSC Southern California Shelf Rockfish Hook and Line Survey (NWFSC HKL Survey)
 
 -   NWFSC Integrated Acoustic and Trawl Survey of Pacific Hake (Acoustic Survey)
 
-Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package are "NWFSC.Combo", "Triennial", "AFSC.Slope", "NWFSC.Slope". The H&L and acoustic surveys are not currently available through that package.
+Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package are "NWFSC.Combo", "Triennial", "AFSC.Slope", "NWFSC.Slope". The HKL and acoustic surveys are not currently available through that package.
 
 ## Summary of NOAA fishery independent trawl surveys used for west coast assessments
 
@@ -92,6 +92,8 @@ Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://
 
     f.  The 2005 and 2013 Shortspine Thornyhead assessments split the triennial into shallow vs. deep to create a single index from 1980-2004 for 55-366 m and a separate 366-500 m index for 1995-2004.
 
+    g.  Strata information from the [2001 AFSC Triennial Survey Plan](https://docs.google.com/a/noaa.gov/document/d/1WnWF60l9GgB7ZwFeds7RYbddXMNmxxR6FAvB2Q4unPY/edit?usp=sharing) includes the following information on the depth strata "Sampling density will be similar throughout the three depth strata: 30-100, 101-200, and 201-275 fm (55-183, 184-366, and 367-500 m) of the survey area. Tracklines are spaced at 10 nmi intervals and stations are located randomly along those tracklines at the rate of one station per four nmi of linear distance in the shallow stratum and one station every five nmi of linear distance in the two deeper strata."
+
 2.  AKFSC Slope Survey (1997-2001, 183--1280m, north of 34.5)
 
     a.  Years before 1997 surveyed small areas of the coast
@@ -107,6 +109,8 @@ Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://
     b.  Note that there were changes in sampling intensity at 183 and 549 meters
 
     c.  This survey should be referenced as the "WCGBT Survey"
+
+![Summary of the day of the year, latitude and depth covered by each of the primary trawl surveys on the U.S. West Coast. Values that are typically excluded (Triennial in 1977 and AFSC Slope survey prior to 1997) are shaded gray. Note that the depth figure uses a log<sub>2</sub>-scale to better reflect the relative area associated with different depth ranges (shelf is generally wider than slope).](img/survey_summary_US_West_Coast.png)
 
 ### AFSC surveys
 
@@ -151,7 +155,7 @@ Additional information on the survey can be found in these documents from John W
 >
 > [Calcs for Strata Tow Percentages and Station Selection for the NWFSC Bottom Trawl Surveys for 2003 and Beyond (PDF file on Google Drive)](https://drive.google.com/a/noaa.gov/file/d/0B5YpOk8zQ3cuYWpSNEQ5XzZUMlk/edit?usp=sharing)
 
-Index standardization is used Kelli Johnson's [VAST wrapper](https://github.com/pfmc-assessments/VASTWestCoast) has specific examples for each survey located in the inst\\examples folder.
+As of January 2025, index standardization for the trawl surveys is conducted by a subset of NWFSC staff used the [{indexwc}](https://github.com/pfmc-assessments/indexwc/) package and shared with the assessment authors. The documentation of this package will be improved in the future to make it easier for folks to explore alternative indices beyond what is initially provided.
 
 ### NWFSC Survey Length and Age Compositions
 
@@ -171,7 +175,7 @@ A second phase would be to define a way to filter all the tows to remove likely 
 
 ### IPHC survey
 
-This survey has been used for Yelloweye Rockfish and Spiny Dogfish. Claude Dykstra ([claude\@iphc.int](mailto:claude@iphc.int)) has provided data in the past. The index was calculated using a binomial GLM developed by John Wallace. Talk to John or Ian Taylor to get R code for this analysis.
+This survey has been used for Yelloweye Rockfish and Spiny Dogfish. Claude Dykstra ([claude\@iphc.int](mailto:claude@iphc.int)) has provided data in the past. The index was calculated using a binomial GLM developed by John Wallace. WDFW staff have also explored standardizing this index (work for Yelloweye in 2025 still in progress).
 
 ### Oregon recreational observer program data
 
@@ -189,7 +193,9 @@ The first approach is to include discard mortality into the catch data rather th
 
 The second and third alternative approaches to including discard data is to model the process of discarding within SS3. Discards can be modeled either as total discards in mt or through the rate of discarding. Both of these approaches will require discard length data to be included in the model, or if not available, a specific assumption regarding the retention curve relative to the estimated selectivity curve.
 
-Estimates of total discards are available in the annual groundfish mortality report (and the GEMM). If a specific breakdown of discard by fleet is required (gear and/or area) speak with Dr. Chantel Wetzel. The data may not be able to be summarized to all fleet structures, so it is best to discuss the options with Chantel early in the assessment process. Assumptions regarding the discard total in the most recent year and historical years prior to the start of WCGOP data (2002) will need to be made by the assessor and modeled (often through the use of time blocks). If total discards are modeled, one will need to enter an annual CV into SS3 which is currently not available with the GEMM. The current approach for obtaining discard totals or discard rates with CV is via bootstrapping the available WCGOP observer data. The bootstrap CV will be based on the observer data and may not be entirely consistent with the data available in the groundfish mortality report (and the GEMM), particularly for sectors with limited observer coverage. Please see below for additional information regarding bootstrapping.
+Estimates of total discards are available in the annual groundfish mortality report (and the GEMM). If a specific breakdown of discard by fleet is required (gear and/or area) speak with Dr. Chantel Wetzel. The data may not be able to be summarized to all fleet structures, so it is best to discuss the options with Chantel early in the assessment process. To get processed data, create a "Data request" issue on the [nwfscDiscard github repo](https://github.com/pfmc-assessments/nwfscDiscard/issues).
+
+Assumptions regarding the discard total in the most recent year and historical years prior to the start of WCGOP data (2002) will need to be made by the assessor and modeled (often through the use of time blocks). If total discards are modeled, one will need to enter an annual CV into SS3 which is currently not available with the GEMM. The current approach for obtaining discard totals or discard rates with CV is via bootstrapping the available WCGOP observer data. The bootstrap CV will be based on the observer data and may not be entirely consistent with the data available in the groundfish mortality report (and the GEMM), particularly for sectors with limited observer coverage. Please see below for additional information regarding bootstrapping.
 
 Modeling discard rates can be an easier approach since it does not require knowledge about the total discard amounts. However, this approach may not be feasible for stocks with limited observations in the WCGOP data due to high variability in the observed discarded and retained fish. The IFQ trawl fleet currently has near 100% observer coverage starting in 2011, while the non-catch share sectors have a much lower observed percentage (\~20% as of last inquiry, but this may change in the future). Historically, it was thought that discard rates could not be calculated for complex managed species. However, this is not the case based on the current data. Discard rates are calculated based on the observed discarded weight relative to the total observed weight of discarded and retained fish. Bootstrapping is done using the data in order to provide a CV to the discard rate. Similar to two previous approaches, assumptions regarding the discard rate in the most recent year and historical years prior to the start of WCGOP data (2002) will need to be made by the assessor and modeled (often through the use of time blocks).
 
@@ -207,17 +213,17 @@ The WCGOP database includes only data collected by observers on West Coast vesse
 
 WCGOP observers a wide-range of fishing sectors for vessels participating in the Individual Fishing Quota (IFQ, also referred to as catch share) fishery and non-catch share fisheries. Groundfish stock assessment most often define fleet structures within assessment models based on gear types. WCGOP data contains data for the following gear groups: bottom trawl, fixed gears, hook & line, midwater trawl, pot, and shrimp trawl. Grouping data based upon gear types will include data from multiple sectors which may or may not catch particular species. Each gear type includes the data from the following sectors:
 
-- bottom trawl: catch shares, limited entry Pacific halibut, limited entry trawl, open access California halibut, and sea cucumber
+-   bottom trawl: catch shares, limited entry Pacific halibut, limited entry trawl, open access California halibut, and sea cucumber
 
-- fixed gear: nearshore
+-   fixed gear: nearshore
 
-- hook & line: catch shares, directed Pacific halibut, limited entry fixed gear DTL, limited entry sablefish, and open access fixed gear
+-   hook & line: catch shares, directed Pacific halibut, limited entry fixed gear DTL, limited entry sablefish, and open access fixed gear
 
-- midwater trawl: catch shares, limited entry trawl, midwater hake, and midwater rockfish
+-   midwater trawl: catch shares, limited entry trawl, midwater hake, and midwater rockfish
 
-- pot: catch shares, limited entry sablefish, and open access fixed gear
+-   pot: catch shares, limited entry sablefish, and open access fixed gear
 
-- shrimp trawl: pink shrimp and ridgeback prawn.
+-   shrimp trawl: pink shrimp and ridgeback prawn.
 
 The groundfish expanded multi-year mortality (GEMM) report can be used to understand how much mortality (landed and discarded) is coming from each sector for any particular species. Examining these data can help analysts understand how best to use these data within their assessment. The GEMM data can be accessed using the `pull_gemm()` in the `nwfscSurvey` package.
 
@@ -231,9 +237,9 @@ The current approach to obtain uncertainty around the data in the WCGOP database
 
 ### Biological data
 
-WGCOP contains data on the lengths of fish discarded by gear type and sector as well as the average body weight of discarded fish that can be used within an assessment to estimate discarding within the model. 
+WGCOP contains data on the lengths of fish discarded by gear type and sector as well as the average body weight of discarded fish that can be used within an assessment to estimate discarding within the model.
 
-Generally, retained length or margninal age composition data within assessments from the commercial fishery (PacFIN bds) or NWFSC surveys are expanded up to the tow/trip and up to the total catch weight by area. In contrast, WCGOP length or age data are only expanded up to the tow level. This is because the total discard or landed weight by area and gear is not readily available in the WCGOP data. Hence, analysts should be mindful about the observations by gear and sector to ensure that the overall compositions are representative of landed catch in the model by fleet. For example, if 50% of the discard lengths are arising from a sector with 5% of the overall landings in the model fleet, this could lead to a situation where the estimated retention curve that is not representative of the sector with the 95% of the landings in the model.  Another example is the shrimp trawl fleet that generally has low overall bycatch of rockfish, but can have large bycatch numbers of small juvenile rockfish. Grouping these data together with other trawl gears will influence both the retention curve but potentially also the estimates of annual recruitment deviations. To deal with this one could choose to not group shrimp trawl length data within the trawl gear data or the analyst could request the length data separated by gear type and then weight the data by total discards available in the GEMM (e.g., one could also talk to Kayleigh Sommers if the correct stratification is not available in the GEMM). 
+Generally, retained length or margninal age composition data within assessments from the commercial fishery (PacFIN bds) or NWFSC surveys are expanded up to the tow/trip and up to the total catch weight by area. In contrast, WCGOP length or age data are only expanded up to the tow level. This is because the total discard or landed weight by area and gear is not readily available in the WCGOP data. Hence, analysts should be mindful about the observations by gear and sector to ensure that the overall compositions are representative of landed catch in the model by fleet. For example, if 50% of the discard lengths are arising from a sector with 5% of the overall landings in the model fleet, this could lead to a situation where the estimated retention curve that is not representative of the sector with the 95% of the landings in the model. Another example is the shrimp trawl fleet that generally has low overall bycatch of rockfish, but can have large bycatch numbers of small juvenile rockfish. Grouping these data together with other trawl gears will influence both the retention curve but potentially also the estimates of annual recruitment deviations. To deal with this one could choose to not group shrimp trawl length data within the trawl gear data or the analyst could request the length data separated by gear type and then weight the data by total discards available in the GEMM (e.g., one could also talk to Kayleigh Sommers if the correct stratification is not available in the GEMM).
 
 ### Requesting discard data
 

@@ -8,6 +8,6 @@ Git is a version control system that can be used to synchronize files between th
 
 ### Shared code locations
 
-Most of the R packages and code used in NWFSC assessments are listed in the README at (https://github.com/pfmc-assessments). Other sources not included in this github organization include [Stock Synthesis](https://github.com/nmfs-stock-synthesis/stock-synthesis) and associated packages including [{r4ss}](https://github.com/r4ss/r4ss/) and [{ss3diags}](https://github.com/jabbamodel/ss3diags) (not yet used for PFMC assessments).
+Most of the R packages and code used in NWFSC assessments are listed in the README at <https://github.com/pfmc-assessments>. Other sources not included in this github organization include [Stock Synthesis](https://github.com/nmfs-stock-synthesis/stock-synthesis) and associated packages including [{r4ss}](https://github.com/r4ss/r4ss/) and [{ss3diags}](https://github.com/jabbamodel/ss3diags) (not yet used for PFMC assessments).
 
 In addition, [NMFS OpenSci](https://github.com/orgs/nmfs-opensci/repositories) has a number of NMFS templates for websites, quarto, Rmd docs, and presentations
