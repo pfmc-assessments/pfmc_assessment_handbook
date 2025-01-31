@@ -10,7 +10,7 @@ The comments below are based on a team discussion on how to select a population 
 
 **Choice 3, Data length bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. We should check to make sure that the selection of length and age bins are consistent with each other. Typically, we often have max length bins where there are only a few fish, but a larger proportion of data in the data age plus group.
 
-**Choice 4, Data age bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered "data mining". Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e., 5\%). Also, add a warning to [{r4ss}](https://github.com/r4ss/r4ss) about the percentage in the population and data plus groups.
+**Choice 4, Data age bins** should probably be big enough that the plus group doesn't have much more in it than the previous bin. In regards to population maximum age, there is no negative repercussions within SS3 for having a larger value, beyond a slower run time. Revising the age bins based on the data, rather than a priori rules about how to set this, may be considered "data mining". Could create a check within the survey and PacFIN comp codes that creates a flag when the data plus group has more than a certain percentage (i.e., 5%). Also, add a warning to [{r4ss}](https://github.com/r4ss/r4ss) about the percentage in the population and data plus groups.
 
 ## Determining prior for natural mortality
 
@@ -26,7 +26,7 @@ Owen's Advice on $M$; July 6, 2022
 
 ## Length-weight relationships
 
-Use the [nwfscSurvey::estimate_weight_length()](https://pfmc-assessments.github.io/nwfscSurvey/reference/estimate_weight_length.html). It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally.
+Use the [nwfscSurvey::estimate_weight_length()](https://pfmc-assessments.github.io/nwfscSurvey/reference/estimate_weight_length.html). It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally. Other data sources (e.g., PacFIN if weights are available, etc.) can be passed to this function to estimate weight-length relationships. The `col_length` and `col_weight` arguments should be used to specify the specific string used to identify these quantities in your data. 
 
 ## Estimating ageing error
 
@@ -186,17 +186,14 @@ Below is detailed information regarding the meta-analysis approach applied betwe
 
     -   2017: mean = 0.72, sd = 0.158
 
-
 ## Projections (a.k.a. Forecasts)
 
-* Forecast settings
-  * The time-varying Pstar for your forecast.ss file can be calculated using `PEPtools::get_buffer()` (no website, see (PEPtools github repo)[https://github.com/pfmc-assessments/PEPtools/])
-    * default `sigma` input to that function is 0.5 for Category 1 stocks and 1.0 for Category 2 but if uncertainty in the model (one of `model$Pstar_sigma` or `model$OFL_sigma` as output from `r4ss::SS_output()`--check with SSC folks on which) is larger, use that instead.
-    * `pstar` input is set by the council (check with GMT rep)
-  * Make sure you are using the right control rule for the PFMC in your forecast file: `3 # Control rule method (0: none; 1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) `
-  * Fixed catches for first 2 years of forecast 
-    * typically provided by GMT rep to STAR
-    * OFL/ACL values are in GMT016 table in https://reports.psmfc.org/pacfin/f?p=501:1000:4357688221402::::: (remember to filter for your species)
-* Creating the forecast table of OFL/ABC/ACL
-  * You can use `r4ss::SSexecutivesummar()` to help with this task 
-    * You may want to specify the OFLs (and ACLs) for the next two years: `r4ss::SSexecutivesummary(model, forecast_ofl = c(3763, 3563))
+The time-varying Pstar for your forecast.ss file can be calculated using `PEPtools::get_buffer()`,see [PEPtools github repo](https://github.com/pfmc-assessments/PEPtools/).
+
+The default `sigma` input to that function is 0.5 for Category 1 stocks and 1.0 for Category 2 but if uncertainty in the model (one of `model$Pstar_sigma` or `model$OFL_sigma` as output from `r4ss::SS_output()`--check with SSC folks on which) is larger, use that instead. The `pstar` is set by the Council and the adopted value can be found online table [GMT015](https://reports.psmfc.org/pacfin/f?p=501:5301:6060050528090:INITIAL::::). It is recommended to get confirmation from the GMT representative as well.
+
+Make sure you are using the right control rule for the PFMC in your forecast file: `3 # Control rule method (0: none; 1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch)`
+
+Fixed catches for first 2 years of forecast (the current year and next) should be provided by GMT rep to STAR Panel. The values are input at the bottome of the SS3 forecast file and should be split by fleet in the model. Adopted OFL/ACL values are in [GMT016 table](https://reports.psmfc.org/pacfin/f?p=501:1000:4357688221402:::::).
+
+Creating the forecast table of OFLs and ABCs (ACLs if the relative stock size is below the management target) for your assessment document you can use [`r4ss::SSexecutivesummary()`](https://r4ss.github.io/r4ss/reference/SSexecutivesummary.html) to help with this task. You may want to specify the OFLs (and ACLs) for the next two years: `r4ss::SSexecutivesummary(model, forecast_ofl = c(3763, 3563))`

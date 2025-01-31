@@ -28,7 +28,7 @@ The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/
 
 ## `r4ss`
 
-1.  The {r4ss} package should be installed from GitHub. Installation instructions are available at [https://r4ss.github.io/r4ss/](https://r4ss.github.io/r4ss/).
+1.  The {r4ss} package should be installed from GitHub. Installation instructions are available at <https://r4ss.github.io/r4ss/>.
 
 2.  See the intro vignette at on that website for info on more advanced topics like scripting Stock Synthesis workflows with r4ss and using the `r4ss::tune_comps()` function.
 
@@ -44,10 +44,10 @@ The rebuilder github repository ([pfmc-assessment/rebuilder](https://github.com/
 
 1.  Read the [terms of reference](https://www.pcouncil.org/documents/2020/05/f-2-attachment-3-draft-revised-terms-of-reference-for-the-groundfish-and-coastal-pelagic-species-stock-assessment-process-for-2021-and-2022.pdf/) and actually follow them.
 
-1.  As of winter 2025, we are transitioning from [{sa4ss}](https://pfmc-assessments.github.io/sa4ss/) to [{asar}](https://nmfs-ost.github.io/asar/) but don't yet have any regional guidance to add to this handbook.
+2.  As of winter 2024, we are transitioning from [{sa4ss}](https://pfmc-assessments.github.io/sa4ss/) to [{asar}](https://nmfs-ost.github.io/asar/) but don't yet have any regional guidance to add to this handbook.
 
-1.  Use proper dashes and hyphens for readability: [Hyphen, En dash, and Em dash](http://cutewriting.blogspot.com/2008/06/en-dash-em-dash-and-hyphen.html)
+3.  Use proper dashes and hyphens for readability: [Hyphen, En dash, and Em dash](http://cutewriting.blogspot.com/2008/06/en-dash-em-dash-and-hyphen.html)
 
-1.  Jason says: "It would be really easy to compare results of every assessment we do with the results of the data-poor methods." He did this for Cabezon in 2009 and thinks we could do it for all our assessments.
+4.  Jason Cope suggests comparing assessment results with estimates from simpler methods saying: "It would be really easy to compare results of every assessment we do with the results of the data-poor methods." Jason did this for cabezon in 2019 and thinks we could do it for all our assessments.
 
-1.  The council website has a [useful dashboard](https://reports.psmfc.org/pacfin/f?p=501:5302:5212201589304:INITIAL::) for information on recent fishery performance, OFLs, ACLs, etc. Go to the "GMT016 - Stock Summary" table and filter by species and area.
+5.  The Council website has a [useful dashboard](https://reports.psmfc.org/pacfin/f?p=501:5302:5212201589304:INITIAL::) for information on recent fishery performance, OFLs, ACLs, etc. Go to the "GMT016 - Stock Summary" table and filter by species and area.
