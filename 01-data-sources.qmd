@@ -60,11 +60,11 @@ This is not automatically included in any of the other data sources. Gretchen Ha
 
 ## Indices of abundance
 
-At a team meeting on 13 March 2019, the team agreed on the following terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. This will be the approach used in the write-up of the surveys as well.
+At a team meeting on 13 March 2019, the team agreed on common terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. These names have been slightly revised to better match the names used in the Miller et al. background doc Overview of West Coast Groundfish Fishery-Independent Surveys (available to NOAA folks on Google Drive at [here](https://docs.google.com/document/d/1gvMFvK0nWT1b3WXiZR14CtQLCIIYAlMu/edit?usp=sharing&ouid=109294197263395918754&rtpof=true&sd=true))
 
--   NWFSC West Coast Groundfish Bottom Trawl Survey (WCGBT Survey)
+-   NWFSC West Coast Groundfish Bottom Trawl Survey (WCGBT Survey or WCGBTS)
 
--   AFSC/NWFSC West Coast Triennial Shelf Survey (Triennial Survey)
+-   NMFS West Coast Triennial Shelf Survey (Triennial Survey)
 
 -   AFSC West Coast Slope Survey (AFSC Slope Survey)
 
@@ -74,7 +74,7 @@ At a team meeting on 13 March 2019, the team agreed on the following terminology
 
 -   NWFSC Integrated Acoustic and Trawl Survey of Pacific Hake (Acoustic Survey)
 
-Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package are "NWFSC.Combo", "Triennial", "AFSC.Slope", "NWFSC.Slope". The H&L and acoustic surveys are not currently available through that package.
+Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package are "NWFSC.Combo", "Triennial", "AFSC.Slope", "NWFSC.Slope". The HKL and acoustic surveys are not currently available through that package.
 
 ## Summary of NOAA fishery independent trawl surveys used for west coast assessments
 
