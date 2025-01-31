@@ -26,11 +26,11 @@ Owen's Advice on $M$; July 6, 2022
 
 ## Length-weight relationships
 
-Use the [getWLpars()](https://pfmc-assessments.github.io/PacFIN.Utilities/reference/getWLpars.html) function in {PacFIN.Utilities} which provides estimates for the parameters required by Stock Synthesis. It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally.
+Use the [nwfscSurvey::estimate_weight_length()](https://pfmc-assessments.github.io/nwfscSurvey/reference/estimate_weight_length.html). It is common to rely only on data from the WCGBT Survey to get the parameters used in the model under the assumption that this survey is most representative of the population as a whole. These parameters should always be fixed in the model as no data type is available in SS3 to accurately estimate them internally.
 
 ## Estimating ageing error
 
-See the [{nwfscAgeingError}](https://github.com/pfmc-assessments/nwfscAgeingError) package.
+See the [{AgeingError}](https://github.com/pfmc-assessments/AgeingError) package.
 
 ## Maturity
 
@@ -46,11 +46,11 @@ Note: John Field has expressed concern that we are too focused on recent samples
 
 [Dick et al. (2017)](http://www.sciencedirect.com/science/article/pii/S0165783616303745) has estimates for the $a$ and $b$ parameters in the functional form $F = aL^b$ for many rockfish. The estimates are based on length in mm and predicted number of eggs, fitted in log-space. If you use length in cm (like in SS3), and don't want huge spawning biomass values (eggs), you can convert the values in the paper to units of cm and millions, billions, or trillions of eggs. First, find the values "$\exp(a)$" (referred to as $a'$ below) and "$b$" from Table 6 in Dick et al. for your species (or subgenus, if no estimate for your species is reported). If your subgenus is not reported, you can use the "*Sebastes*" values.
 
-The correct value of the "$a$" parameter in Stock Synthesis (using fecundity at length option 2: eggs=a*L^b) with length in cm and spawning output in **millions of eggs** is:
+The correct value of the "$a$" parameter in Stock Synthesis (using fecundity at length option 2: eggs=a\*L\^b) with length in cm and spawning output in **millions of eggs** is:
 
 $$a = \frac{a'\cdot10^b}{1000}$$
 
-The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. The value of $b$ is unchanged, and can be used directly in the assessment. 
+The division is by 1 thousand instead of 1 million because recruitment in SS3 is in thousands. The value of $b$ is unchanged, and can be used directly in the assessment.
 
 Other options include spawning output in **billions of eggs** via:
 
@@ -185,3 +185,18 @@ Below is detailed information regarding the meta-analysis approach applied betwe
     -   2015: mean = 0.77, sd = 0.147
 
     -   2017: mean = 0.72, sd = 0.158
+
+
+## Projections (a.k.a. Forecasts)
+
+* Forecast settings
+  * The time-varying Pstar for your forecast.ss file can be calculated using `PEPtools::get_buffer()` (no website, see (PEPtools github repo)[https://github.com/pfmc-assessments/PEPtools/])
+    * default `sigma` input to that function is 0.5 for Category 1 stocks and 1.0 for Category 2 but if uncertainty in the model (one of `model$Pstar_sigma` or `model$OFL_sigma` as output from `r4ss::SS_output()`--check with SSC folks on which) is larger, use that instead.
+    * `pstar` input is set by the council (check with GMT rep)
+  * Make sure you are using the right control rule for the PFMC in your forecast file: `3 # Control rule method (0: none; 1: ramp does catch=f(SSB), buffer on F; 2: ramp does F=f(SSB), buffer on F; 3: ramp does catch=f(SSB), buffer on catch; 4: ramp does F=f(SSB), buffer on catch) `
+  * Fixed catches for first 2 years of forecast 
+    * typically provided by GMT rep to STAR
+    * OFL/ACL values are in GMT016 table in https://reports.psmfc.org/pacfin/f?p=501:1000:4357688221402::::: (remember to filter for your species)
+* Creating the forecast table of OFL/ABC/ACL
+  * You can use `r4ss::SSexecutivesummar()` to help with this task 
+    * You may want to specify the OFLs (and ACLs) for the next two years: `r4ss::SSexecutivesummary(model, forecast_ofl = c(3763, 3563))

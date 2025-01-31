@@ -24,15 +24,15 @@ Vanessa Tuttle ([Vanessa.Tuttle\@noaa.gov](mailto:Vanessa.Tuttle@noaa.gov)) is t
 
 ### PacFIN biological data (BDS)
 
-To get these data, create a "Data request" issue on the [PacFIN.Utilities github repo](https://github.com/pfmc-assessments/PacFIN.Utilities/issues). To confirm sample sizes for BDS, go to [this webpage](http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt) which should give a recent tally of samples by state agency.
+To get these data, create a "Data request" issue on the [pacfintools github repo](https://github.com/pfmc-assessments/pacfintools/issues). To confirm sample sizes for BDS, go to [this webpage](http://pacfin.psmfc.org/pacfin_pub/data_rpts_pub/bds_table_stats_sp_subtotals.txt) which should give a recent tally of samples by state agency.
 
-Generalized code to process the data are currently in [{PacFIN.Utilities}](https://github.com/pfmc-assessments/PacFIN.Utilities).
+Generalized code to process the data are currently in [{pacfintools}](https://github.com/pfmc-assessments/pacfintools).
 
 You may see some discrepancies in CA data from 1985-1989 when compared to older extractions. Some samples were removed for some species. It is not clear why these samples were removed.
 
 ### PacFIN landings
 
-To get these data, create a "Data request" issue on the [PacFIN.Utilities github repo](https://github.com/pfmc-assessments/PacFIN.Utilities/issues).
+To get these data, create a "Data request" issue on the [pacfintools github repo](https://github.com/pfmc-assessments/pacfintools/issues).
 
 Note that the PacFIN catch can be broken down by INPFC or month only for the trawl component, not the non-trawl gears. Also, beware double counting based on multiple levels of aggregation.
 
