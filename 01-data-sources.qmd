@@ -110,7 +110,7 @@ Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://
 
     c.  This survey should be referenced as the "WCGBT Survey"
 
-![Summary of the day of the year, latitude and depth covered by each of the primary trawl surveys on the U.S. West Coast. Note that the depth figure uses a log<sub>2</sub>-scale.](img/survey_summary_US_West_Coast.png)
+![Summary of the day of the year, latitude and depth covered by each of the primary trawl surveys on the U.S. West Coast. Values that are typically excluded (Triennial in 1977 and AFSC Slope survey prior to 1997) are shaded gray. Note that the depth figure uses a log<sub>2</sub>-scale to better reflect the relative area associated with different depth ranges (shelf is generally wider than slope).](img/survey_summary_US_West_Coast.png)
 
 ### AFSC surveys
 
