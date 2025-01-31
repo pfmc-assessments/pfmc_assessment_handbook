@@ -60,7 +60,7 @@ This is not automatically included in any of the other data sources. Gretchen Ha
 
 ## Indices of abundance
 
-At a team meeting on 13 March 2019, the team agreed on common terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. These names have been slightly revised to better match the names used in the Miller et al. background doc Overview of West Coast Groundfish Fishery-Independent Surveys (available to NOAA folks on Google Drive at [here](https://docs.google.com/document/d/1gvMFvK0nWT1b3WXiZR14CtQLCIIYAlMu/edit?usp=sharing&ouid=109294197263395918754&rtpof=true&sd=true))
+At a team meeting on 13 March 2019, the team agreed on common terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. These names have been slightly revised to better match the names used in the Miller et al. background doc "Overview of West Coast Groundfish Fishery-Independent Surveys" (available to NOAA folks on Google Drive at [here](https://docs.google.com/document/d/1gvMFvK0nWT1b3WXiZR14CtQLCIIYAlMu/edit?usp=sharing&ouid=109294197263395918754&rtpof=true&sd=true))
 
 -   NWFSC West Coast Groundfish Bottom Trawl Survey (WCGBT Survey or WCGBTS)
 
