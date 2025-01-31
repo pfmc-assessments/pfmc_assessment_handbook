@@ -1,6 +1,6 @@
 # Running Stock Synthesis
 
-Note that there's lots more information on the SS3 website: [https://nmfs-ost.github.io/ss3-website](https://nmfs-ost.github.io/ss3-website) including the User Manual.
+Note that there's lots more information on the SS3 website: <https://nmfs-ost.github.io/ss3-website> including the User Manual.
 
 ## Model setup
 
@@ -20,8 +20,9 @@ Note that there's lots more information on the SS3 website: [https://nmfs-ost.gi
 
 7.  **Composition data is typically tuned by either iterative Francis weighting or estimating Dirichlet-multinomial parameters.** The McAllister-Ianelli method has not performed as well in simulation testing. See the [data weighting section of the Stock Synthesis Manual](https://nmfs-stock-synthesis.github.io/doc/SS330_User_Manual.html#DataWeight) for more info (Dirichlet-multinomial guidance was updated by Jim Thorson in September 2022). The choice between these two methods often depends on qualitative evaluation of fits to the comp data and index data and how it differs among tuning approaches.
 
-8.  **Discard ratios and mean body weight** These data SHOULD be tuned if they are used in the model, but haven't often done so. Kelli Johnson tuned these for Sablefish in 2019 with the following description:
+8.  **Discard ratios and mean body weight** These data SHOULD be tuned if they are used in the model, but haven't often done so. In August 2023 the `r4ss::SS_output()` function was augmented to return `$discard_tuning_info` and `$mnwgt_tuning_info` based on code written by Kelli Johnson for the 2019 sablefish assessment. The following description for tuning was provided in the 2019 assessment of sablefish:
 
-    > Added variances for discard rates and mean body weights were set using values calculated iteratively using the RMSE of differences between input and estimated values derived from SS3. Variances were parameterized in terms of standard deviation and coefficient of variation, respectively. In August 2023 the `r4ss::SS_output()` function was augmented to return `$discard_tuning_info` and `$mnwgt_tuning_info` based on code written by Kelli for the 2019 Sablefish assessment.
+    > Added variances for discard rates and mean body weights were set using values calculated iteratively using the RMSE of differences between input and estimated values derived from SS3. Variances were parameterized in terms of standard deviation and coefficient of variation, respectively. 
+    
 
-9.  **Think about sigmaR.** This could be an arbitrarily chosen value, freely estimated, or iteratively tuned. Methot and Taylor (2011) suggest a way that the tuning could be done. Whatever you choose, put a little thought into it. SigmaR should be greater than the SD of the estimated recruitment deviations. The table `$sigma_R_info` output by `r4ss::SS_output()` provides information on tuning sigmaR.
+9.  **Think about sigmaR.** This could be an arbitrarily chosen value, freely estimated, or iteratively tuned. [Methot and Taylor (2011)](https://cdnsciencepub.com/doi/10.1139/f2011-092) suggest a way that the tuning could be done. Whatever you choose, put a little thought into it. SigmaR should be greater than the SD of the estimated recruitment deviations. The table `$sigma_R_info` output by `r4ss::SS_output()` provides information on tuning sigmaR.

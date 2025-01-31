@@ -92,7 +92,7 @@ Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://
 
     f.  The 2005 and 2013 Shortspine Thornyhead assessments split the triennial into shallow vs. deep to create a single index from 1980-2004 for 55-366 m and a separate 366-500 m index for 1995-2004.
 
-    g.  Strata information from the [2001 AFSC Triennial Survey Plan](https://docs.google.com/a/noaa.gov/document/d/1WnWF60l9GgB7ZwFeds7RYbddXMNmxxR6FAvB2Q4unPY/edit?usp=sharing) includes the following information on the depth strata "Sampling density will be similar throughout the three depth strata: 30-100, 101-200, and 201-275 fm (55-183, 184-366, and 367-500 m) of the survey area.  Tracklines are spaced at 10 nmi intervals and stations are located randomly along those tracklines at the rate of one station per four nmi of linear distance in the shallow stratum and one station every five nmi of linear distance in the two deeper strata."
+    g.  Strata information from the [2001 AFSC Triennial Survey Plan](https://docs.google.com/a/noaa.gov/document/d/1WnWF60l9GgB7ZwFeds7RYbddXMNmxxR6FAvB2Q4unPY/edit?usp=sharing) includes the following information on the depth strata "Sampling density will be similar throughout the three depth strata: 30-100, 101-200, and 201-275 fm (55-183, 184-366, and 367-500 m) of the survey area. Tracklines are spaced at 10 nmi intervals and stations are located randomly along those tracklines at the rate of one station per four nmi of linear distance in the shallow stratum and one station every five nmi of linear distance in the two deeper strata."
 
 2.  AKFSC Slope Survey (1997-2001, 183--1280m, north of 34.5)
 
