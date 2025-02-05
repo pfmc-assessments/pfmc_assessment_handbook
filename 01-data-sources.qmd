@@ -58,6 +58,10 @@ E.J. Dick (SWFSC) and Jason Edwards (PSMFC) are developing tables with catch-wei
 
 This is not automatically included in any of the other data sources. Gretchen Hanshew ([Gretchen.Hanshew\@noaa.gov](mailto:Gretchen.Hanshew@noaa.gov)) has been the source in the past. Talk to John Wallace and ~~Ian Taylor~~ about complexities regarding PacFIN records of landings from research catch.
 
+### Foreign landings
+
+Foreign commercial landings in U.S. waters that occurred prior to closure of the EEZ are not included in any state historical reconstruction, but should be included in catch time series. Estimates for a number of Sebastes and Sebastolobus species are available in [Rogers 2003](https://repository.library.noaa.gov/view/noaa/3364).
+
 ## Indices of abundance
 
 At a team meeting on 13 March 2019, the team agreed on common terminology for the surveys, where best practice would be to introduce the survey initially using the full name, with the short name in parentheses, and then use the short name after that. These names have been slightly revised to better match the names used in the Miller et al. background doc "Overview of West Coast Groundfish Fishery-Independent Surveys" (available to NOAA folks on Google Drive at [here](https://docs.google.com/document/d/1gvMFvK0nWT1b3WXiZR14CtQLCIIYAlMu/edit?usp=sharing&ouid=109294197263395918754&rtpof=true&sd=true))
