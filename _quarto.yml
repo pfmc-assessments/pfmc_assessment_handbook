@@ -29,9 +29,9 @@ format:
   html:
     theme: cosmo
     number-sections: true
-  pdf:
-    documentclass: scrreprt
-    number-sections: true
+#  pdf:
+#    documentclass: scrreprt
+#    number-sections: true
 
 editor: visual
 
