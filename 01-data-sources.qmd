@@ -2,7 +2,21 @@
 
 ## Table of contacts
 
-Contact info for various agencies (states, PacFIN, etc.) is listed in [this Google Doc](https://spreadsheets.google.com/ccc?key=0ApyEcf4KAlVTdDV0V1ZsNFM5REVzNDh4SXJGWkJydWc&hl=en#gid=0) created by Jason Cope in 2009 (updated May 2021)
+Below is a list of key contacts. It is not comprehensive, but someone on this list can probably help you find who you are looking for.
+
+| Name | Affiliation | Role | Email |
+|----------------|----------------|--------------------|--------------------|
+| Ali Whitman | ODFW | OR data steward | [alison.d.whitman\@odfw.oregon.gov](mailto:alison.d.whitman@odfw.oregon.gov){.email} |
+| Theresa Tsou | WDFW | WA data steward, SSC | [Tien-Shui.Tsou\@dfw.wa.gov](mailto:Tien-Shui.Tsou@dfw.wa.gov){.email} |
+| Fabio Caltabellotta | WDFW | WA data steward | [fabio.priorcaltabellotta\@dfw.wa.gov](mailto:fabio.priorcaltabellotta@dfw.wa.gov){.email} |
+| John Budrick | CDFW | SSC, CA data steward-ish | [John.Budrick\@wildlife.ca.gov](mailto:John.Budrick@wildlife.ca.gov){.email} |
+| Brenda Erwin | PSMFC | PacFIN CA data, CA otoliths | BErwin\@psmfc.org |
+| Jason Edwards | PSMFC | RecFIN | JEdwards\@psmfc.org |
+| E.J. Dick | SWFSC | Pre-PacFIN CA landings | edward.dick\@noaa.gov |
+| Vacant? | PSMFC | PacFIN data manager |  |
+| Patrick McDonald | PSMFC/NWFSC | Ageing lab | patrick.j.mcdonald\@noaa.gov |
+
+Check the PFMC webpage or contact Brian Langseth, the current NWFSC stock assessor on the GMT (as of 2027 cycle), for GMT representatives.
 
 ## Requesting data from State partners
 
@@ -54,6 +68,8 @@ To obtain length composition data,
 
 E.J. Dick (SWFSC) and Jason Edwards (PSMFC) are developing tables with catch-weighted length compositions. Tables have been prepared for WA and OR, and CA is in prep. Contact E.J. ([edward.dick\@noaa.gov](edward.dick@noaa.gov)) if you have questions or would like to use the estimates.
 
+As of the 2027 cycle, Brian Langseth has developed a new R package [{recfintools}](https://github.com/pfmc-assessments/recfintools) that functions similarly to {pacfintools}.
+
 ### Research catch
 
 This is not automatically included in any of the other data sources. Gretchen Hanshew ([Gretchen.Hanshew\@noaa.gov](mailto:Gretchen.Hanshew@noaa.gov)) has been the source in the past. Talk to John Wallace and ~~Ian Taylor~~ about complexities regarding PacFIN records of landings from research catch.
@@ -78,7 +94,7 @@ At a team meeting on 13 March 2019, the team agreed on common terminology for th
 
 -   NWFSC Integrated Acoustic and Trawl Survey of Pacific Hake (Acoustic Survey)
 
-Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package are "NWFSC.Combo", "Triennial", "AFSC.Slope", "NWFSC.Slope". The HKL and acoustic surveys are not currently available through that package.
+Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package in the `pull_*()` functions are "NWFSC.Combo", "Triennial", "AFSC.Slope", and "NWFSC.Slope". A cached version of hook and line survey data (i.e., not pulled directly from the NWFSC data warehouse) is available through the `pull_hkl_cache()` function. The acoustic survey, which has only been used for the hake assessment, is not available through an R package; contact the FEAT team.
 
 ## Summary of NOAA fishery independent trawl surveys used for west coast assessments
 
@@ -110,11 +126,11 @@ Note: the names for the first 4 of these surveys in the [{nwfscSurvey}](https://
 
     a.  Starting in 2004, there's a change in sampling intensity north and south of 34.5, so this strata boundary should be included (unless there's some specific reason not to)
 
-    b.  Note that there were changes in sampling intensity at 183 and 549 meters
+    b.  Note that there were changes in sampling intensity at 183 and 549 meters. These strata should also be included.
 
     c.  This survey should be referenced as the "WCGBT Survey"
 
-![Summary of the day of the year, latitude and depth covered by each of the primary trawl surveys on the U.S. West Coast. Values that are typically excluded (Triennial in 1977 and AFSC Slope survey prior to 1997) are shaded gray. Note that the depth figure uses a log<sub>2</sub>-scale to better reflect the relative area associated with different depth ranges (shelf is generally wider than slope).](img/survey_summary_US_West_Coast.png)
+![Summary of the day of the year, latitude and depth covered by each of the primary trawl surveys on the U.S. West Coast through 2024. Values that are typically excluded (Triennial in 1977 and AFSC Slope survey prior to 1997) are shaded gray. Note that the depth figure uses a log<sub>2</sub>-scale to better reflect the relative area associated with different depth ranges (shelf is generally wider than slope).](img/survey_summary_US_West_Coast.png)
 
 ### AFSC surveys
 
@@ -159,21 +175,21 @@ Additional information on the survey can be found in these documents from John W
 >
 > [Calcs for Strata Tow Percentages and Station Selection for the NWFSC Bottom Trawl Surveys for 2003 and Beyond (PDF file on Google Drive)](https://drive.google.com/a/noaa.gov/file/d/0B5YpOk8zQ3cuYWpSNEQ5XzZUMlk/edit?usp=sharing)
 
-As of January 2025, index standardization for the trawl surveys is conducted by a subset of NWFSC staff used the [{indexwc}](https://github.com/pfmc-assessments/indexwc/) package and shared with the assessment authors. The documentation of this package will be improved in the future to make it easier for folks to explore alternative indices beyond what is initially provided.
+As of January 2025, index standardization for the trawl surveys is conducted by a subset of NWFSC staff using the [{indexwc}](https://github.com/pfmc-assessments/indexwc/) package and shared with the assessment authors. The documentation of this package will be improved in the future to make it easier for folks to explore alternative indices beyond what is initially provided.
 
 ### NWFSC Survey Length and Age Compositions
 
-[{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package is used for comp data and other data explorations.
+The [{nwfscSurvey}](https://github.com/pfmc-assessments/nwfscSurvey) package is used for comp data and other data explorations.
 
-Scaling from Tow to Stratum Level: Weight normalized length or age comps for each tow by the numerical CPUE. This is done in the standard data package we get from Beth.
-
-Scaling from Stratum to Coastwide (or Assessment Area) level: Weight strata length or age comps by numerical index for each strata (from GLMM). This may mean dividing the biomass index for each stratum by the average weight in that stratum (likely estimated from the length comp in that stratum).
+The function `nwfscSurvey::get_expanded_comps()` will expand (i.e., weight) length and age observations by numerical abundance in the tow and stratum. The strata used to expand the composition data should be the same strata used to calculate the design-based index. The survey design should be included in that stratification.
 
 #### Filtering recorded catches that are fish stuck in net from previous tow
 
-In some cases, fish caught in one tow remain in the net until the next tow and are recorded as caught in that second tow (despite the attempts of the people on the survey to identify and exclude such fish from the data). While we plan to come up with a consistent way to deal with this, it has not been dealt with yet.
+In some cases, fish caught in one tow remain in the net until the next tow and are recorded as caught in that second tow (despite the attempts of the people on the survey to identify and exclude such fish from the data).
 
-One problem arising from this is catch data outside of the depth range of the species. To identify the depth range, one can start with the deepest/shallowest tow with a positive record for that species and then look to see if the previous tow conducted by that vessel (likely on the same date) caught that species. If so, and if a small number or a small relative number of that fish species were recorded in the second tow, one can assume that those were from the previous tow. By moving sequentially until one reaches a depth range where a few clearly legitimate tows occurred, one can define a reasonable depth range.
+One problem arising from this is catch data outside of the depth range of the species. Be careful when determining the maximum depth for projecting indices over. Using the absolute maximum recorded depth as the limit for this grid may go beyond the species' depth range.
+
+To identify the depth range, one can start with the deepest/shallowest tow with a positive record for that species and then look to see if the previous tow conducted by that vessel (likely on the same date) caught that species. If so, and if a small number or a small relative number of that fish species were recorded in the second tow, one can assume that those were from the previous tow. By moving sequentially until one reaches a depth range where a few clearly legitimate tows occurred, one can define a reasonable depth range.
 
 A second phase would be to define a way to filter all the tows to remove likely candidates. A simple way to do this is to look at the range of catch levels that were determined to be not legitimate, and filter the whole data set for that species by removing all tows with catches below some quantile of those catch levels (say 80 or 90%). This will eliminate having a large number of small catches in the database used for the GLMM, which would skew the modeled distribution.
 
@@ -183,7 +199,7 @@ This survey has been used for Yelloweye Rockfish and Spiny Dogfish. Claude Dykst
 
 ### Oregon recreational observer program data
 
-Troy Buell ([troy.v.buell\@state.or.us](mailto:troy.v.buell@state.or.us)) is still involved with this data source even though he has changed positions.
+Ali Whitman generally works up these data and provides indices.
 
 ## Notes and best practices for observer data and discards
 
@@ -211,7 +227,7 @@ Finally, the GEMM includes recreational mortality by state. These values are not
 
 ### What are the WCGOP data?
 
-The WCGOP database includes only data collected by observers on West Coast vessels. The data available in this database varies fairly dramatically based on the sector. The IFQ vessels essentially have 100% observer coverage, so the database includes a comprehensive view of discards and retained catch from observers for that sector. However, other sectors have a much lower percentage of observer coverage ([see the observer coverage](https://www.nwfsc.noaa.gov/research/divisions/fram/observation/data_products/sector_products.cfm#ob)). As an example, the nearshore fishery generally has about 20% observer coverage. Only the observations made on that percentage of vessels are going to be available in the WCGOP database. Hence, the observed retained and discard amounts are going to be a significant underestimate of total mortality in that sector. The discard ratio will also be more variable, but could generally be representative of the discarding behavior.
+The WCGOP database includes only data collected by observers on West Coast vessels. The data available in this database varies fairly dramatically based on the sector. The IFQ vessels essentially have 100% observer or electronic monitoring coverage, so the database includes a comprehensive view of discards and retained catch from observers for that sector through 2024. However, beginning in 2024, electronic monitoring data is not subject to 100% review rates; the video review rate now varies by IFQ sector. Non-IFQ sectors have a much lower percentage of observer coverage. As an example, the nearshore fishery generally has about 20% observer coverage. Only the observations made on that percentage of vessels are going to be available in the WCGOP database. Hence, the observed retained and discard amounts are going to be a significant underestimate of total mortality in that sector. The discard ratio will also be more variable, but could generally be representative of the discarding behavior.
 
 ### Available gear types
 
@@ -227,11 +243,11 @@ WCGOP observers a wide-range of fishing sectors for vessels participating in the
 
 -   pot: catch shares, limited entry sablefish, and open access fixed gear
 
--   shrimp trawl: pink shrimp and ridgeback prawn.
+-   shrimp trawl: pink shrimp and ridgeback prawn. (WCGOP stopped providing observers in these state-regulated fisheries following a 2024 U.S. Supreme Court decision)
 
 The groundfish expanded multi-year mortality (GEMM) report can be used to understand how much mortality (landed and discarded) is coming from each sector for any particular species. Examining these data can help analysts understand how best to use these data within their assessment. The GEMM data can be accessed using the `pull_gemm()` in the `nwfscSurvey` package.
 
-As noted above, the observer coverage varies by sector with the catch share fishery have 100% observer coverage starting in 2011. Given that, these data are treated as a census with estimates of discarding rates provided separately between catch share and non-catch share data. Additionally, electronic monitoring became available for catch share vessels starting in 2015. Vessels using electronic monitoring have video coverage of on the water discarding rather than always having an human onboard observer. These data are also considered to be a full representation of discarding.
+As noted above, the observer coverage varies by sector with the catch share fishery having higher observer coverage. Thus, estimates of discarding rates are provided separately between catch share and non-catch share data. Electronic monitoring became available for catch share vessels starting in 2015. Vessels using electronic monitoring have video coverage of on the water discarding rather than always having an human onboard observer. Video review rates declined below 100% beginning in 2024. Discards for EM catch share sectors are considered to be a full census from 2011 (when 100% observer coverage began) to 2023 (the last year of 100% video review rates). Beginning in 2024, discards are assumed to be estimates, similar to non-catch share sectors. Discards for catch share sectors with onboard observers are considered a census from 2011 onward.
 
 The catch share fishery includes the following sectors: catch share, catch share electronic monitoring, limited entry California halibut, midwater hake, midwater hake electronic monitoring, midwater rockfish, and midwater rockfish electronic monitoring.
 
@@ -251,4 +267,4 @@ There are two types of discard data available using WCGOP data. The first is a s
 
 ### Discard rates, and length comps, from the Pikitch et al. Discard Study (1985-87) and Mesh Study (1988-90) databases
 
-If enough data exists, discard rates and length comps from the Pikitch et al. Discard Study database (or Mesh Study if no data exists in the Discard Study) may be obtained for a species to be assessed from John Wallace. Optionally, these rates can be expanded out to the surrounding years based on applying the study rates to PacFIN catch from the expanded years. This, of course, is only reasonable when the assumption of no significant changes to the fishery is a good one. For those in NOAA a draft of the methods paper can be downloaded [here](https://drive.google.com/drive/folders/1RKexGwgWtY8m5wb7IHwfUmNeGyHDTP5B) (for non-NOAA folks that are interested, contact the author at john.wallace\@noaa.gov).
+If enough data exists, discard rates and length comps from the Pikitch et al. Discard Study database (or Mesh Study if no data exists in the Discard Study) may be obtained for a species to be assessed from Vlada Gertseva. Optionally, these rates can be expanded out to the surrounding years based on applying the study rates to PacFIN catch from the expanded years. This, of course, is only reasonable when the assumption of no significant changes to the fishery is a good one. For those in NOAA a draft of the methods paper can be downloaded [here](https://drive.google.com/drive/folders/1RKexGwgWtY8m5wb7IHwfUmNeGyHDTP5B) (for non-NOAA folks that are interested, John has retired but other staff can share a copy).
