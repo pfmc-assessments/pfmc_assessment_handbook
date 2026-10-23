@@ -104,7 +104,7 @@
     "href": "02-model-choices.html#determining-prior-for-natural-mortality",
     "title": "2  Modeling choices, notes and best practices",
     "section": "2.2 Determining prior for natural mortality",
-    "text": "2.2 Determining prior for natural mortality\nOwen’s Advice on \\(M\\); July 6, 2022\n\nI prefer using age data alone to estimate the natural mortality rate (see accompanying document: M2017_for_Methods_Review_Hamel; Hamel and Cope (in review)), except in cases where getting a reasonable estimate of the maximum age is problematic.\nThe age based prior is simply: \\[\\text{lognormal}(\\ln(5.4/\\text{max age}), 0.31).\\]\nThe fixed value for \\(M\\) if not estimating is even more simply the median of that prior: \\[M = 5.4/\\text{max age}\\]\nCan explore a range approaches for M estimates and priors here; reference is Cope and Hamel, in press.",
+    "text": "2.2 Determining prior for natural mortality\nOwen’s Advice on \\(M\\); July 6, 2022\n\nI prefer using age data alone to estimate the natural mortality rate (see Hamel and Cope (2022), except in cases where getting a reasonable estimate of the maximum age is problematic.\nThe age based prior is simply: \\[\\text{lognormal}(\\ln(5.4/\\text{max age}), 0.31).\\]\nThe fixed value for \\(M\\) if not estimating is even more simply the median of that prior: \\[M = 5.4/\\text{max age}\\]\nCan explore a range approaches for M estimates and priors here; reference is Cope and Hamel, in press.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Modeling choices, notes and best practices</span>"
     ]
