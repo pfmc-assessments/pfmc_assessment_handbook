@@ -14,7 +14,7 @@
     "href": "01-data-sources.html",
     "title": "1  Data sources: notes, contact information, and links",
     "section": "",
-    "text": "1.1 Table of contacts\nBelow is a list of key contacts. It is not comprehensive, but someone on this list can probably help you find who you are looking for.\nCheck the PFMC webpage or contact Brian Langseth, the current NWFSC stock assessor on the GMT (as of 2027 cycle), for GMT representatives.",
+    "text": "1.1 Table of contacts\nBelow is a list of key contacts. It is not comprehensive, but someone on this list can probably help you find who you are looking for.\nCheck the PFMC webpage or contact Brian Langseth, the current NWFSC stock assessor on the GMT (as of 2027 cycle), for GMT representatives. Unlike Washington and Oregon, California generally has separate POCs for each data source. They usually provide a spreadsheet of POCs early in the assessment cycle.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Data sources: notes, contact information, and links</span>"
     ]
@@ -284,7 +284,17 @@
     "href": "05-other.html#notes-on-shared-software",
     "title": "5  Other useful tidbits",
     "section": "",
-    "text": "5.1.1 Using GitHub\nGit is a version control system that can be used to synchronize files between the web and local directories. GitHub is a user-friendly website which hosts files and depends on Git.\n\n\n5.1.2 Shared code locations\nMost of the R packages and code used in NWFSC assessments are listed in the README at https://github.com/pfmc-assessments. Other sources not included in this github organization include Stock Synthesis and associated packages including {r4ss} and {ss3diags} (not yet used for PFMC assessments).\nIn addition, NMFS OpenSci has a number of NMFS templates for websites, quarto, Rmd docs, and presentations",
+    "text": "5.1.1 Using GitHub\nGit is a version control system that can be used to synchronize files between the web and local directories. GitHub is a user-friendly website which hosts files and depends on Git.\n\n\n5.1.2 Shared code locations\nMost of the R packages and code used in NWFSC assessments are listed in the README at https://github.com/pfmc-assessments. Other sources not included in this github organization include Stock Synthesis and associated packages including {r4ss} and {ss3diags} (not yet used for PFMC assessments).\nIn addition, NMFS OpenSci has a number of NMFS templates for websites, quarto, Rmd docs, and presentations.\nWe build assessment reports as reproducible quarto documents using the automatic stock assessment report or {asar} package which is maintained by the NMFS Office of Science and Technology.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Other useful tidbits</span>"
+    ]
+  },
+  {
+    "objectID": "05-other.html#shared-computing-resources",
+    "href": "05-other.html#shared-computing-resources",
+    "title": "5  Other useful tidbits",
+    "section": "5.2 Shared computing resources",
+    "text": "5.2 Shared computing resources\nIn most cases, stock assessment models can be built and explored locally on your assigned laptop. However, occasionally you need additional computing power. This is less common for stock assessments for management and more common for research purposes when you might be running a lot of simulations. PEP has two computers that are available for group use. Contact Owen to gain access.\n\nPrometheus (NWCDW04327574): set up as a server, multiple users can utilize the resource at once. Intel Xenon 2.5 GHz processor, 128 GB RAM, 24 cores/48 threads, 1.86 TB storage (D drive)\nLeafcutter (NWCDW04327533): single-user, Intel Xenon 3.00 GHz processor, 64 GB RAM (comparable to laptops), 18 cores/36 threads, 1.84 TB storage\n\nNote that when you parallelize processes over many cores, your RAM needs increase substantially. The process you are trying to replicate will slow down if you become RAM-limited.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Other useful tidbits</span>"
     ]
