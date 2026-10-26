@@ -18,8 +18,20 @@ We build assessment reports as reproducible quarto documents using the automatic
 
 In most cases, stock assessment models can be built and explored locally on your assigned laptop. However, occasionally you need additional computing power. This is less common for stock assessments for management and more common for research purposes when you might be running a lot of simulations. PEP has two computers that are available for group use. Contact Owen to gain access.
 
--   Prometheus (NWCDW04327574): set up as a server, multiple users can utilize the resource at once. Intel Xenon 2.5 GHz processor, 128 GB RAM, 24 cores/48 threads, 1.86 TB storage (D drive)
+-   Prometheus:
 
--   Leafcutter (NWCDW04327533): single-user, Intel Xenon 3.00 GHz processor, 64 GB RAM (comparable to laptops), 18 cores/36 threads, 1.84 TB storage
+    -   NWCDW04327574
+
+    -   Located in 209S (i.e., Megsie's office)
+
+    -   Set up as a server so multiple users can utilize the resource at once. Intel Xenon 2.5 GHz processor, 128 GB RAM, 24 cores/48 threads, 1.86 TB storage (D drive)
+
+-   Leafcutter:
+
+    -   NWCDW04327533
+
+    -   Located in 224S (i.e., debrief room / meeting room)
+
+    -   Single-user computer. Intel Xenon 3.00 GHz processor, 64 GB RAM (comparable to laptops), 18 cores/36 threads, 1.84 TB storage
 
 Note that when you parallelize processes over many cores, your RAM needs increase substantially. The process you are trying to replicate will slow down if you become RAM-limited.
