@@ -5,7 +5,7 @@
 Below is a list of key contacts. It is not comprehensive, but someone on this list can probably help you find who you are looking for.
 
 | Name | Affiliation | Role | Email |
-|----------------|----------------|--------------------|--------------------|
+|-----------------|-----------------|-------------------|-------------------|
 | Ali Whitman | ODFW | OR data steward | [alison.d.whitman\@odfw.oregon.gov](mailto:alison.d.whitman@odfw.oregon.gov){.email} |
 | Theresa Tsou | WDFW | WA data steward, SSC | [Tien-Shui.Tsou\@dfw.wa.gov](mailto:Tien-Shui.Tsou@dfw.wa.gov){.email} |
 | Fabio Caltabellotta | WDFW | WA data steward | [fabio.priorcaltabellotta\@dfw.wa.gov](mailto:fabio.priorcaltabellotta@dfw.wa.gov){.email} |
@@ -16,7 +16,7 @@ Below is a list of key contacts. It is not comprehensive, but someone on this li
 | Vacant? | PSMFC | PacFIN data manager |  |
 | Patrick McDonald | PSMFC/NWFSC | Ageing lab | patrick.j.mcdonald\@noaa.gov |
 
-Check the PFMC webpage or contact Brian Langseth, the current NWFSC stock assessor on the GMT (as of 2027 cycle), for GMT representatives.
+Check the PFMC webpage or contact Brian Langseth, the current NWFSC stock assessor on the GMT (as of 2027 cycle), for GMT representatives. Unlike Washington and Oregon, California generally has separate POCs for each data source. They usually provide a spreadsheet of POCs early in the assessment cycle.
 
 ## Requesting data from State partners
 
