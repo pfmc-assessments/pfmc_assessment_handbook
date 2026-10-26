@@ -16,7 +16,7 @@ The comments below are based on a team discussion on how to select a population 
 
 Owen's Advice on $M$; July 6, 2022
 
-1.  I prefer using age data alone to estimate the natural mortality rate (see accompanying document: M2017_for_Methods_Review_Hamel; Hamel and Cope (in review)), except in cases where getting a reasonable estimate of the maximum age is problematic.
+1.  I prefer using age data alone to estimate the natural mortality rate (see [Hamel and Cope (2022)](https://repository.library.noaa.gov/view/noaa/68311), except in cases where getting a reasonable estimate of the maximum age is problematic.
 
 2.  The age based prior is simply: $$\text{lognormal}(\ln(5.4/\text{max age}), 0.31).$$
 
